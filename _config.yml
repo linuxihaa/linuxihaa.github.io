@@ -1,0 +1,27 @@
+title: لینوکسی‌ها
+email: info@linuxihaa.ir
+description: >
+  وبسایت فارسی آموزش و اخبار گنو/لینوکس
+baseurl: ""
+url: http://linuxihaa.ir
+twitter_username: linuxihaa
+github_username:  linuxihaa
+locale: fa_IR
+
+markdown: kramdown
+
+encode: utf-8
+timezone: Asian/Tehran
+permalink: :title/
+
+gems:
+  - jekyll-paginate
+  - jekyll-sitemap
+
+paginate: 10
+paginate_path: "page/:num/"
+
+disqus_shortname: linuxihaa
+
+imgurl: /assets/images
+youtube: <div class='youtube'><iframe width='560' height='420' src='http://www.youtube.com/embed/ID?color=white&theme=light'></iframe></div>
