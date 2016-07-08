@@ -1,0 +1,63 @@
+{% include header.html %}
+	<article class="box special">
+		<header>
+			<h1>{{ page.title }}</h1>
+		</header>
+		<div class="content">{{ page.content }}</div>
+		<footer class="meta">
+<!-- AddToAny BEGIN -->
+<div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+<a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+<a class="a2a_button_facebook"></a>
+<a class="a2a_button_twitter"></a>
+<a class="a2a_button_google_plus"></a>
+</div>
+<script async src="https://static.addtoany.com/menu/page.js"></script>
+<!-- AddToAny END -->
+			{% if page.user %}
+			{% assign user = site.data.users[page.user] %}
+			{% if user.donate %}<p><a class="button special" href="{{ user.donate }}" target="_blank">حمایت مالی از نویسنده‌ی این مطلب فقط با ۱۰۰۰ تومان</a></p>{% endif %}
+			<span>نوشته شده توسط </span><address class="author"><a href="{{ user.url }}" class="author" rel="author" target="_blank" title="{{ user.bio }}">{{ user.name }}</a></address><span>، </span>
+			{% endif %}
+			{% if page.jdate %}
+				{% assign jdate = page.jdate | split: "-" %}
+				{% assign y = jdate[0] | minus: 0 %}
+				{% assign m = jdate[1] | minus: 1 %}
+				{% assign d = jdate[2] | minus: 0 %}
+				{% assign w = page.date | date: "%w" | minus: 0 %}
+			{% endif %}
+			{% if page.jedit %}
+				{% assign jedit = page.jedit | split: "-" %}
+				{% assign ye = jedit[0] | minus: 0 %}
+				{% assign me = jedit[1] | minus: 1 %}
+				{% assign de = jedit[2] | minus: 0 %}
+				{% assign we = page.edit | date: "%w" | minus: 0 %}
+			{% endif %}
+			<time class="date" pubdate datetime="{{ page.date | date_to_xmlschema }}">{% if page.jdate %}{{ site.data.date.weekdays[w] }} {{ d }} {{ site.data.date.months[m] }} {{ y }}{% else %}{{ page.date | date: "%A %d %m %y" }}{% endif %}</time>
+			{% if page.edit %}<span> - آخرین ویرایش </span><span>{% if page.jedit %}{{ site.data.date.weekdays[we] }} {{ de }} {{ site.data.date.months[me] }} {{ ye }}{% else %}{{ page.edit | date: "%A %d %m %y" }}{% endif %}{% endif %}</span>
+			<ul class="tags">
+				<span>دسته </span><a href="/category/{{ page.categories }}" class="category">{{ page.categories }}</a><span>، </span>
+				<span>برچسب</span>
+				{% for tag in page.tags %}
+				<li><a href="/tag/{{ tag }}" class="tag">{{ tag }}</a><span>،</span></li>
+				{% endfor %}
+			</ul>
+			<div class="adv">
+				{% if page.advimg %}
+				<a href="{{ page.advurl }}" target="_blank"><img src="{{ page.advimg }}" alt="advertise" /></a>
+				{% else %}
+				{% if user %}
+					{% if user.advimg %}
+					<a href="{{ user.advurl }}" target="_blank"><img src="{{ user.advimg }}" alt="advertise" /></a>
+					{% else %}
+					<a href="mailto:{{ user.email }}" target="_blank"><img src="/adv.png" alt="advertise" /></a>
+					{% endif %}
+				{% endif %}
+				{% else %}
+				<a href="mailto:{{ site.email }}" target="_blank"><img src="/adv.png" alt="advertise" /></a>
+				{% endif %}
+			</div>
+		</footer>
+	</article>
+	{% include disqus.html %}
+{% include footer.html %}

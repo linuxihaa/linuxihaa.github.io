@@ -1,0 +1,23 @@
+---
+layout: default
+---
+{% if page.url == "/" %}
+<section class="box special">
+	<header class="major">
+		<h2>بررسی لینوکس مینت ۱۸ (به‌زودی)</h2>
+		<p>حامی این مطلب شوید و علاوه بر حمایت از نویسنده، محصولات و خدمات خود را نیز تبلیغ کنید!<br/>
+		برای اطلاعات بیشتر با ما <a href="{{ site.baseurl }}/contact/">تماس</a> بگیرید.
+		</p>
+	</header>
+	<span class="image featured"><img src="{{ site.baseurl }}/assets/images/cn/linux_mint_18.jpg" alt="" /></span>
+</section>
+{% endif %}
+<div class="row">
+	{% for post in paginator.posts %}
+		{% include excerpt.html %}
+	{% endfor %}
+</div>
+<div class="pagination">
+	{% if paginator.previous_page %}<a href="{{ paginator.previous_page_path }}" class="previous">« مطالب جدیدتر</a>{% else %}<span class="previous">« مطالب جدیدتر</span>{% endif %}
+	{% if paginator.next_page %}<a href="{{ paginator.next_page_path }}" class="next">مطالب قدیمی‌تر »</a>{% else %}<span class="next ">مطالب قدیمی‌تر »</span>{% endif %}
+</div>
