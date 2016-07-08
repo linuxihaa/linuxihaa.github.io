@@ -1,5 +1,4 @@
 # Linuxihaa Website
----
 
 Persian GNU/Linux Educational & News Website
 
