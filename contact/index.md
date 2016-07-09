@@ -3,4 +3,4 @@ layout: page
 title: تماس
 ---
 
-برای تماس با ما می‌توانید از ایمیل info [at] linuxihaa [dot] ir استفاده کنید.
+برای تماس با ما می‌توانید از ایمیل linuxihaa [at] gmail [dot] com استفاده کنید.
