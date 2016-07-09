@@ -1578,6 +1578,7 @@ ul.tags li {
 	max-width: 100%;
 	margin: auto;
 	width: auto;
+	border-radius: none !important;
 }
 .\36 u .box .image.featured:first-child {
 	background: #dadada;
