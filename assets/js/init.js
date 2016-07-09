@@ -11,7 +11,7 @@
 	skel.init({
 		reset: 'full',
 		breakpoints: {
-			global:		{ range: '*', href: '{{ site.baseurl }}/assets/css/style.css?v=2016-07-09:2', containers: '60em', grid: { gutters: { vertical: '2em', horizontal: 0 } } },
+			global:		{ range: '*', href: '{{ site.baseurl }}/assets/css/style.css?v=2016-07-09:3', containers: '60em', grid: { gutters: { vertical: '2em', horizontal: 0 } } },
 			wide:		{ range: '-1680', href: '{{ site.baseurl }}/assets/css/style-wide.css' },
 			normal:		{ range: '-1280', href: '{{ site.baseurl }}/assets/css/style-normal.css', grid: { gutters: { vertical: '1.5em' } }, viewport: { scalable: false } },
 			narrow:		{ range: '-980', href: '{{ site.baseurl }}/assets/css/style-narrow.css', containers: '90%' },
