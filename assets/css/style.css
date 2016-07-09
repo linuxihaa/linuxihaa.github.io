@@ -1574,6 +1574,15 @@ ul.tags li {
 	float: right !important;
 }
 
+.\36 u .box .image.featured img {
+	max-width: 100%;
+	margin: auto;
+	width: auto;
+}
+.\36 u .box .image.featured:first-child {
+	background: #dadada;
+}
+
 /**
  * Syntax highlighting styles
  */
