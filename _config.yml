@@ -7,6 +7,8 @@ url: http://linuxihaa.ir
 twitter_username: linuxihaa
 github_username:  linuxihaa
 locale: fa_IR
+lang: fa
+direction: rtl
 
 markdown: kramdown
 

@@ -1,0 +1,115 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xml" href="{{ site.baseurl }}/feed.xslt.xml"?>
+{% if site.url %}
+  {% assign url_base = site.url | append: site.baseurl %}
+{% else %}
+  {% assign url_base = site.github.url %}
+{% endif %}
+<feed xmlns="http://www.w3.org/2005/Atom"{% if site.lang %} xml:lang="{{ site.lang }}"{% endif %} dir="{{ site.direction }}">
+  <generator uri="http://jekyllrb.com" version="{{ jekyll.version }}">Jekyll</generator>
+  <link href="{{ page.url | prepend: url_base }}" rel="self" type="application/atom+xml" />
+  <link href="{{ url_base }}/" rel="alternate" type="text/html" {% if site.lang %}hreflang="{{ site.lang }}" {% endif %}/>
+  <updated>{{ site.time | date_to_xmlschema }}</updated>
+  <id>{{ url_base | xml_escape }}/</id>
+
+  {% if site.title %}
+    <title>{{ site.title | smartify | xml_escape }}</title>
+  {% elsif site.name %}
+    <title>{{ site.name | smartify | xml_escape }}</title>
+  {% endif %}
+
+  {% if site.description %}
+    <subtitle>{{ site.description | xml_escape }}</subtitle>
+  {% endif %}
+
+  {% if site.author %}
+    <author>
+      {% if site.author.name %}
+        <name>{{ site.author.name | xml_escape }}</name>
+      {% else %}
+        <name>{{ site.author | xml_escape }}</name>
+      {% endif %}
+      {% if site.author.email %}
+        <email>{{ site.author.email | xml_escape }}</email>
+      {% endif %}
+      {% if site.author.uri %}
+        <uri>{{ site.author.uri | xml_escape }}</uri>
+      {% endif %}
+    </author>
+  {% endif %}
+
+  {% for post in site.posts limit: 10 %}
+  {% unless post.draft %}
+    <entry{% if post.lang %} xml:lang="{{ post.lang }}"{% endif %}>
+      <title>{{ post.title | smartify | strip_html | replace: '\n', ' ' | strip | xml_escape }}</title>
+      <link href="{{ post.url | prepend: url_base }}" rel="alternate" type="text/html" title="{{ post.title | xml_escape }}" />
+      <published>{{ post.date | date_to_xmlschema }}</published>
+      {% if post.last_modified_at %}
+        <updated>{{ post.last_modified_at | date_to_xmlschema }}</updated>
+      {% else %}
+        <updated>{{ post.date | date_to_xmlschema }}</updated>
+      {% endif %}
+
+      {% if post.user %}
+        {% assign user = site.data.users[post.user] %}
+      {% endif %}
+
+      <id>{{ post.id | prepend: url_base | xml_escape }}</id>
+      <content type="html" xml:base="{{ post.url | prepend: url_base | xml_escape }}">
+        {{ post.content | strip | xml_escape }}
+          {% if user %}
+          {% if user.donate %}
+          &lt;p&gt;&lt;a class=&quot;button special&quot; href=&quot;{{ user.donate }}&quot; target=&quot;_blank&quot;&gt;حمایت مالی از نویسنده‌ی این مطلب فقط با ۱۰۰۰ تومان&lt;/a&gt;&lt;/p&gt;
+          {% endif %}
+          {% endif %}
+          &lt;p&gt;
+            {% if post.advimg %}
+            &lt;a href=&quot;{{ post.advurl }}&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;{{ post.advimg }}&quot; alt=&quot;advertise&quot; /&gt;&lt;/a&gt;
+            {% else %}
+            {% if user %}
+              {% if user.advimg %}
+              &lt;a href=&quot;{{ user.advurl }}&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;{{ user.advimg }}&quot; alt=&quot;advertise&quot; /&gt;&lt;/a&gt;
+              {% else %}
+              &lt;a href=&quot;mailto:{{ user.email }}&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;/adv.png&quot; alt=&quot;advertise&quot; /&gt;&lt;/a&gt;
+              {% endif %}
+            {% endif %}
+            {% else %}
+            &lt;a href=&quot;mailto:{{ site.email }}&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;/adv.png&quot; alt=&quot;advertise&quot; /&gt;&lt;/a&gt;
+            {% endif %}
+          &lt;/p&gt;
+      </content>
+
+      {% if user %}
+        <author>
+            <name>{{ user.name | xml_escape }}</name>
+          {% if user.email %}
+            <email>{{ user.email | xml_escape }}</email>
+          {% endif %}
+          {% if user.url %}
+            <uri>{{ user.url | xml_escape }}</uri>
+          {% endif %}
+        </author>
+      {% endif %}
+
+      {% for tag in post.tags %}
+        <category term="{{ tag | xml_escape }}" />
+      {% endfor %}
+
+      {% if post.excerpt and post.excerpt != empty %}
+        <summary>{{ post.excerpt | strip_html | replace: '\n', ' ' | strip | xml_escape }}</summary>
+      {% endif %}
+
+      {% assign post_image = post.featured %}
+      {% if post_image %}
+        {% unless post_image contains "://" %}
+          {% assign post_image = post_image | prepend: "/" | prepend: site.imgurl | prepend: url_base | xml_escape  %}
+        {% endunless %}
+        <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="{{ post_image }}" />
+      {% endif %}
+    </entry>
+  {% endunless %}
+  {% endfor %}
+</feed>
