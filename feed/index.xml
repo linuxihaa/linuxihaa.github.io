@@ -17,7 +17,7 @@ layout: null
         <guid isPermaLink="true">{{ post.url | prepend: site.url }}</guid>
         <pubDate>{{ post.date | date_to_xmlschema }}</pubDate>
         <category><![CDATA[{{ post.categories }}]]></category>
-        <description><![CDATA[{{ post.content | xml_escape }}]]></description>
+        <description><![CDATA[{{ post.excerpt | xml_escape }}]]></description>
       </item>
     {% endunless %}
   {% endfor %}
