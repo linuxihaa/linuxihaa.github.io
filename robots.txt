@@ -1,3 +1,4 @@
+Sitemap: http://linuxihaa.ir/sitemap.xml
 User-agent: *
 Disallow: /_*
 Disallow: /*.md
