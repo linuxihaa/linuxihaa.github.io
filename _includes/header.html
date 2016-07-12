@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="{{ site.lang }}">
 	<head>
-		<title>{% if page.title %}{{ site.title | escape }} - {{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+		<title>{{ site.title | escape }} - {% if page.title %}{{ page.title | escape }}{% else %}{{ site.short_description }}{% endif %}</title>
 		<meta http-equiv="content-type" content="text/html; charset={{ site.encode }}" />
 		<link type="application/atom+xml" rel="alternate" href="http://linuxihaa.ir/feed.xml" title="لینوکسی‌ها">
 		<link type="application/xml" rel="sitemap" title="لینوکسی‌ها" href="http://linuxihaa.ir/sitemap.xml" />
