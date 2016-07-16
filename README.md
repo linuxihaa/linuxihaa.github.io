@@ -2,7 +2,7 @@
 
 Persian GNU/Linux Educational & News Website
 
-Powered by Jekyll, Hosted on github
+Powered by Jekyll, Hosted on Github
 
 Contents license: Attribution-NonCommercial-NoDerivs 3.0 Unported (CC BY-NC-ND 3.0)
 
