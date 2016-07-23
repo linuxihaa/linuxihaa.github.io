@@ -2,7 +2,7 @@
 layout: post    
 jdate: 1395-05-02    
 user: rmasoumvand    
-title: امن نمودن SSH با از Google Authenticator   
+title: SSH امن با Google Authenticator
 categories:
 - آموزشی
 tags:
