@@ -7,7 +7,7 @@ categories:
 - آموزشی
 tags:
 - سرور
-- حریم‌خصوصی
+- حریم‌شخصی
 featured: openssh-two-factor.png    
 keywords:
 - Google Authenticator
