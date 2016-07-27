@@ -43,18 +43,22 @@
 				{% endfor %}
 			</ul>
 			<div class="adv">
-				{% if page.advimg %}
-				<a href="{{ page.advurl }}" target="_blank"><img src="{{ page.advimg }}" alt="advertise" /></a>
+				{% if user.anetwork %}
+					{{ site.anetwork | replace: 'ID', user.anetwork }}
 				{% else %}
-				{% if user %}
-					{% if user.advimg %}
-					<a href="{{ user.advurl }}" target="_blank"><img src="{{ user.advimg }}" alt="advertise" /></a>
+					{% if page.advimg %}
+					<a href="{{ page.advurl }}" target="_blank"><img src="{{ page.advimg }}" alt="advertise" /></a>
 					{% else %}
-					<a href="mailto:{{ user.email }}" target="_blank"><img src="/adv.png" alt="advertise" /></a>
+					{% if user %}
+						{% if user.advimg %}
+						<a href="{{ user.advurl }}" target="_blank"><img src="{{ user.advimg }}" alt="advertise" /></a>
+						{% else %}
+						<a href="mailto:{{ user.email }}" target="_blank"><img src="/adv.png" alt="advertise" /></a>
+						{% endif %}
 					{% endif %}
-				{% endif %}
-				{% else %}
-				<a href="mailto:{{ site.email }}" target="_blank"><img src="/adv.png" alt="advertise" /></a>
+					{% else %}
+					<a href="mailto:{{ site.email }}" target="_blank"><img src="/adv.png" alt="advertise" /></a>
+					{% endif %}
 				{% endif %}
 			</div>
 		</footer>
