@@ -1,0 +1,119 @@
+* * *
+
+layout: post  
+jdate: 1395-05-13  
+user: rmasoumvand  
+title: راه اندازی DNS Server در لینوکس  
+categories:
+
+*   آموزشی
+
+tags:
+
+*   bind9
+
+*   linux dns server
+
+featured: dns-server-linux.jpg  
+keywords:
+
+*   bind9 dns server
+
+## description: راه اندازی DNS Server در لینوکس
+
+همان‌طور که می‌دانید زمانی که می‌خواهید وارد وبسایتی شوید برای مراجعه می بایست آدرس سرویس دهنده آن وب سایت را بدانید که با آدرس ای پی (IP Address) مشخص می شود. از آنجایی که به خاطر سپردن آدرس‌های IP برای تمامی وب سایت‌ها کاری دشوار و تقریباً غیر ممکن است می‌توانیم بجای وارد نمودن آدرس IP از سرویس نام های دامنه یا همان DNS استفاده کنیم. توسط این سرویس نام های دامنه به آدرس‌های ای پی ترجمه می‌شوند.
+
+در این آموزش به نحوه نصب و راه اندازی سرویس دهنده معروف bind در لینوکس خواهیم پرداخت
+
+ابتدا توسط دستور زیر سرویس دهنده bind را نصب می‌کنیم
+
+*   برای سیستم‌های مبتنی بر دبیان:
+```sh
+sudo apt install bind9
+```sh
+*   برای سیستم‌های مبتنی بر ردهت:
+```sh
+sudo yum install bind
+```
+سپس برای تعریف یک zone می بایست فایل زیر را ویرایش کنیم
+```sh
+sudo gedit /etc/bind/named.conf.local
+```sh
+و خطوط زیر را به آن اضافه می‌کنیم
+```sh
+zone “linuxihaa.ir” {
+	type master;
+	file “/etc/bind/db.linuxihaa.ir”;
+};
+```sh
+که در اینجا نام دامنه ما linuxihaa.ir و از نوع master می باشد.
+
+سپس می بایست یک zone فایل برای دامنه مورد نظرمان ایجاد کنیم. برای اینکار به صورت زیر عمل می‌کنیم
+```sh
+cd /etc/bind
+cp db.empty db.linuxihaa.ir
+```sh
+و فایل ایجاد شده را توسط یک ویرایشگر متنی ویرایش می‌کنیم
+```sh
+sudo gedit /etc/bind/db.linuxiha.ir
+```sh
+که در ابتدا محتویات فایل فوق بصورت زیر خواهد بود
+```sh
+$TTL 86400
+
+@ IN SOA localhost. root.localhost. (
+	1 ; Serial
+	604800 ; Refresh
+	86400 ; Retry
+	2419200 ; Expire
+	86400 ) ; Negative Cache TTL
+;
+@ IN NS localhost.
+```sh
+که می بایست بجای localhost نام دامنه مورد نظرمان را اضافه کنیم.
+```sh
+$TTL 86400
+
+@ IN SOA linuxihaa.ir. admin.linuxihaa.ir. (
+	1 ; Serial
+	604800 ; Refresh
+	86400 ; Retry
+	2419200 ; Expire
+	86400 ) ; Negative Cache TTL
+;
+
+@ IN NS linuxihaa.ir.
+```sh
+که در اینجا linuxihaa.ir. نام دامنه مورد نظر ما و admin.linuxihaa.ir. آدرس ایمیل مدیر سیستم می باشد.
+
+پس از اعمال تغییرات فوق می بایست رکورد های مربوط به هاست های مورد نظرمان را به انتهای فایل بصورت زیر وارد کنیم.
+```sh
+ns IN A 104.28.12.99
+
+linuxihaa.ir. A 104.28.12.99
+www CNAME linuxihaa.ir.
+host1 A 104.28.12.199
+host2 A 104.28.12.200
+```sh
+که در مثال فوق در خط چهارم آدرس یک وب سرور را مشخص نمودیم که در‌واقع یک نام مستعار به آدرس linuxihaa.ir می باشد.
+
+همچنین در خطوط پنجم و ششم دو هاست به آدرس‌های host1.linuxihaa.ir و host2.linuxihaa.ir تعریف نمودیم.
+
+پس از ویرایش و ذخیره فایل فوق می بایست صحت اطلاعات وارد شده را توسط ابزار named-checkzone بصورت زیر بررسی کنیم
+```sh
+named-checkzone linuxihaa.ir /etc/bind/db.linuxihaa.ir
+```sh
+پس از اجرای دستور فوق و در صورت نداشتن مشکل برنامه خروجی زیر را نمایش خواهد داد
+```sh
+zone linuxihaa.ir/IN: loaded serial 1
+OK
+```sh
+سپس جهت راه اندازی مجدد bind دستور زیر را وارد می‌کنیم
+```sh
+sudo systemctl restart bind9
+```
+جهت تست سرویس دهنده می‌توانیم از دستور dig بصورت زیر استفاده کنیم
+```sh
+dig @104.28.12.99 [www.linuxihaa.ir](http://www.linuxihaa.ir/)
+```sh
+*   نکته: برای استفاده از دستور dig می بایست بسته dnsutils را نصب کنید
