@@ -6,11 +6,11 @@ title: مدیریت سرویس‌ها توسط systemctl
 categories:
 - آموزشی
 tags:
-- systemd
+- پیکربندی
 featured: systemctl.jpg  
 keywords:
-- systemd لینوکس
 - systemctl
+- systemd
 description: مدیریت سرویس‌ها توسط systemctl
 ---
 
