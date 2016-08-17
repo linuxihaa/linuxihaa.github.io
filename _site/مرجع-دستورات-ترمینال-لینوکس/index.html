@@ -1,0 +1,527 @@
+<!DOCTYPE HTML>
+<html lang="fa">
+	<head>
+		<title>لینوکسی‌ها - مرجع دستورات ترمینال لینوکس</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<link rel="alternate" href="http://linuxihaa.ir" hreflang="fa-IR" />
+		<link type="application/atom+xml" rel="alternate" href="http://linuxihaa.ir/feed.xml" title="لینوکسی‌ها">
+		<link type="application/xml" rel="sitemap" title="لینوکسی‌ها" href="http://linuxihaa.ir/sitemap.xml" />
+		<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+			<!--[if lte IE 8]><script src="/assets/css/ie/html5shiv.js"></script><![endif]-->
+		<script src="/assets/js/jquery.min.js"></script>
+		<script src="/assets/js/jquery.dropotron.min.js"></script>
+		<script src="/assets/js/skel.min.js"></script>
+		<script src="/assets/js/skel-layers.min.js"></script>
+		<script src="/assets/js/jquery.scrollgress.min.js"></script>
+		<script src="/assets/js/init.js?v=2016-07-09:3"></script>
+		<noscript>
+			<link rel="stylesheet" href="/assets/css/skel.css" />
+			<link rel="stylesheet" href="/assets/css/style.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie/v8.css" /><![endif]-->
+		<meta name="robots" content="noodp"/>
+		<meta name="description" content="آموزش دستورات ترمینال لینوکس"/>
+		<meta property="og:site_name" content="لینوکسی‌ها" />
+		<link rel="canonical" href="http://linuxihaa.ir/%D9%85%D8%B1%D8%AC%D8%B9-%D8%AF%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D8%AA-%D8%AA%D8%B1%D9%85%DB%8C%D9%86%D8%A7%D9%84-%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3/" />
+		<meta property="og:locale" content="fa_IR" />
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content="لینوکسی‌ها - مرجع دستورات ترمینال لینوکس" />
+		<meta property="og:description" content="آموزش دستورات ترمینال لینوکس" />
+		<meta property="og:url" content="http://linuxihaa.ir/%D9%85%D8%B1%D8%AC%D8%B9-%D8%AF%D8%B3%D8%AA%D9%88%D8%B1%D8%A7%D8%AA-%D8%AA%D8%B1%D9%85%DB%8C%D9%86%D8%A7%D9%84-%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3/" />
+		<meta property="article:tag" content="دستورات ترمینال لینوکس" />
+		<meta property="article:section" content="آموزشی" />
+		<meta property="article:published_time" content="2013-11-22 00:00:00 +0000" />
+		
+		
+		<meta property="og:image" content="http://linuxihaa.ir/assets/images/terminal.png" />
+		<meta property="og:image:width" content="600" />
+		<meta property="og:image:height" content="300" />
+	</head>
+	
+		<body>
+			<section id="banner"></section>
+	
+	<!-- Header -->
+	<header id="header" class="alt">
+		<div id="logo" ><a href="/"><span>لینوکسی‌ها</span><img src="/logo.png" /></a></div>
+		<nav id="nav">
+			<ul>
+				<li><a href="/">خانه</a></li>
+				<li>
+					<a href="" class="icon fa-angle-down">دسته‌بندی</a>
+					<ul>
+						
+						<li><a href="/category/خبری/">خبری</a></li>
+						
+						<li><a href="/category/آموزشی/">آموزشی</a></li>
+						
+					</ul>
+				</li>
+				<li><a href="/about/">درباره</a></li>
+				<li><a href="/cooperation/">همکاری</a></li>
+				<li><a href="/contact/">تماس</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<!-- Main -->
+	<section id="main" class="container">
+
+	<article class="box special">
+		<header>
+			<h1>مرجع دستورات ترمینال لینوکس</h1>
+		</header>
+		<div class="content"><p>ترمینال محیط خط فرمان لینوکس است. اگر اکنون در محیط گرافیکی هستید ساده‌ترین روش برای آوردن ترمینال استفاده از کلیدهای ‌Ctr + Alt + T است که در تمامی توزیع‌ها پشتیبانی می‌شود. راه‌های دیگری نیز وجود دارد مثل استفاده از کلیدهای Ctr + Alt + F6 (برای خروج از کلیدهای Ctrl + Alt + F7 استفاده کنید) که محیط اصلی خط فرمان را برای شما می‌آورد. در این مطلب قصد دارم دستورات ترمینال را که برای اکثر توزیع‌ها استفاده می‌شود به صورت کامل، دسته‌بندی شده و همراه با توضیح و مثال ارا‌ئه کنم. برای استفاده بهتر از کلیدهای صفحه کلید می‌توانید از مطلب <a href="http://linuxihaa.ir/%DA%A9%D9%84%DB%8C%D8%AF%D9%87%D8%A7%DB%8C-%D9%85%DB%8C%D8%A7%D9%86%E2%80%8C%D8%A8%D8%B1-%D8%AA%D8%B1%D9%85%DB%8C%D9%86%D8%A7%D9%84/">کلیدهای میان‌بر در ترمینال</a> استفاده کنید.</p>
+
+<h3 id="section">اطلاعات سیستم</h3>
+
+<ul>
+  <li><strong>date</strong> – تاریخ و ساعت جاری را نمایش می‌دهد.</li>
+  <li><strong>cal</strong> – تقویم ماه‌ها را نمایش می‌دهد.</li>
+  <li><strong>uptime</strong> –  زمان روشن بودن سیستم و کاربران فعال را نشان می‌دهد.</li>
+  <li><strong>w</strong> – کاربران جاری که از سیستم استفاده می‌کنند را همراه با توضیحاتی درباره استفاده آن‌ها نشان می‌دهد. دستور شامل اطلاعات خروجی دستور ‌uptime نیز هست.</li>
+  <li><strong>whoami</strong> – کاربر جاری که شما اکنون از طریق آن با سیستم کار می‌کنید را نمایش می‌دهد.</li>
+  <li><strong>finger <em>user</em></strong> – اطلاعاتی درباره کاربری user (به جای آن نام‌کاربری مورد نظر را بنویسید) در اختیار شما می‌گذارد.</li>
+  <li><strong>uname</strong> – نام سیستم یونیکس شما که همان لینوکس است را نمایش می‌دهد.</li>
+  <li><strong>uname -a</strong> – دستور uname همراه با سویچ a اطلاعات تکمیلی از سیستم‌عامل شما شامل نسخه کرنل لینوکس را نمایش می‌دهد.</li>
+  <li><strong>cat /proc/cpuinfo</strong> – نمایش اطلاعات پردازنده (CPU).</li>
+  <li><strong>cat /proc/meminfo</strong> – نمایش اطلاعات حافظه اصلی (RAM).</li>
+  <li><strong>df</strong> – مقدار استفاده از دیسک‌های حافظه را نمایش می‌دهد.</li>
+  <li><strong>du</strong> – مقدار فضای استفاده شده تمامی دایرکتوری ها</li>
+  <li><strong>free</strong> – نمایش فضاهای خالی و استفاده شده حافظه رم و سواپ (swap)</li>
+</ul>
+
+<h3 id="section-1">دستورات فایل</h3>
+
+<ul>
+  <li><strong>ls</strong> – گرفتن لیست محتویات مسیر جاری شامل پوشه و فایل ها.</li>
+  <li><strong>ls -l</strong> – دستور ‌ls همراه با سویچ l لیست محتویات مسیر جاری را با اطلاعات کامل نمایش می‌دهد.</li>
+  <li><strong>ls -laC</strong> – مانند دستور ls -l است اما اطلاعات را به صورت ستونی نشان می‌دهد.</li>
+  <li><strong>ls -F</strong> – سویچ f در دستور ls لیست محتویات را همراه با فرمت فایل‌ها نمایش می‌دهد.</li>
+  <li><strong>ls -al</strong> – سویچ a در دستور ls لیست فایل‌ها را همراه با فایل‌های مخفی نشان می‌دهد. (فایل و پوشه مخفی در لینوکس یک نقطه قبل نام خود دارند)</li>
+  <li><strong>cd <em>dir</em></strong> – تغییر مسیر جاری به شاخه مورد نظر (بجای dir پوشه مورد نظر را وارد کنید)</li>
+  <li><strong>cd</strong> – مسیر جاری را به مسیر اصلی (home) بر می‌گرداند. (مسیر اصلی برای هر کاربر متفاوت است که پوشه‌های شخصی و تنظیمات در آن‌جا قرار می‌گیرند).</li>
+  <li><strong>mkdir</strong><em><strong> dir</strong></em> – ساخت یک شاخه (به جای dir نام پوشه که می‌خواهید بسازید را بنویسید).</li>
+  <li><strong>pwd</strong> – مسیر جاری را نشان می‌دهد.</li>
+  <li><strong>rm <em>name</em></strong> – حذف (پاک کردن) فایل یا دایرکتوری مورد نظر (به جای name نام فایل یا پوشه نوشته می‌شود).</li>
+  <li><strong>rm</strong><em><strong> -r dir</strong></em> – حذف یک دایرکتوری با محتویات درون آن (به جای dir نام پوشه را بنویسید).</li>
+  <li><strong>rm -f <em>file</em></strong> – اجبار کردن به حذف یک فایل برای مواقعی که فایل به دلایلی حذف نمی‌شود (نام فایل بجای file نوشته می‌شود).</li>
+  <li><strong>rm -rf <em>dir</em></strong> – اجبار کردن به حذف یک دایرکتوری برای مواقعی که آن به دلایلی حذف نمی‌شود (نام پوشه بجای dir نوشته می‌شود).</li>
+  <li><strong>cp <em>file1 file2</em></strong> – کپی کردن فایل در مسیر دیگر (file1 نام و مسیر فایل مبدا و file2 نام و مسیر فایل مقصد است).</li>
+  <li><strong>cp -r <em>dir1 dir2</em></strong> – کپی کردن پوشه در مسیر دیگر (dir1 نام و مسیر پوشه مبدا و dir2 نام و مسیر پوشه مقصد است).</li>
+  <li><strong>cp <em>file</em> dir </strong>– کپی کردن فایل مورد نظر در مسیر دیگر با همان نام (file نام فایل و dir مسیر پوشه مقصد است).</li>
+  <li><strong>mv <em>file</em> dir </strong>– جابجایی (مانند cut) کردن فایل مورد نظر در مسیر دیگر با همان نام (file نام فایل و dir مسیر پوشه مقصد است).</li>
+  <li><strong>mv</strong><em><strong> file1 file2</strong></em> – جابجایی کردن فایل به مسیر دیگر (file1 نام و مسیر فایل و file2 نام و مسیر فایل در مقصد است).</li>
+  <li><strong>ln -s <em>file link</em></strong> – ساخت لینک سیمبولیک از فایل در مسیر مورد نظر (file نام و مسیر فایل یا پوشه و link نام و مسیر لینک است).</li>
+  <li><strong>touch <em>file</em></strong> – ساخت یک فایل.</li>
+  <li><strong>cat &gt; <em>file</em></strong> – نوشتن متن در فایل.</li>
+  <li><strong>cat <em>file</em></strong> – نمایش محتویات یک فایل یا فراخوانی آن.</li>
+  <li><strong>more <em>file</em></strong> – نمایش محتویات فایل به صورت کم کم (برای فایل با محتویات زیاد).</li>
+  <li><strong>command | more</strong> – نمایش خروجی دستور به صورت کم کم.</li>
+  <li><strong>less <em>file</em></strong> – نمایش محتویات فایل به صورت صفحه به صفحه (برای فایل با محتویات زیاد).</li>
+  <li><strong>command | less</strong> – نمایش خروجی دستور به صورت صفحه به صفحه.</li>
+  <li><strong>head <em>file</em></strong> – نمایش ۱۰ خط اول محتویات یک فایل</li>
+  <li><strong>head -20 <em>file</em></strong> – نمایش ۲۰ خط اول محتویات یک فایل</li>
+  <li><strong>tail <em>file</em></strong> – نمایش ۱۰ خط آخر محتویات یک فایل</li>
+  <li><strong>tail -20 <em>file</em></strong> – نمایش ۲۰ خط آخر محتویات یک فایل</li>
+</ul>
+
+<h3 id="section-2">پروانه فایل</h3>
+
+<ul>
+  <li><strong>chmod <em>octal</em> <em>file</em></strong> – تغییر مجوز یک فایل با استفاده از کد دسترسی
+    <ul>
+      <li>مجوز یک فایل سطح دسترسی یک فایل را مشخص می‌کند. سطح دسترسی می‌تواند خواندنی (عدد ۴)، نوشتنی (عدد ۲) و اجرا (عدد ۱) باشد که سطح دسترسی یک فایل با جمع کردن این اعداد بدست می‌آید. یعنی سطح دسترسی ۷ تمامی مواد را شامل می‌شود.</li>
+      <li>هر فایل دسترسی آن برای سه دسته کاربری روت، گروه و عمومی تعریف می‌شود که از روش عددی بالا استفاده می‌کند و این سه عدد کنار هم سطح دسترسی یک فایل را مشخص می‌کنند. مثال‌های زیر را مشاهده کنید.</li>
+    </ul>
+  </li>
+  <li><strong>chmod 777 file</strong> – مجوز خواندن، نوشتن و اجرا فایل را به سه دسته روت، گروه و عمومی می‌دهد.</li>
+  <li><strong>chmod 755 file</strong> – مجوز خواندن، نوشتن و اجرا برای کاربری روت و مجوزهای خواندن و اجرا برای کاربران گروه و عمومی.</li>
+</ul>
+
+<h3 id="section-3">فشرده سازی</h3>
+
+<p>به صورت پیش‌فرض لینوکس از فشرده‌سازی با فرمت tar استفاده می‌کند که دستورات کار با آن را نیز پشتیبانی می‌کند. لینوکس از فشرده‌ساز Gzip برای کار با فایل‌های فشرده با فرمت tar.gz و gz فشرده‌ساز Bzip2 برای کار با فایل‌های فشرده با فرمت tar.bz2 استفاده می‌کند.</p>
+
+<ul>
+  <li><strong>tar cf <em>file.tar files</em></strong>– Create a tar named <em><strong>file.tar</strong></em> containing <em><strong>files</strong></em></li>
+  <li><em><strong>tar xf file.tar</strong></em> – استخراج محتویات فایل فشرده.</li>
+  <li><strong>tar czf <em>file.tar.gz files</em></strong> – ساخت فایل فشرده با فرمت ‌tar.gz از فایل‌ها توسط فشرده‌ساز Gzip.</li>
+  <li><strong>tar xzf <em>file.tar.gz</em> </strong>– استخراج محتویات فایل فشرده با فرمت tar.gz توسط فشرده‌ساز Gzip.</li>
+  <li><strong>tar czf <em>file.gz files</em></strong> – ساخت فایل فشرده با فرمت ‌gz از فایل‌ها توسط فشرده‌ساز Gzip.</li>
+  <li><strong>tar xzf <em>file.gz</em> </strong>– استخراج محتویات فایل فشرده با فرمت gz توسط فشرده‌ساز Gzip.</li>
+  <li><em><strong>tar cjf file.tar.bz2</strong></em> – ساخت فایل فشرده با فرمت ‌tar.bz2 از فایل‌ها توسط فشرده‌ساز.</li>
+  <li><strong>tar xjf <em>file.tar.bz2</em></strong> – استخراج محتویات فایل فشرده با فرمت tar.bz2 توسط فشرده‌ساز Bzip2.</li>
+</ul>
+
+<h3 id="section-4">جستوجو</h3>
+
+<ul>
+  <li><strong>grep <em>pattern</em> <em>files</em></strong> – جستجوی عبارت در فایل مورد نظر.</li>
+  <li><strong>grep <em>pattern</em> <em>dir</em></strong> – جستجوی عبارت در فایل‌های موجود در شاخه مورد نظر.</li>
+  <li><strong>grep -r <em>pattern</em> <em>dir</em></strong> – جستجوی عبارت در فایل‌های موجود در شاخه مورد نظر به صورت بازگشتی.</li>
+  <li><em><strong>command | </strong></em><strong>grep</strong><em><strong> pattern</strong></em> – جستجوی عبارت در خروجی دستور.</li>
+  <li><strong>locate <em>file</em></strong> – یافتن فایل مورد نظر ما در مسیر جاری.</li>
+  <li><strong>find ‌dir -name <em>filename</em></strong> – یافتن فایل مورد نظر ما در شاخه مورد نظر.</li>
+  <li><strong>find ”<em>_filename_</em>”</strong> – جستجوی تمامی فایل‌هایی که نام آن‌ها شامل نام فایل مورد نظر ما است (در مسیر جاری).</li>
+  <li><strong>updatedb</strong> – ساختن یا به‌روز رسانی دیتابیس فایل‌های سیستمی شاخه روت لینوکس.</li>
+  <li><strong>locate <em>filename</em></strong> – جستجوی فایل با ‌‌locate. فرض شده است که قبلا از دستور updatedb استفاده کرده‌اید.</li>
+  <li><strong>which <em>filename</em></strong> – نمایش شاخه بالایی فایل مورد نظر (پوشه‌ای که فایل ما در آن قرار دارد).</li>
+</ul>
+
+<h3 id="section-5">شبکه</h3>
+
+<ul>
+  <li><strong>ifconfig</strong> – نمایش لیست آی پی تمامی دستگاه‌های متصل (وایرلس، کارت شبکه، شبکه‌های وی‌پی‌ان  و …).</li>
+  <li><strong>ping</strong><em><strong> host</strong></em> – گرفتن پینگ از هاست مورن نظر.</li>
+  <li><strong>whois <em>domain</em></strong> – گرفتن اطلاعات دامنه (مالک دامنه، آی‌پی، دی‌ان‌اس سرور و …).</li>
+  <li><strong>dig <em>domain</em></strong> – دریافت اطلاعات DNS دامنه.</li>
+  <li><strong>dig -x</strong><em><strong> host</strong></em> – مشاهده میزبان به صورت معکوس.</li>
+  <li><strong>wget <em>file</em></strong> – دانلود یک فایل از اینترنت.</li>
+  <li><strong>wget -c</strong><em><strong> file</strong></em> – ادامه دانلود کردن یک دانلود متوقف شده.</li>
+</ul>
+
+<h3 id="ssh">SSH</h3>
+
+<p>پروتکل SSH برای ارتباط و کنترل با سیستم از راه دور استفاده می‌شود که پیش‌فرض از پورت SSH با شماره 22 استفاده می‌کند. بیشتر برای کنترل سرور توسط کاربری از راه دور استفاده می‌شود.</p>
+
+<ul>
+  <li><strong>ssh <em>user</em>@<em>host</em></strong> – اتصال به میزبان مورد نظر با نام کاربری مورد نظر (بعد از آن پسورد آن نام کاربری از شما پرسیده می‌شود).</li>
+  <li><strong>ssh -p <em>port user</em>@<em>host</em></strong> – اتصال به میزبان با نام کاربری توسط شماره پورت مشخص</li>
+  <li><strong>ssh-copy-id <em>user</em>@<em>host</em></strong> – اضافه کردن کلید برای اتصال کاربر از این سیستم راه دور. (برای مواقعی که نمی‌خواهیم پسورد را در هر اتصال وارد کنیم. ارسال پسورد اصلی امنیت میزبان را به خطر می‌اندازد اما کلید ساخته شده فقط برای سیستم جاری و نام کاربری مورد نظر اعتبار دارد).</li>
+</ul>
+
+<h3 id="section-6">مدیریت کاربران</h3>
+
+<ul>
+  <li><strong>adduser </strong><em><strong>accountname</strong></em> – ساخت یک کاربر جدید در سیستم لینوکس خود.</li>
+  <li><strong>passwd <em>accountname</em></strong> – تغییر گذرواژه (password) کاربر مورد نظر.</li>
+  <li><strong>su</strong> – ورود به خط فرمان با کاربری روت (کاربر روت مجوز دسترسی به تمامی فایل‌ها و تنظیمات سیستم را دارد).</li>
+  <li><strong>exit</strong> – خروج از خط فرمان با کاربر جاری.</li>
+</ul>
+
+<h3 id="section-7">شروع و پایان</h3>
+
+<ul>
+  <li><strong>shutdown -h now</strong> – خاموش کردن سیستم.</li>
+  <li><strong>halt</strong> – توقف تمام پردازش‌ها (مانند خاموش کردن سیستم است).</li>
+  <li><strong>shutdown -r 5</strong> – راه‌اندازی مجدد (ریست کردن) سیستم در مدت ۵ دقیقه بعد.</li>
+  <li><strong>shutdown -r now</strong> – ریست کردن سیستم لینوکس.</li>
+  <li><strong>reboot</strong> – راه‌اندازی مجدد سیستم لینوکس (مانند دستور بالا است).</li>
+</ul>
+
+<h3 id="section-8">نصب برنامه ها</h3>
+
+<ul>
+  <li>به صورت عادی اگر سورس برنامه در اختیار ما باشد به شاخه سورس رفته و دستورات زیر را برای نصب اعمال می‌کنیم.
+    <ul>
+      <li><strong>./configure</strong></li>
+      <li><strong>make</strong></li>
+      <li><strong>make install</strong></li>
+    </ul>
+  </li>
+  <li>اگر از توزیع‌های خاص لینوکس استفاده می‌کنید از دستورات زیر (یا دستورات خاص آن توزیع) برای نصب بسته نرم‌افزاری تهیه شده برای آن توزیع استفاده کنید.
+    <ul>
+      <li><strong>dpkg -i</strong><em><strong> pkg.deb</strong></em> – نصب بسته نرم افزاری دبیان - برای توزیع‌های دبیان، ابونتو، مینت و … .</li>
+      <li><strong>rpm -Uvh <em>pkg.rpm</em></strong> – نصب بسته نرم افزاری RPM - برای توزیع‌های ردهت، فدورا و … .</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="section-9">چاپ</h3>
+
+<ul>
+  <li><strong>/etc/rc.d/init.d/lpd start</strong> – شروع به کار سیستم چاپ.</li>
+  <li><strong>/etc/rc.d/init.d/lpd stop</strong> – پایان دادن به سیستم چاپ.</li>
+  <li><strong>/etc/rc.d/init.d/lpd status</strong> – نمایش وضعیت سیستم چاپ.</li>
+  <li><strong>lpq</strong> – نمایش کارهای موجود در صف چاپ.</li>
+  <li><strong>lprm</strong> – حذف کارهای موجود در صف چاپ.</li>
+  <li><strong>lpr</strong> – چاپ یک فایل.</li>
+  <li><strong>lpc</strong> – تنظیمات کنترلی چاپ.</li>
+  <li><strong>man <em>subject</em> | lpr</strong> – چاپ کتاب راهنمای یک دستور به صورت متنی.</li>
+  <li><strong>man -t <em>subject</em> | lpr</strong> – چاپ کتاب راهنمای یک دستور به صورت اسکریپتی.</li>
+  <li><strong>printtool</strong> – شروع رابط نصب پرینتر مورد نظر.</li>
+</ul>
+
+<h3 id="section-10">مدیرت پردازش ها</h3>
+
+<ul>
+  <li><strong>ps</strong> – نمایش پردازش های فعال جاری.</li>
+  <li><strong>top</strong> – نمایش تمام پردازش های در حال اجرا.</li>
+  <li><strong>kill <em>pid</em></strong> – از بین بردن پردازش مورد نظر با شناسه pid.</li>
+  <li><strong>killall <em>proc</em></strong> – از بین بردن تمام پردازش هایی با نام ‌proc. در اجرای آن احتیاط کنید.</li>
+  <li><strong>bg</strong> – نمایش پردازش های متوقف شده (stop) یا مکث کرده (puse) در بخش کارهای پس‌زمینه و ادامه اجرا پردارش های مکث کرده.</li>
+  <li><strong>fg</strong> – آوردن کارهای به تازگی انجام شده در بخش کارهای پیش‌زمینه.</li>
+  <li>&lt;strong”&gt;fg_<strong> n</strong>_ – آوردن کار n در بخش کارهای پیش‌زمینه.</li>
+</ul>
+
+<h3 id="section-11">آموزش نحوه عملکرد دستورات</h3>
+
+<ul>
+  <li><strong>apropos</strong><em><strong> subject</strong></em> – لیست صفحات کتابچه راهنما برای موضوع مورد نظر.</li>
+  <li><strong>man -k <em>keyword</em></strong> – نمایش صفحات شامل کلمه کلیدی مورد نظر.</li>
+  <li><strong>man <em>command</em></strong> – نمایش کتابچه راهنما برای دستور مورد نظر.</li>
+  <li><strong>man -t <em>man</em> | ps2pdf - &gt; <em>man.pdf</em></strong>  – ساخت فایل pdf از صفحه کتابچه راهنما.</li>
+  <li><strong>which </strong><em><strong>command</strong></em> – نمایش مسیر کامل دستور مورد نظر.</li>
+  <li><strong>time <em>command</em></strong> – نمایش زمان طول کشیدن دستور مورد نظر.</li>
+  <li><strong>whereis <em>app</em></strong> – نمایش مسیر بالقوه برنامه مورد نظر.</li>
+  <li><strong>which <em>app</em></strong> – نمایش میسر برنامه app که به صورت پیش‌فرض اجرا می‌شود.</li>
+</ul>
+
+<p>منبع دستورات: community.linuxmint.com/tutorial/view/244</p>
+</div>
+		<footer class="meta">
+<!-- AddToAny BEGIN -->
+<div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+<a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+<a class="a2a_button_facebook"></a>
+<a class="a2a_button_twitter"></a>
+<a class="a2a_button_google_plus"></a>
+</div>
+<script async src="https://static.addtoany.com/menu/page.js"></script>
+<!-- AddToAny END -->
+			
+			
+			<p><a class="button special" href="http://zarinp.al/19683" target="_blank">حمایت مالی از نویسنده‌ی این مطلب فقط با ۱۰۰۰ تومان</a></p>
+			<span>نوشته شده توسط </span><address class="author"><a href="http://misam.ir" class="author" rel="author" target="_blank" title="من میثم ساکی هستم؛ برای اطلاعات بیشتر به سایت من سر بزنید">میثم ساکی</a></address><span>، </span>
+			
+			
+			
+			<time class="date" pubdate datetime="2013-11-22T00:00:00+00:00">جمعه 1 آذر 1392</time>
+			</span>
+			<ul class="tags">
+				<span>دسته </span><a href="/category/آموزشی" class="category">آموزشی</a><span>، </span>
+				<span>برچسب</span>
+				
+				<li><a href="/tag/ترمینال" class="tag">ترمینال</a><span>،</span></li>
+				
+			</ul>
+			<div class="adv">
+				
+					
+					
+						
+						<a href="https://cafebazaar.ir/app/ir.misam.leitner/" target="_blank"><img src="http://misam.ir/leitner-adv.png?v=2" alt="advertise" /></a>
+						
+					
+					
+				
+			</div>
+		</footer>
+	</article>
+	<div id="disqus_thread"></div>
+<script>
+    (function() {
+        var d = document, s = d.createElement('script');
+        
+        s.src = 'https://linuxihaa.disqus.com/embed.js';
+        
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>لطفاً برای مشاهده نظرات جاوااسکریپت را روشن کنید <a href="https://disqus.com/?ref_noscript" rel="nofollow">Powered by Disqus.</a></noscript>
+		</section>
+		<!-- Footer -->
+			<footer id="footer">
+				<span>برچسب‌ها</span>
+				<ul class="tags container">
+					
+					<li>
+						<a href="/tag/پراکسی/" title="1 مطلب" style="font-size: 1.0133333333333334em;">پراکسی</a>
+					</li>
+					
+					<li>
+						<a href="/tag/اوبونتو/" title="30 مطلب" style="font-size: 1.4733333333333334em;">اوبونتو</a>
+					</li>
+					
+					<li>
+						<a href="/tag/dns/" title="1 مطلب" style="font-size: 1.0133333333333334em;">dns</a>
+					</li>
+					
+					<li>
+						<a href="/tag/شخصی‌سازی/" title="6 مطلب" style="font-size: 1.0933333333333333em;">شخصی‌سازی</a>
+					</li>
+					
+					<li>
+						<a href="/tag/سرور/" title="9 مطلب" style="font-size: 1.14em;">سرور</a>
+					</li>
+					
+					<li>
+						<a href="/tag/دبیان/" title="10 مطلب" style="font-size: 1.1533333333333333em;">دبیان</a>
+					</li>
+					
+					<li>
+						<a href="/tag/اوبونتو استدیو/" title="1 مطلب" style="font-size: 1.0133333333333334em;">اوبونتو استدیو</a>
+					</li>
+					
+					<li>
+						<a href="/tag/کوبونتو/" title="1 مطلب" style="font-size: 1.0133333333333334em;">کوبونتو</a>
+					</li>
+					
+					<li>
+						<a href="/tag/زوبونتو/" title="1 مطلب" style="font-size: 1.0133333333333334em;">زوبونتو</a>
+					</li>
+					
+					<li>
+						<a href="/tag/اوبونتو کایلین/" title="1 مطلب" style="font-size: 1.0133333333333334em;">اوبونتو کایلین</a>
+					</li>
+					
+					<li>
+						<a href="/tag/لوبونتو/" title="2 مطلب" style="font-size: 1.0266666666666666em;">لوبونتو</a>
+					</li>
+					
+					<li>
+						<a href="/tag/اوبونتو گنوم/" title="1 مطلب" style="font-size: 1.0133333333333334em;">اوبونتو گنوم</a>
+					</li>
+					
+					<li>
+						<a href="/tag/فدورا/" title="10 مطلب" style="font-size: 1.1533333333333333em;">فدورا</a>
+					</li>
+					
+					<li>
+						<a href="/tag/ترمینال/" title="5 مطلب" style="font-size: 1.0733333333333333em;">ترمینال</a>
+					</li>
+					
+					<li>
+						<a href="/tag/میزکار/" title="6 مطلب" style="font-size: 1.0933333333333333em;">میزکار</a>
+					</li>
+					
+					<li>
+						<a href="/tag/گنوم/" title="3 مطلب" style="font-size: 1.0466666666666666em;">گنوم</a>
+					</li>
+					
+					<li>
+						<a href="/tag/یونیتی/" title="2 مطلب" style="font-size: 1.0266666666666666em;">یونیتی</a>
+					</li>
+					
+					<li>
+						<a href="/tag/سینامون/" title="2 مطلب" style="font-size: 1.0266666666666666em;">سینامون</a>
+					</li>
+					
+					<li>
+						<a href="/tag/kde/" title="2 مطلب" style="font-size: 1.0266666666666666em;">kde</a>
+					</li>
+					
+					<li>
+						<a href="/tag/xfce/" title="1 مطلب" style="font-size: 1.0133333333333334em;">xfce</a>
+					</li>
+					
+					<li>
+						<a href="/tag/lxde/" title="1 مطلب" style="font-size: 1.0133333333333334em;">lxde</a>
+					</li>
+					
+					<li>
+						<a href="/tag/ردهت/" title="7 مطلب" style="font-size: 1.1066666666666667em;">ردهت</a>
+					</li>
+					
+					<li>
+						<a href="/tag/centos/" title="6 مطلب" style="font-size: 1.0933333333333333em;">centos</a>
+					</li>
+					
+					<li>
+						<a href="/tag/نرم‌افزار/" title="21 مطلب" style="font-size: 1.3333333333333333em;">نرم‌افزار</a>
+					</li>
+					
+					<li>
+						<a href="/tag/آرچ‌لینوکس/" title="3 مطلب" style="font-size: 1.0466666666666666em;">آرچ‌لینوکس</a>
+					</li>
+					
+					<li>
+						<a href="/tag/اوپن‌سوزه/" title="9 مطلب" style="font-size: 1.14em;">اوپن‌سوزه</a>
+					</li>
+					
+					<li>
+						<a href="/tag/پیکربندی/" title="16 مطلب" style="font-size: 1.2533333333333334em;">پیکربندی</a>
+					</li>
+					
+					<li>
+						<a href="/tag/مرورگر/" title="2 مطلب" style="font-size: 1.0266666666666666em;">مرورگر</a>
+					</li>
+					
+					<li>
+						<a href="/tag/لینوکس مینت/" title="7 مطلب" style="font-size: 1.1066666666666667em;">لینوکس مینت</a>
+					</li>
+					
+					<li>
+						<a href="/tag/توسعه/" title="3 مطلب" style="font-size: 1.0466666666666666em;">توسعه</a>
+					</li>
+					
+					<li>
+						<a href="/tag/شبکه/" title="5 مطلب" style="font-size: 1.0733333333333333em;">شبکه</a>
+					</li>
+					
+					<li>
+						<a href="/tag/مگیا/" title="1 مطلب" style="font-size: 1.0133333333333334em;">مگیا</a>
+					</li>
+					
+					<li>
+						<a href="/tag/حریم‌شخصی/" title="5 مطلب" style="font-size: 1.0733333333333333em;">حریم‌شخصی</a>
+					</li>
+					
+					<li>
+						<a href="/tag/کتاب/" title="1 مطلب" style="font-size: 1.0133333333333334em;">کتاب</a>
+					</li>
+					
+					<li>
+						<a href="/tag/بوت‌لودر/" title="1 مطلب" style="font-size: 1.0133333333333334em;">بوت‌لودر</a>
+					</li>
+					
+					<li>
+						<a href="/tag/توزیع/" title="1 مطلب" style="font-size: 1.0133333333333334em;">توزیع</a>
+					</li>
+					
+					<li>
+						<a href="/tag/sudo/" title="2 مطلب" style="font-size: 1.0266666666666666em;">sudo</a>
+					</li>
+					
+					<li>
+						<a href="/tag/کالی لینوکس/" title="1 مطلب" style="font-size: 1.0133333333333334em;">کالی لینوکس</a>
+					</li>
+					
+					<li>
+						<a href="/tag/nixos/" title="1 مطلب" style="font-size: 1.0133333333333334em;">nixos</a>
+					</li>
+					
+					<li>
+						<a href="/tag/مدیربسته/" title="1 مطلب" style="font-size: 1.0133333333333334em;">مدیربسته</a>
+					</li>
+					
+					<li>
+						<a href="/tag/رسپبری‌پای/" title="1 مطلب" style="font-size: 1.0133333333333334em;">رسپبری‌پای</a>
+					</li>
+					
+					<li>
+						<a href="/tag/اندروید/" title="1 مطلب" style="font-size: 1.0133333333333334em;">اندروید</a>
+					</li>
+					
+				</ul>
+				<ul class="icons">
+					<li><a href="http://facebook.com/linuxihaa" class="icon genericon genericon-facebook" target="_blank">Facebook</a></li>
+					<li><a href="https://twitter.com/linuxihaa" class="icon genericon genericon-twitter" target="_blank">Twitter</a></li>
+					<li><a href="https://telegram.me/linuxiha" class="icon genericon genericon-telegram" target="_blank">Telegram</a></li>
+					<li><a href="https://www.instagram.com/linuxiha" class="icon genericon genericon-instagram" target="_blank">Instagram</a></li>
+					<li><a href="https://plus.google.com/109502803142394425024/posts" class="icon genericon genericon-googleplus" target="_blank">Google+</a></li>
+					<li><a href="http://www.youtube.com/channel/UCM8_p07cthYziOA96HDdzOg" class="icon genericon genericon-youtube" target="_blank">YouTube</a></li>
+					<li><a href="https://github.com/linuxihaa" class="icon genericon genericon-github" target="_blank">Github</a></li>
+					<li><a href="/feed.xml" class="icon genericon genericon-feed" target="_blank">RSS Feed</a></li>
+				</ul>
+				<ul class="copyright">
+					<li>&copy; حق نشر ۱۳۹۵-۱۳۹۲ <a href="">لینوکسی‌ها</a>، <a href="/version-history/">نسخه‌ی ۲.۰</a>، تحت مجوز <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/">کرتیو کامنز ۳.۰</a></li>
+					<li> پوسته برگرفته از <a href="https://github.com/CloudCannon/Alpha-Jekyll-Theme">Alpha Jekyll Theme</a></li>
+				</ul>
+			</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-44951909-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	</body>
+</html>
+

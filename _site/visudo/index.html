@@ -1,0 +1,435 @@
+<!DOCTYPE HTML>
+<html lang="fa">
+	<head>
+		<title>لینوکسی‌ها - visudo، ویرایش sudoers</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<link rel="alternate" href="http://linuxihaa.ir" hreflang="fa-IR" />
+		<link type="application/atom+xml" rel="alternate" href="http://linuxihaa.ir/feed.xml" title="لینوکسی‌ها">
+		<link type="application/xml" rel="sitemap" title="لینوکسی‌ها" href="http://linuxihaa.ir/sitemap.xml" />
+		<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+			<!--[if lte IE 8]><script src="/assets/css/ie/html5shiv.js"></script><![endif]-->
+		<script src="/assets/js/jquery.min.js"></script>
+		<script src="/assets/js/jquery.dropotron.min.js"></script>
+		<script src="/assets/js/skel.min.js"></script>
+		<script src="/assets/js/skel-layers.min.js"></script>
+		<script src="/assets/js/jquery.scrollgress.min.js"></script>
+		<script src="/assets/js/init.js?v=2016-07-09:3"></script>
+		<noscript>
+			<link rel="stylesheet" href="/assets/css/skel.css" />
+			<link rel="stylesheet" href="/assets/css/style.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie/v8.css" /><![endif]-->
+		<meta name="robots" content="noodp"/>
+		<meta name="description" content="آموزش ویرایش sudoers با visudo"/>
+		<meta property="og:site_name" content="لینوکسی‌ها" />
+		<link rel="canonical" href="http://linuxihaa.ir/visudo/" />
+		<meta property="og:locale" content="fa_IR" />
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content="لینوکسی‌ها - visudo، ویرایش sudoers" />
+		<meta property="og:description" content="آموزش ویرایش sudoers با visudo" />
+		<meta property="og:url" content="http://linuxihaa.ir/visudo/" />
+		<meta property="article:tag" content="visudo" />
+		<meta property="article:section" content="آموزشی" />
+		<meta property="article:published_time" content="2015-03-23 00:00:00 +0000" />
+		
+		
+		<meta property="og:image" content="http://linuxihaa.ir/assets/images/sudo_report_incident.png" />
+		<meta property="og:image:width" content="600" />
+		<meta property="og:image:height" content="300" />
+	</head>
+	
+		<body>
+			<section id="banner"></section>
+	
+	<!-- Header -->
+	<header id="header" class="alt">
+		<div id="logo" ><a href="/"><span>لینوکسی‌ها</span><img src="/logo.png" /></a></div>
+		<nav id="nav">
+			<ul>
+				<li><a href="/">خانه</a></li>
+				<li>
+					<a href="" class="icon fa-angle-down">دسته‌بندی</a>
+					<ul>
+						
+						<li><a href="/category/خبری/">خبری</a></li>
+						
+						<li><a href="/category/آموزشی/">آموزشی</a></li>
+						
+					</ul>
+				</li>
+				<li><a href="/about/">درباره</a></li>
+				<li><a href="/cooperation/">همکاری</a></li>
+				<li><a href="/contact/">تماس</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<!-- Main -->
+	<section id="main" class="container">
+
+	<article class="box special">
+		<header>
+			<h1>visudo، ویرایش sudoers</h1>
+		</header>
+		<div class="content"><p>سلام. قبل از شروع این مطلب، سال جدید رو به شما تبریک می‌گم و امیدوارم سال ۱۳۹۴ همراه با سلامتی و موفقیت برای شما و خانوادتون باشه.</p>
+
+<p><img src="/assets/images/sudo_report_incident.png" alt="یه عکس که بی‌ربط نیست به موضوع مطلبمون و سال نو!" /></p>
+
+<p>یه عکس که بی‌ربط نیست به موضوع مطلبمون و سال نو!</p>
+
+<p>تو این پست قصد دارم نحوه‌ی ویرایش فایل sudoers با visudo رو آموزش بدم. توی مطلب «<a href="http://linuxihaa.ir/sudo/">sudo چیست؟</a>» دیدید که sudo برای اجرای دستوراتی استفاده میشه که ما اجازه اجرای اون‌ها رو نداریم؛ مثل دستور apt-get در دبیان و اوبونتو که برای اجرا نیاز به دسترسی روت داره و ما می‌تونیم با دستور sudo apt-get و دادن پسورد خودمون اون رو اجرا کنیم.</p>
+
+<p>یکم جلوتر بریم و توی پست «<a href="http://linuxihaa.ir/%D8%A7%D8%AC%D8%B1%D8%A7%DB%8C-%D8%AF%D8%B3%D8%AA%D9%88%D8%B1-%D8%B3%D9%88%D8%AF%D9%88-%D8%A8%D8%AF%D9%88%D9%86-%D9%BE%D8%B3%D9%88%D8%B1%D8%AF/">اجرای دستور سودو بدون پسورد</a>» دیدید که ما نیاز داشتیم بعضی از دستورات رو بدون نیاز به دادن پسورد اجرا کنیم. مثلا sudo apt-get رو که وارد کردیم دیگه نیاز به وارد کردن پسورد نباشه و بدون دریافت پسورد اجرا بشه. توی اون پست یه روش مبتدیانه و خطرناک گفتم اما قول دادم که روش اصولی رو آموزش بدم که حالا به قولم وفا کردم!</p>
+
+<p>خب شروع کنیم. می‌خوایم یه کارایی کنیم که بعضی دستورات با sudo که اجرا میشن دیگه نیاز نباشه که پسوردمون رو وارد کنیم. این کار و خیلی کارهای دیگه رو میشه از طریق ویرایش فایل sudoers انجام داد. کلیت کارها، اعطای دسترسی اجرا دستور (یا دستورات یا فایل) برای کاربری (یا گروه کاربران) در هر ماشین (یا یک ماشین خاص)، بدون نیاز به وارد کردن پسورد‌ (یا نیاز به وارد کردن پسورد) هست. حالا میتونه شامل اعطای اجرای تمام دستورات (حتی دستورات با دسترسی روت) برای کاربران ادمین سیستم با نیاز به وارد کردن پسورد باشه که میشه همون استفاده همیشگی که از دستور sudo داریم؛ یا اینکه اجرای یک دستور (که ما دسترسی به اجرای اون رو نداریم و مثلا فقط با دسترسی روت میتونه اجرا بشه) برای کاربری خاص بدون نیاز به وارد کردن پسورد.</p>
+
+<p>حالا که می‌دونیم با ویرایش sudoers چه کارهایی میشه انجام داد بیایم یه توضیحی درباره اون بدیم. فایل sudoers معمولا توی شاخه <span dir="ltr">/etc</span> هست و یک فایل متنی با ساختار مشخص هست که پیکربندی sudo محسوب میشه و دستور sudo با توجه به محتوای این فایل دسترسی‌ها رو تست و اعمال می‌کنه. برای ویرایش این فایل می‌تونید مستقیم فایل رو پیدا کنید و با هر ویرایشگری که خواستید ویرایش کنید یا اینکه از دستور visduo استفاده کنید که به معنی باز کردن فایل sudoers با ویرایشگر vi هست و این فایل رو با ویرایشگر پیش‌فرض شما برای ویرایش باز میکنه.</p>
+
+<p>بریم سراغ ویرایش فایل sudoers.</p>
+
+<p>ساختار این فایل از دو نوع دستور ایجاد شده. مورد اول برای مشخص کردن تنظیمات پیش‌فرض هست؛ مثل اینکه با وارد کردن پسورد چه زمانی طول بکشه تا دوباره این نشست منقضی بشه و دوباره نیاز به وارد کردن پسورد باشه یا ویرایشگر پیشفرض visudo چی باشه و … . اما مورد دوم همین دسترسی‌ها هست که دربارش صحبت کردیم.</p>
+
+<p>واسه اینکه هم مثالی برای مورد اول بشه و هم اینکه در تست‌های بعدی راحت باشیم این خط رو به فایل sudoers اضافه کنید.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Defaults:ALL timestamp_timeout=0
+</code></pre>
+</div>
+
+<p>این خط می‌گه که زمان انقضای پسورد 0 باشه؛ یعنی برای هر بار استفاده از دستور sudo نیاز به دادن پسورد باشه (اگه نیاز بود). به صورت پیشفرض این زمان معمولا 15 دقیقه هست؛ یعنی اینکه با اجرای دستوری مثل sudo apt-get و دادن پسورد، تا 15 دقیقه دیگه نیاز به وارد کردن پسورد نیست (در همین نشست) و اگه دستور sudo apt-get رو تو این بازه زمانی اجرا کنیم بدون نیاز به دادن پسورد اجرا میشه.</p>
+
+<ul>
+  <li>
+    <p>این تنظیم برای ادامه آموزش نیاز هست تا کار شما راحت‌تر باشه و اگر این مورد رو فعال نکردید باید بعد از هر بار که پسورد رو وارد کردید دستور sudo -K رو وارد کنید تا زمان منقضی بشه و برای اجرای دوباره sudo نیاز به دادن پسورد باشه. این کار رو انجام می‌دیم که تفاوت تنظیماتی که در ادامه انجام می‌دیم رو با حالت عادی احساس کنید.</p>
+  </li>
+  <li>
+    <p>اگر این تنظیم رو انجام دادید بعد از تست این مطلب اون رو حذف کنید.</p>
+  </li>
+  <li>
+    <p>توجه: در دستورات ترمینالی که استفاده شده، نوشته‌ها با رنگ زرد، خروجی هستند.</p>
+  </li>
+</ul>
+
+<p>و مورد دوم. فرض کنید من فایلی به نام test.sh با محتوای <span dir="ltr">echo ‘Linuxihaa’</span> می‌سازم و دسترسی اون رو 700 قرار می‌دم.</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span><span class="nb">echo</span> <span class="s2">"echo 'Linuxihaa'"</span> &gt; test.sh
+<span class="gp">$ </span>chmod 700 test.sh
+</code></pre>
+</div>
+
+<p>حالا اگه فایل رو اجرا کنید متن خروجی رو مشاهده می‌کنید.</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>./test.sh
+Linuxihaa
+</code></pre>
+</div>
+
+<p>بیاید مالک فایل رو روت قرار بدید تا دیگه بهش دسترسی نداشته باشید.</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>sudo chown root test.sh
+</code></pre>
+</div>
+
+<p>حالا دوباره فایل رو اجرا کنید تا مشاهده کنید که قادر به اجرای اون نیستید.</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>./test.sh
+-bash: ./test.sh: Permission denied
+</code></pre>
+</div>
+
+<p>می‌دونیم که با اجرای دستور sudo ./test.sh و دادن پسورد این فایل اجرا میشه اما برای اینکه پسورد نخواد خط زیر رو به فایل sudoers اضافه کنید. توجه کنید که بجای YOUR_USERNAME، نام کاربری خودتون و بجای FILE_PATH آدرس فایل test.sh رو به صورت کامل بنویسید.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>YOUR_USERNAME ALL=(ALL) NOPASSWD: FILE_PATH
+</code></pre>
+</div>
+
+<p>بعد از اضافه کردن این خط به فایل sudoers اگه دستور sudo ./test.sh رو وارد کنید می‌بینید که بدون نیاز به دادن پسورد، دستور اجرا میشه.</p>
+
+<p>خب این مثال تموم شد اما بیایم ببنیم ساختار کلی اعطای مجوز در فایل sudoers چطور هست؟</p>
+
+<p>ساختار هر خط تقریبا به شکل زیر هست.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>[USERNAME / %GROUPNAME] [MACHINE]=(USER) &lt;NOPASSWD:&gt; [PATH] [ARGUMENTS]
+</code></pre>
+</div>
+
+<ul>
+  <li>در بخش اول می‌تونید یک نام کاربری یا گروه کاربری (برای گروه کاربری باید اول نام گروه کاراکتر % قرار بدید) بنویسید.</li>
+  <li>در بخش دوم
+    <ul>
+      <li>ابتدا نام ماشینی که مجوز در اون اعطا میشه رو وارد می‌کنید (می‌تونید نام ماشین خودتون رو بنویسید) و یا ALL می‌نویسید تا برای همه ماشین‌ها باشه.</li>
+      <li>سپس نام یوزی که میشه با اون اجرا بشه رو وارد می‌کنید یا ALL می‌نویسید تا محدودیتی نباشه. این مورد برای دستور sudo -u USERNAME استفاده میشه.</li>
+    </ul>
+  </li>
+  <li>در بخش سوم یا می‌نویسید <span dir="ltr">NOPASSWD:</span> تا نیاز به وارد کردن پسورد نباشه یا چیزی نمی‌نویسید تا پسورد نیاز باشه.</li>
+  <li>
+    <p>در بخش چهارم مسیر فایل دستور یا فایل‌های خودتون رو وارد می‌کنید. میتونه یه فایل خاص باشه یا فایل‌های داخل یه شاخه خاص. همچنین می‌تونید بعد از نام فایل، آرگومان‌های مشخصی رو هم بنویسید تا اون دستور فقط با اون آرگومان‌ها قابل دسترس باشه.</p>
+  </li>
+  <li>
+    <p>اگه چند آرگومان با نام مشابه هست می‌تویند از * استفاده کنید. مثلا <span dir="ltr">up*</span> آرگومان‌های update و upgrade رو شامل میشه.</p>
+  </li>
+  <li>می‌تونید چندتا مسیر رو با دادن , از هم جدا کنید و مجوز به همشون اعمال بشه.</li>
+</ul>
+
+<p>نکته دیگری هست خوشحال میشم شما بگید یا بپرسید تا جواب داده بشه.</p>
+
+<p>موفق باشید.</p>
+
+<ul>
+  <li>تصویر شاخص از 4.bp.blogspot.com</li>
+</ul>
+</div>
+		<footer class="meta">
+<!-- AddToAny BEGIN -->
+<div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+<a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+<a class="a2a_button_facebook"></a>
+<a class="a2a_button_twitter"></a>
+<a class="a2a_button_google_plus"></a>
+</div>
+<script async src="https://static.addtoany.com/menu/page.js"></script>
+<!-- AddToAny END -->
+			
+			
+			<p><a class="button special" href="http://zarinp.al/19683" target="_blank">حمایت مالی از نویسنده‌ی این مطلب فقط با ۱۰۰۰ تومان</a></p>
+			<span>نوشته شده توسط </span><address class="author"><a href="http://misam.ir" class="author" rel="author" target="_blank" title="من میثم ساکی هستم؛ برای اطلاعات بیشتر به سایت من سر بزنید">میثم ساکی</a></address><span>، </span>
+			
+			
+			
+			<time class="date" pubdate datetime="2015-03-23T00:00:00+00:00">دوشنبه 3 فروردین 1394</time>
+			</span>
+			<ul class="tags">
+				<span>دسته </span><a href="/category/آموزشی" class="category">آموزشی</a><span>، </span>
+				<span>برچسب</span>
+				
+				<li><a href="/tag/sudo" class="tag">sudo</a><span>،</span></li>
+				
+			</ul>
+			<div class="adv">
+				
+					
+					
+						
+						<a href="https://cafebazaar.ir/app/ir.misam.leitner/" target="_blank"><img src="http://misam.ir/leitner-adv.png?v=2" alt="advertise" /></a>
+						
+					
+					
+				
+			</div>
+		</footer>
+	</article>
+	<div id="disqus_thread"></div>
+<script>
+    (function() {
+        var d = document, s = d.createElement('script');
+        
+        s.src = 'https://linuxihaa.disqus.com/embed.js';
+        
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>لطفاً برای مشاهده نظرات جاوااسکریپت را روشن کنید <a href="https://disqus.com/?ref_noscript" rel="nofollow">Powered by Disqus.</a></noscript>
+		</section>
+		<!-- Footer -->
+			<footer id="footer">
+				<span>برچسب‌ها</span>
+				<ul class="tags container">
+					
+					<li>
+						<a href="/tag/پراکسی/" title="1 مطلب" style="font-size: 1.0133333333333334em;">پراکسی</a>
+					</li>
+					
+					<li>
+						<a href="/tag/اوبونتو/" title="30 مطلب" style="font-size: 1.4733333333333334em;">اوبونتو</a>
+					</li>
+					
+					<li>
+						<a href="/tag/dns/" title="1 مطلب" style="font-size: 1.0133333333333334em;">dns</a>
+					</li>
+					
+					<li>
+						<a href="/tag/شخصی‌سازی/" title="6 مطلب" style="font-size: 1.0933333333333333em;">شخصی‌سازی</a>
+					</li>
+					
+					<li>
+						<a href="/tag/سرور/" title="9 مطلب" style="font-size: 1.14em;">سرور</a>
+					</li>
+					
+					<li>
+						<a href="/tag/دبیان/" title="10 مطلب" style="font-size: 1.1533333333333333em;">دبیان</a>
+					</li>
+					
+					<li>
+						<a href="/tag/اوبونتو استدیو/" title="1 مطلب" style="font-size: 1.0133333333333334em;">اوبونتو استدیو</a>
+					</li>
+					
+					<li>
+						<a href="/tag/کوبونتو/" title="1 مطلب" style="font-size: 1.0133333333333334em;">کوبونتو</a>
+					</li>
+					
+					<li>
+						<a href="/tag/زوبونتو/" title="1 مطلب" style="font-size: 1.0133333333333334em;">زوبونتو</a>
+					</li>
+					
+					<li>
+						<a href="/tag/اوبونتو کایلین/" title="1 مطلب" style="font-size: 1.0133333333333334em;">اوبونتو کایلین</a>
+					</li>
+					
+					<li>
+						<a href="/tag/لوبونتو/" title="2 مطلب" style="font-size: 1.0266666666666666em;">لوبونتو</a>
+					</li>
+					
+					<li>
+						<a href="/tag/اوبونتو گنوم/" title="1 مطلب" style="font-size: 1.0133333333333334em;">اوبونتو گنوم</a>
+					</li>
+					
+					<li>
+						<a href="/tag/فدورا/" title="10 مطلب" style="font-size: 1.1533333333333333em;">فدورا</a>
+					</li>
+					
+					<li>
+						<a href="/tag/ترمینال/" title="5 مطلب" style="font-size: 1.0733333333333333em;">ترمینال</a>
+					</li>
+					
+					<li>
+						<a href="/tag/میزکار/" title="6 مطلب" style="font-size: 1.0933333333333333em;">میزکار</a>
+					</li>
+					
+					<li>
+						<a href="/tag/گنوم/" title="3 مطلب" style="font-size: 1.0466666666666666em;">گنوم</a>
+					</li>
+					
+					<li>
+						<a href="/tag/یونیتی/" title="2 مطلب" style="font-size: 1.0266666666666666em;">یونیتی</a>
+					</li>
+					
+					<li>
+						<a href="/tag/سینامون/" title="2 مطلب" style="font-size: 1.0266666666666666em;">سینامون</a>
+					</li>
+					
+					<li>
+						<a href="/tag/kde/" title="2 مطلب" style="font-size: 1.0266666666666666em;">kde</a>
+					</li>
+					
+					<li>
+						<a href="/tag/xfce/" title="1 مطلب" style="font-size: 1.0133333333333334em;">xfce</a>
+					</li>
+					
+					<li>
+						<a href="/tag/lxde/" title="1 مطلب" style="font-size: 1.0133333333333334em;">lxde</a>
+					</li>
+					
+					<li>
+						<a href="/tag/ردهت/" title="7 مطلب" style="font-size: 1.1066666666666667em;">ردهت</a>
+					</li>
+					
+					<li>
+						<a href="/tag/centos/" title="6 مطلب" style="font-size: 1.0933333333333333em;">centos</a>
+					</li>
+					
+					<li>
+						<a href="/tag/نرم‌افزار/" title="21 مطلب" style="font-size: 1.3333333333333333em;">نرم‌افزار</a>
+					</li>
+					
+					<li>
+						<a href="/tag/آرچ‌لینوکس/" title="3 مطلب" style="font-size: 1.0466666666666666em;">آرچ‌لینوکس</a>
+					</li>
+					
+					<li>
+						<a href="/tag/اوپن‌سوزه/" title="9 مطلب" style="font-size: 1.14em;">اوپن‌سوزه</a>
+					</li>
+					
+					<li>
+						<a href="/tag/پیکربندی/" title="16 مطلب" style="font-size: 1.2533333333333334em;">پیکربندی</a>
+					</li>
+					
+					<li>
+						<a href="/tag/مرورگر/" title="2 مطلب" style="font-size: 1.0266666666666666em;">مرورگر</a>
+					</li>
+					
+					<li>
+						<a href="/tag/لینوکس مینت/" title="7 مطلب" style="font-size: 1.1066666666666667em;">لینوکس مینت</a>
+					</li>
+					
+					<li>
+						<a href="/tag/توسعه/" title="3 مطلب" style="font-size: 1.0466666666666666em;">توسعه</a>
+					</li>
+					
+					<li>
+						<a href="/tag/شبکه/" title="5 مطلب" style="font-size: 1.0733333333333333em;">شبکه</a>
+					</li>
+					
+					<li>
+						<a href="/tag/مگیا/" title="1 مطلب" style="font-size: 1.0133333333333334em;">مگیا</a>
+					</li>
+					
+					<li>
+						<a href="/tag/حریم‌شخصی/" title="5 مطلب" style="font-size: 1.0733333333333333em;">حریم‌شخصی</a>
+					</li>
+					
+					<li>
+						<a href="/tag/کتاب/" title="1 مطلب" style="font-size: 1.0133333333333334em;">کتاب</a>
+					</li>
+					
+					<li>
+						<a href="/tag/بوت‌لودر/" title="1 مطلب" style="font-size: 1.0133333333333334em;">بوت‌لودر</a>
+					</li>
+					
+					<li>
+						<a href="/tag/توزیع/" title="1 مطلب" style="font-size: 1.0133333333333334em;">توزیع</a>
+					</li>
+					
+					<li>
+						<a href="/tag/sudo/" title="2 مطلب" style="font-size: 1.0266666666666666em;">sudo</a>
+					</li>
+					
+					<li>
+						<a href="/tag/کالی لینوکس/" title="1 مطلب" style="font-size: 1.0133333333333334em;">کالی لینوکس</a>
+					</li>
+					
+					<li>
+						<a href="/tag/nixos/" title="1 مطلب" style="font-size: 1.0133333333333334em;">nixos</a>
+					</li>
+					
+					<li>
+						<a href="/tag/مدیربسته/" title="1 مطلب" style="font-size: 1.0133333333333334em;">مدیربسته</a>
+					</li>
+					
+					<li>
+						<a href="/tag/رسپبری‌پای/" title="1 مطلب" style="font-size: 1.0133333333333334em;">رسپبری‌پای</a>
+					</li>
+					
+					<li>
+						<a href="/tag/اندروید/" title="1 مطلب" style="font-size: 1.0133333333333334em;">اندروید</a>
+					</li>
+					
+				</ul>
+				<ul class="icons">
+					<li><a href="http://facebook.com/linuxihaa" class="icon genericon genericon-facebook" target="_blank">Facebook</a></li>
+					<li><a href="https://twitter.com/linuxihaa" class="icon genericon genericon-twitter" target="_blank">Twitter</a></li>
+					<li><a href="https://telegram.me/linuxiha" class="icon genericon genericon-telegram" target="_blank">Telegram</a></li>
+					<li><a href="https://www.instagram.com/linuxiha" class="icon genericon genericon-instagram" target="_blank">Instagram</a></li>
+					<li><a href="https://plus.google.com/109502803142394425024/posts" class="icon genericon genericon-googleplus" target="_blank">Google+</a></li>
+					<li><a href="http://www.youtube.com/channel/UCM8_p07cthYziOA96HDdzOg" class="icon genericon genericon-youtube" target="_blank">YouTube</a></li>
+					<li><a href="https://github.com/linuxihaa" class="icon genericon genericon-github" target="_blank">Github</a></li>
+					<li><a href="/feed.xml" class="icon genericon genericon-feed" target="_blank">RSS Feed</a></li>
+				</ul>
+				<ul class="copyright">
+					<li>&copy; حق نشر ۱۳۹۵-۱۳۹۲ <a href="">لینوکسی‌ها</a>، <a href="/version-history/">نسخه‌ی ۲.۰</a>، تحت مجوز <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/">کرتیو کامنز ۳.۰</a></li>
+					<li> پوسته برگرفته از <a href="https://github.com/CloudCannon/Alpha-Jekyll-Theme">Alpha Jekyll Theme</a></li>
+				</ul>
+			</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-44951909-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	</body>
+</html>
+

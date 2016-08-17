@@ -1,0 +1,400 @@
+<!DOCTYPE HTML>
+<html lang="fa">
+	<head>
+		<title>لینوکسی‌ها - راه اندازی LAMP در دبیان و اوبونتو</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<link rel="alternate" href="http://linuxihaa.ir" hreflang="fa-IR" />
+		<link type="application/atom+xml" rel="alternate" href="http://linuxihaa.ir/feed.xml" title="لینوکسی‌ها">
+		<link type="application/xml" rel="sitemap" title="لینوکسی‌ها" href="http://linuxihaa.ir/sitemap.xml" />
+		<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+			<!--[if lte IE 8]><script src="/assets/css/ie/html5shiv.js"></script><![endif]-->
+		<script src="/assets/js/jquery.min.js"></script>
+		<script src="/assets/js/jquery.dropotron.min.js"></script>
+		<script src="/assets/js/skel.min.js"></script>
+		<script src="/assets/js/skel-layers.min.js"></script>
+		<script src="/assets/js/jquery.scrollgress.min.js"></script>
+		<script src="/assets/js/init.js?v=2016-07-09:3"></script>
+		<noscript>
+			<link rel="stylesheet" href="/assets/css/skel.css" />
+			<link rel="stylesheet" href="/assets/css/style.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie/v8.css" /><![endif]-->
+		<meta name="robots" content="noodp"/>
+		<meta name="description" content="راه اندازی lamp در دبیان و اوبونتو"/>
+		<meta property="og:site_name" content="لینوکسی‌ها" />
+		<link rel="canonical" href="http://linuxihaa.ir/%D8%B1%D8%A7%D9%87-%D8%A7%D9%86%D8%AF%D8%A7%D8%B2%DB%8C-lamp-%D8%AF%D8%B1-%D8%AF%D8%A8%DB%8C%D8%A7%D9%86-%D9%88-%D8%A7%D8%A8%D9%88%D9%86%D8%AA%D9%88/" />
+		<meta property="og:locale" content="fa_IR" />
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content="لینوکسی‌ها - راه اندازی LAMP در دبیان و اوبونتو" />
+		<meta property="og:description" content="راه اندازی lamp در دبیان و اوبونتو" />
+		<meta property="og:url" content="http://linuxihaa.ir/%D8%B1%D8%A7%D9%87-%D8%A7%D9%86%D8%AF%D8%A7%D8%B2%DB%8C-lamp-%D8%AF%D8%B1-%D8%AF%D8%A8%DB%8C%D8%A7%D9%86-%D9%88-%D8%A7%D8%A8%D9%88%D9%86%D8%AA%D9%88/" />
+		<meta property="article:tag" content="lamp" />
+		<meta property="article:section" content="آموزشی" />
+		<meta property="article:published_time" content="2013-10-16 00:00:00 +0000" />
+		<meta property="article:modified_time" content="2016-07-08" />
+		<meta property="og:updated_time" content="2016-07-08" />
+		<meta property="og:image" content="http://linuxihaa.ir/assets/images/lamp.jpg" />
+		<meta property="og:image:width" content="600" />
+		<meta property="og:image:height" content="300" />
+	</head>
+	
+		<body>
+			<section id="banner"></section>
+	
+	<!-- Header -->
+	<header id="header" class="alt">
+		<div id="logo" ><a href="/"><span>لینوکسی‌ها</span><img src="/logo.png" /></a></div>
+		<nav id="nav">
+			<ul>
+				<li><a href="/">خانه</a></li>
+				<li>
+					<a href="" class="icon fa-angle-down">دسته‌بندی</a>
+					<ul>
+						
+						<li><a href="/category/خبری/">خبری</a></li>
+						
+						<li><a href="/category/آموزشی/">آموزشی</a></li>
+						
+					</ul>
+				</li>
+				<li><a href="/about/">درباره</a></li>
+				<li><a href="/cooperation/">همکاری</a></li>
+				<li><a href="/contact/">تماس</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<!-- Main -->
+	<section id="main" class="container">
+
+	<article class="box special">
+		<header>
+			<h1>راه اندازی LAMP در دبیان و اوبونتو</h1>
+		</header>
+		<div class="content"><p>کاربرانی که از اوبونتو برای مدیرت سرور خود استفاده می‌کنند و یا کاربران اوبونتو دسکتاپ که قصد ایجاد لوکال هاست را برای آزمایش پروژه‌های وب خود دارند حتما نیازمند راه‌اندازی LAMP روی سیستم عامل خود هستند. البته مدیران سرور اکثرا ترجیح می‌دهند از کنترل‌پنل‌های آماده (و اکثرا معروف) برای این‌کار استفاده کنند زیرا راه اندازی راحتی دارند، مدیریت آسان‌تر با قابلیت‌های زیادی در اختیار کاربران قرار می‌دهند و کنترل امنیت شبکه را نیز به راحتی امکان پذیر می‌کنند. این کنترل‌پنل‌ها قبل از نصب لمپ را در سیستم شما راه اندازی می‌کنند و بعد برنامه‌ای برای مدیریت در اختیار شما قرار می‌دهند.</p>
+
+<p>و اما کاربران دسکتاپ که نیاز به لوکال‌هاست دارند؛ این کاربران نیز می‌توانند از برنامه‌های آماده برای راه اندازی لمپ در سیستم خود استفاده کنند که نرم‌افزار گرافیکی برای مدیریت نیز در اختیار کاربر می‌گذارند.</p>
+
+<p>اما بگذاریم حرفه‌ای تر کار کنیم! بگذارید خودمان تمام کارها را انجام بدهیم، کمی یاد بگیریم و منابع کمتری از سیستم را اشغال کنیم. بگذارید لمپ ساده‌ای را خودمان راه اندازی کنیم (این کار به مدیران سرور توصیه ‌نمی‌شود و بهتر است از کنترل‌پنل‌های قدرتمندی نظیر سی‌پنل استفاده کنید تا امنیت بیشتری برای شما تضمین شود و کاربران شما نیز راحت‌تر باشند).</p>
+
+<p><img src="/assets/images/lamp.jpg" alt="" /></p>
+
+<p>کلمه LAMP از Linux, Apache, MySQL, PHP تشکیل شده است و لینوکس آن بخاطر راه‌اندازی در سیستم لینوکس است و در دیگر سیستم‌عامل‌ها این عبارت بسته به حرف اول اسم آن تغییر می‌کند. مانند WAMP برای ویندوز و MAMP برای مک.</p>
+
+<p>پس تمام چیزهایی که باید نصب کنیم عبارتند از؛ آپاچی، مای‌اس‌کیو‌ال و پی‌اچ‌پی. و اما روش و ترتیب نصب.</p>
+
+<h3 id="apache">نصب آپاچی Apache</h3>
+
+<p>اول از همه از دستور زیر برای نصب آپاچی در ترمینال استفاده کنید.</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code>sudo apt-get install apache2
+</code></pre>
+</div>
+
+<p>بعد از نصب آپاچی در مرورگر خود آدرس http://localhost را بزنید و در صورتی که آپاچی به درستی نصب شده باشد صفحه‌ای با محتوای اطلاعات وب‌سرور آپاچی در مرورگر نمایش داده می‌شود.</p>
+
+<h3 id="php">نصب پی‌اچ‌پی PHP</h3>
+
+<p>اکنون بیایید پی‌اچ‌پی را نصب کنیم.</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code>sudo apt-get install php5 libapache2-mod-php5
+</code></pre>
+</div>
+
+<p>حالا بیایید پی اچ پی نصب شده را امتحان کنیم. از دستور زیر برای ایجاد فایلی در آدرس مورد نظر استفاده کنید. دسترسی این آدرس روت است و باید از sudo برای دسترسی به آن استفاده کنید (جلوتر می‌گویم که چگونه با دسترسی عادی کار کنید).</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code>sudo gedit /var/www/html/test.php
+</code></pre>
+</div>
+
+<p>در فایل ایجاد شده کد <code class="highlighter-rouge">&lt;?php phpinfo(); ?&gt;</code> را بنویسید. و بعد از ذخیره در مرورگر آدرس http://localhost/test.php زیر را وارد کنید. اگر همه چیز به درستی انجام شده باشد باید لیست کاملی از تنظیمات پی‌اچ‌پی خود را مشاهده کنید.</p>
+
+<h3 id="mysql">نصب مای‌اس‌کیو‌ال MySQL</h3>
+
+<p>اکنون زمان آن رسیده است که سرور دیتابیس نصب کنیم. یعنی مای‌اس‌کیو‌ال که برای لینوکس تهیه شده است.</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code>sudo apt-get install mysql-server
+</code></pre>
+</div>
+
+<p>تمام شد! لمپ شما راه‌اندازی شد. می‌توانید دستورات پی‌اچ‌پی خود را بنویسید، از دیتابیس با کوئری توسط کاربری روت آن استفاده کنید و از طریق لوکال هاست آن را اجرا کنید.</p>
+
+<p>اما حتما شما نیاز به راه ساده‌ای برای مدیریت دیتابیس‌های خود می‌خواهید و دوست ندارید همه کارها را با کوئری دادن انجام دهید. برای این‌کار از برنامه تحت وب پی‌اچ‌پی-مای-ادمین می‌توانید استفاده کنید که هم رایگان است و هم محیط کاربری خوب با قابلیت‌های بالایی در اختیار شما می‌گذارد. از برنامه‌های مشابه دیگر هم می‌توانید استفاده کنید.</p>
+
+<h3 id="phpmyadmin">نصب پی‌اچ‌پی‌مای‌ادمین phpMyAdmin</h3>
+
+<p>در ترمینال دستور زیر را وارد کنید و در مراحل نصب پسورد مای‌اس‌کیوال خود را هنگام نیاز وارد کنید و هنگامی که از شما وب‌سرویس را می‌پرسد، تیک  apache2 را بزنید.</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code>sudo apt-get install php5-mysql phpmyadmin
+</code></pre>
+</div>
+
+<ul>
+  <li>همانطور که در بخش آزمایش درست عمل کردن پی‌اچ‌پی دیدیم؛ هر فایل php که بخواهد در لوکال‌هاست ما اجرا شود باید در مسیر var/www/html قرار گیرد که این مسیر دسترسی روت دارد و برای هر تغییری ما باید از دسترسی روت استفاده کنیم. برای این‌که کار ما راحت شود اول در پوشه‌های خود پوشه‌ای برای کارهای وب خود بسازید (مثلاً web در home خود) و سپس توسط دستور زیر در ترمینال لینکی از پوشه را در مسیر var/www قرار دهید.</li>
+</ul>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code>sudo ln -sf ~/web /var/www/html/
+</code></pre>
+</div>
+
+<p>از این به بعد کافیست فایل‌های خود را در پوشه web ذخیره کنید و سپس در مرورگر از آدرس http://localhost/web اجرا کنید.</p>
+</div>
+		<footer class="meta">
+<!-- AddToAny BEGIN -->
+<div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+<a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+<a class="a2a_button_facebook"></a>
+<a class="a2a_button_twitter"></a>
+<a class="a2a_button_google_plus"></a>
+</div>
+<script async src="https://static.addtoany.com/menu/page.js"></script>
+<!-- AddToAny END -->
+			
+			
+			<p><a class="button special" href="http://zarinp.al/19683" target="_blank">حمایت مالی از نویسنده‌ی این مطلب فقط با ۱۰۰۰ تومان</a></p>
+			<span>نوشته شده توسط </span><address class="author"><a href="http://misam.ir" class="author" rel="author" target="_blank" title="من میثم ساکی هستم؛ برای اطلاعات بیشتر به سایت من سر بزنید">میثم ساکی</a></address><span>، </span>
+			
+			
+			
+			<time class="date" pubdate datetime="2013-10-16T00:00:00+00:00">چهار‌شنبه 24 مهر 1392</time>
+			<span> - آخرین ویرایش </span><span>جمعه 18 تیر 1395</span>
+			<ul class="tags">
+				<span>دسته </span><a href="/category/آموزشی" class="category">آموزشی</a><span>، </span>
+				<span>برچسب</span>
+				
+				<li><a href="/tag/سرور" class="tag">سرور</a><span>،</span></li>
+				
+				<li><a href="/tag/اوبونتو" class="tag">اوبونتو</a><span>،</span></li>
+				
+				<li><a href="/tag/دبیان" class="tag">دبیان</a><span>،</span></li>
+				
+			</ul>
+			<div class="adv">
+				
+					
+					
+						
+						<a href="https://cafebazaar.ir/app/ir.misam.leitner/" target="_blank"><img src="http://misam.ir/leitner-adv.png?v=2" alt="advertise" /></a>
+						
+					
+					
+				
+			</div>
+		</footer>
+	</article>
+	<div id="disqus_thread"></div>
+<script>
+    (function() {
+        var d = document, s = d.createElement('script');
+        
+        s.src = 'https://linuxihaa.disqus.com/embed.js';
+        
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>لطفاً برای مشاهده نظرات جاوااسکریپت را روشن کنید <a href="https://disqus.com/?ref_noscript" rel="nofollow">Powered by Disqus.</a></noscript>
+		</section>
+		<!-- Footer -->
+			<footer id="footer">
+				<span>برچسب‌ها</span>
+				<ul class="tags container">
+					
+					<li>
+						<a href="/tag/پراکسی/" title="1 مطلب" style="font-size: 1.0133333333333334em;">پراکسی</a>
+					</li>
+					
+					<li>
+						<a href="/tag/اوبونتو/" title="30 مطلب" style="font-size: 1.4733333333333334em;">اوبونتو</a>
+					</li>
+					
+					<li>
+						<a href="/tag/dns/" title="1 مطلب" style="font-size: 1.0133333333333334em;">dns</a>
+					</li>
+					
+					<li>
+						<a href="/tag/شخصی‌سازی/" title="6 مطلب" style="font-size: 1.0933333333333333em;">شخصی‌سازی</a>
+					</li>
+					
+					<li>
+						<a href="/tag/سرور/" title="9 مطلب" style="font-size: 1.14em;">سرور</a>
+					</li>
+					
+					<li>
+						<a href="/tag/دبیان/" title="10 مطلب" style="font-size: 1.1533333333333333em;">دبیان</a>
+					</li>
+					
+					<li>
+						<a href="/tag/اوبونتو استدیو/" title="1 مطلب" style="font-size: 1.0133333333333334em;">اوبونتو استدیو</a>
+					</li>
+					
+					<li>
+						<a href="/tag/کوبونتو/" title="1 مطلب" style="font-size: 1.0133333333333334em;">کوبونتو</a>
+					</li>
+					
+					<li>
+						<a href="/tag/زوبونتو/" title="1 مطلب" style="font-size: 1.0133333333333334em;">زوبونتو</a>
+					</li>
+					
+					<li>
+						<a href="/tag/اوبونتو کایلین/" title="1 مطلب" style="font-size: 1.0133333333333334em;">اوبونتو کایلین</a>
+					</li>
+					
+					<li>
+						<a href="/tag/لوبونتو/" title="2 مطلب" style="font-size: 1.0266666666666666em;">لوبونتو</a>
+					</li>
+					
+					<li>
+						<a href="/tag/اوبونتو گنوم/" title="1 مطلب" style="font-size: 1.0133333333333334em;">اوبونتو گنوم</a>
+					</li>
+					
+					<li>
+						<a href="/tag/فدورا/" title="10 مطلب" style="font-size: 1.1533333333333333em;">فدورا</a>
+					</li>
+					
+					<li>
+						<a href="/tag/ترمینال/" title="5 مطلب" style="font-size: 1.0733333333333333em;">ترمینال</a>
+					</li>
+					
+					<li>
+						<a href="/tag/میزکار/" title="6 مطلب" style="font-size: 1.0933333333333333em;">میزکار</a>
+					</li>
+					
+					<li>
+						<a href="/tag/گنوم/" title="3 مطلب" style="font-size: 1.0466666666666666em;">گنوم</a>
+					</li>
+					
+					<li>
+						<a href="/tag/یونیتی/" title="2 مطلب" style="font-size: 1.0266666666666666em;">یونیتی</a>
+					</li>
+					
+					<li>
+						<a href="/tag/سینامون/" title="2 مطلب" style="font-size: 1.0266666666666666em;">سینامون</a>
+					</li>
+					
+					<li>
+						<a href="/tag/kde/" title="2 مطلب" style="font-size: 1.0266666666666666em;">kde</a>
+					</li>
+					
+					<li>
+						<a href="/tag/xfce/" title="1 مطلب" style="font-size: 1.0133333333333334em;">xfce</a>
+					</li>
+					
+					<li>
+						<a href="/tag/lxde/" title="1 مطلب" style="font-size: 1.0133333333333334em;">lxde</a>
+					</li>
+					
+					<li>
+						<a href="/tag/ردهت/" title="7 مطلب" style="font-size: 1.1066666666666667em;">ردهت</a>
+					</li>
+					
+					<li>
+						<a href="/tag/centos/" title="6 مطلب" style="font-size: 1.0933333333333333em;">centos</a>
+					</li>
+					
+					<li>
+						<a href="/tag/نرم‌افزار/" title="21 مطلب" style="font-size: 1.3333333333333333em;">نرم‌افزار</a>
+					</li>
+					
+					<li>
+						<a href="/tag/آرچ‌لینوکس/" title="3 مطلب" style="font-size: 1.0466666666666666em;">آرچ‌لینوکس</a>
+					</li>
+					
+					<li>
+						<a href="/tag/اوپن‌سوزه/" title="9 مطلب" style="font-size: 1.14em;">اوپن‌سوزه</a>
+					</li>
+					
+					<li>
+						<a href="/tag/پیکربندی/" title="16 مطلب" style="font-size: 1.2533333333333334em;">پیکربندی</a>
+					</li>
+					
+					<li>
+						<a href="/tag/مرورگر/" title="2 مطلب" style="font-size: 1.0266666666666666em;">مرورگر</a>
+					</li>
+					
+					<li>
+						<a href="/tag/لینوکس مینت/" title="7 مطلب" style="font-size: 1.1066666666666667em;">لینوکس مینت</a>
+					</li>
+					
+					<li>
+						<a href="/tag/توسعه/" title="3 مطلب" style="font-size: 1.0466666666666666em;">توسعه</a>
+					</li>
+					
+					<li>
+						<a href="/tag/شبکه/" title="5 مطلب" style="font-size: 1.0733333333333333em;">شبکه</a>
+					</li>
+					
+					<li>
+						<a href="/tag/مگیا/" title="1 مطلب" style="font-size: 1.0133333333333334em;">مگیا</a>
+					</li>
+					
+					<li>
+						<a href="/tag/حریم‌شخصی/" title="5 مطلب" style="font-size: 1.0733333333333333em;">حریم‌شخصی</a>
+					</li>
+					
+					<li>
+						<a href="/tag/کتاب/" title="1 مطلب" style="font-size: 1.0133333333333334em;">کتاب</a>
+					</li>
+					
+					<li>
+						<a href="/tag/بوت‌لودر/" title="1 مطلب" style="font-size: 1.0133333333333334em;">بوت‌لودر</a>
+					</li>
+					
+					<li>
+						<a href="/tag/توزیع/" title="1 مطلب" style="font-size: 1.0133333333333334em;">توزیع</a>
+					</li>
+					
+					<li>
+						<a href="/tag/sudo/" title="2 مطلب" style="font-size: 1.0266666666666666em;">sudo</a>
+					</li>
+					
+					<li>
+						<a href="/tag/کالی لینوکس/" title="1 مطلب" style="font-size: 1.0133333333333334em;">کالی لینوکس</a>
+					</li>
+					
+					<li>
+						<a href="/tag/nixos/" title="1 مطلب" style="font-size: 1.0133333333333334em;">nixos</a>
+					</li>
+					
+					<li>
+						<a href="/tag/مدیربسته/" title="1 مطلب" style="font-size: 1.0133333333333334em;">مدیربسته</a>
+					</li>
+					
+					<li>
+						<a href="/tag/رسپبری‌پای/" title="1 مطلب" style="font-size: 1.0133333333333334em;">رسپبری‌پای</a>
+					</li>
+					
+					<li>
+						<a href="/tag/اندروید/" title="1 مطلب" style="font-size: 1.0133333333333334em;">اندروید</a>
+					</li>
+					
+				</ul>
+				<ul class="icons">
+					<li><a href="http://facebook.com/linuxihaa" class="icon genericon genericon-facebook" target="_blank">Facebook</a></li>
+					<li><a href="https://twitter.com/linuxihaa" class="icon genericon genericon-twitter" target="_blank">Twitter</a></li>
+					<li><a href="https://telegram.me/linuxiha" class="icon genericon genericon-telegram" target="_blank">Telegram</a></li>
+					<li><a href="https://www.instagram.com/linuxiha" class="icon genericon genericon-instagram" target="_blank">Instagram</a></li>
+					<li><a href="https://plus.google.com/109502803142394425024/posts" class="icon genericon genericon-googleplus" target="_blank">Google+</a></li>
+					<li><a href="http://www.youtube.com/channel/UCM8_p07cthYziOA96HDdzOg" class="icon genericon genericon-youtube" target="_blank">YouTube</a></li>
+					<li><a href="https://github.com/linuxihaa" class="icon genericon genericon-github" target="_blank">Github</a></li>
+					<li><a href="/feed.xml" class="icon genericon genericon-feed" target="_blank">RSS Feed</a></li>
+				</ul>
+				<ul class="copyright">
+					<li>&copy; حق نشر ۱۳۹۵-۱۳۹۲ <a href="">لینوکسی‌ها</a>، <a href="/version-history/">نسخه‌ی ۲.۰</a>، تحت مجوز <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/">کرتیو کامنز ۳.۰</a></li>
+					<li> پوسته برگرفته از <a href="https://github.com/CloudCannon/Alpha-Jekyll-Theme">Alpha Jekyll Theme</a></li>
+				</ul>
+			</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-44951909-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	</body>
+</html>
+

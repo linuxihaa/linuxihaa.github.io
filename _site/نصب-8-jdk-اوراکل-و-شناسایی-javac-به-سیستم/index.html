@@ -1,0 +1,368 @@
+<!DOCTYPE HTML>
+<html lang="fa">
+	<head>
+		<title>لینوکسی‌ها - نصب 8 jdk اوراکل و شناسایی javac به سیستم</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<link rel="alternate" href="http://linuxihaa.ir" hreflang="fa-IR" />
+		<link type="application/atom+xml" rel="alternate" href="http://linuxihaa.ir/feed.xml" title="لینوکسی‌ها">
+		<link type="application/xml" rel="sitemap" title="لینوکسی‌ها" href="http://linuxihaa.ir/sitemap.xml" />
+		<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+			<!--[if lte IE 8]><script src="/assets/css/ie/html5shiv.js"></script><![endif]-->
+		<script src="/assets/js/jquery.min.js"></script>
+		<script src="/assets/js/jquery.dropotron.min.js"></script>
+		<script src="/assets/js/skel.min.js"></script>
+		<script src="/assets/js/skel-layers.min.js"></script>
+		<script src="/assets/js/jquery.scrollgress.min.js"></script>
+		<script src="/assets/js/init.js?v=2016-07-09:3"></script>
+		<noscript>
+			<link rel="stylesheet" href="/assets/css/skel.css" />
+			<link rel="stylesheet" href="/assets/css/style.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie/v8.css" /><![endif]-->
+		<meta name="robots" content="noodp"/>
+		<meta name="description" content="آموزش نصب 8 jdk اوراکل و شناسایی javac به سیستم"/>
+		<meta property="og:site_name" content="لینوکسی‌ها" />
+		<link rel="canonical" href="http://linuxihaa.ir/%D9%86%D8%B5%D8%A8-8-jdk-%D8%A7%D9%88%D8%B1%D8%A7%DA%A9%D9%84-%D9%88-%D8%B4%D9%86%D8%A7%D8%B3%D8%A7%DB%8C%DB%8C-javac-%D8%A8%D9%87-%D8%B3%DB%8C%D8%B3%D8%AA%D9%85/" />
+		<meta property="og:locale" content="fa_IR" />
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content="لینوکسی‌ها - نصب 8 jdk اوراکل و شناسایی javac به سیستم" />
+		<meta property="og:description" content="آموزش نصب 8 jdk اوراکل و شناسایی javac به سیستم" />
+		<meta property="og:url" content="http://linuxihaa.ir/%D9%86%D8%B5%D8%A8-8-jdk-%D8%A7%D9%88%D8%B1%D8%A7%DA%A9%D9%84-%D9%88-%D8%B4%D9%86%D8%A7%D8%B3%D8%A7%DB%8C%DB%8C-javac-%D8%A8%D9%87-%D8%B3%DB%8C%D8%B3%D8%AA%D9%85/" />
+		<meta property="article:tag" content="jdk 8" />
+		<meta property="article:section" content="آموزشی" />
+		<meta property="article:published_time" content="2014-07-21 00:00:00 +0000" />
+		
+		
+		<meta property="og:image" content="http://linuxihaa.ir/assets/images/java8.png" />
+		<meta property="og:image:width" content="600" />
+		<meta property="og:image:height" content="300" />
+	</head>
+	
+		<body>
+			<section id="banner"></section>
+	
+	<!-- Header -->
+	<header id="header" class="alt">
+		<div id="logo" ><a href="/"><span>لینوکسی‌ها</span><img src="/logo.png" /></a></div>
+		<nav id="nav">
+			<ul>
+				<li><a href="/">خانه</a></li>
+				<li>
+					<a href="" class="icon fa-angle-down">دسته‌بندی</a>
+					<ul>
+						
+						<li><a href="/category/خبری/">خبری</a></li>
+						
+						<li><a href="/category/آموزشی/">آموزشی</a></li>
+						
+					</ul>
+				</li>
+				<li><a href="/about/">درباره</a></li>
+				<li><a href="/cooperation/">همکاری</a></li>
+				<li><a href="/contact/">تماس</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<!-- Main -->
+	<section id="main" class="container">
+
+	<article class="box special">
+		<header>
+			<h1>نصب 8 jdk اوراکل و شناسایی javac به سیستم</h1>
+		</header>
+		<div class="content"><p>در مخازن توزیع‌های مختلف معمولا بسته نرم‌افزاری openjdk وجود دارد و اگر بخواهیم با جاوا ۸ کار کنیم باید به دنبال راهی برای نصب oracle jdk1.8 باشیم. در این مطلب می‌خواهیم مراحل نصب و شناسایی جاوا به کل سیستم را بررسی کنیم.</p>
+
+<p>ابتدا جاوا ۸ را از لینک <a href="https://jdk8.java.net/download.html">jdk8.java.net</a> دریافت کنید. پس از دریافت فایل مربوط به لینوکس، فایلی با پسوند tar.gz که حاوی jdk هست را از حالت فشرده خارج کنید و در مسیری مثل opt/ قرار دهید یا با دستور زیر را در ترمینال اجرا کنید.</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>sudo tar -xzvf jdk-8XXXXXXXXX.tar.gz -C /opt/
+</code></pre>
+</div>
+
+<p>پس از اینکه فایل از حالت فشرده خارج شد سه دستور زیر را در ترمینال اجرا کنید تا نصب کامل شود و در کل سیستم جاوا قابل دسترس باشد.</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>sudo update-alternatives --install <span class="s2">"/usr/bin/java"</span> <span class="s2">"java"</span> <span class="s2">"/opt/jdk1.8.0/bin/java"</span> 1
+<span class="gp">$ </span>sudo update-alternatives --install <span class="s2">"/usr/bin/javac"</span> <span class="s2">"javac"</span> <span class="s2">"/opt/jdk1.8.0/bin/javac"</span> 1
+<span class="gp">$ </span>sudo update-alternatives --install <span class="s2">"/usr/bin/javaws"</span> <span class="s2">"javaws"</span> <span class="s2">"/opt/jdk1.8.0/bin/javaws"</span> 1
+</code></pre>
+</div>
+
+<p>اگر بر روی سیستم openjdk نصب است لازم است که دستورات زیر را نیز اجرا کنید و از منوی ظاهر شده گزینه مورد نظر را انتخاب کنید تا jdk8 به عنوان پیش فرض در نظر گرفته شود.</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>sudo update-alternatives --config java
+There are 2 choices <span class="k">for </span>the alternative java <span class="o">(</span>providing /usr/bin/java<span class="o">)</span>.
+
+ Selection Path Priority Status
+------------------------------------------------------------
+ 0 /usr/lib/jvm/java-6-openjdk-amd64/jre/bin/java 1061 auto mode
+<span class="k">*</span> 1 /opt/jdk1.8.0/bin/java 1 manual mode
+ 2 /usr/lib/jvm/java-6-openjdk-amd64/jre/bin/java 1061 manual mode
+
+Press enter to keep the current choice[<span class="k">*</span><span class="o">]</span>, or <span class="nb">type </span>selection number: 1
+</code></pre>
+</div>
+
+<p>همین کار را برای javac و javaws نیز تکرار کنید. حال نصب کامل شده است و جاوا  در همه جا قابل دسترسی است. برای امتحان موفقیت آمیز بودن عملیات فوق دستور زیر را  در ترمینال اجرا کنید.</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>java -version
+java version <span class="s2">"1.8.0"</span>
+Java<span class="o">(</span>TM<span class="o">)</span> SE Runtime Environment <span class="o">(</span>build 1.8.0-b132<span class="o">)</span>
+Java HotSpot<span class="o">(</span>TM<span class="o">)</span> 64-Bit Server VM <span class="o">(</span>build 25.0-b70, mixed mode<span class="o">)</span>
+</code></pre>
+</div>
+</div>
+		<footer class="meta">
+<!-- AddToAny BEGIN -->
+<div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+<a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+<a class="a2a_button_facebook"></a>
+<a class="a2a_button_twitter"></a>
+<a class="a2a_button_google_plus"></a>
+</div>
+<script async src="https://static.addtoany.com/menu/page.js"></script>
+<!-- AddToAny END -->
+			
+			
+			
+			<span>نوشته شده توسط </span><address class="author"><a href="mailto:amin.khozaei@gmail.com" class="author" rel="author" target="_blank" title="">امین خزاعی</a></address><span>، </span>
+			
+			
+			
+			<time class="date" pubdate datetime="2014-07-21T00:00:00+00:00">دوشنبه 30 تیر 1393</time>
+			</span>
+			<ul class="tags">
+				<span>دسته </span><a href="/category/آموزشی" class="category">آموزشی</a><span>، </span>
+				<span>برچسب</span>
+				
+				<li><a href="/tag/توسعه" class="tag">توسعه</a><span>،</span></li>
+				
+			</ul>
+			<div class="adv">
+				
+					
+					
+						
+						<a href="mailto:amin.khozaei@gmail.com" target="_blank"><img src="/adv.png" alt="advertise" /></a>
+						
+					
+					
+				
+			</div>
+		</footer>
+	</article>
+	<div id="disqus_thread"></div>
+<script>
+    (function() {
+        var d = document, s = d.createElement('script');
+        
+        s.src = 'https://linuxihaa.disqus.com/embed.js';
+        
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>لطفاً برای مشاهده نظرات جاوااسکریپت را روشن کنید <a href="https://disqus.com/?ref_noscript" rel="nofollow">Powered by Disqus.</a></noscript>
+		</section>
+		<!-- Footer -->
+			<footer id="footer">
+				<span>برچسب‌ها</span>
+				<ul class="tags container">
+					
+					<li>
+						<a href="/tag/پراکسی/" title="1 مطلب" style="font-size: 1.0133333333333334em;">پراکسی</a>
+					</li>
+					
+					<li>
+						<a href="/tag/اوبونتو/" title="30 مطلب" style="font-size: 1.4733333333333334em;">اوبونتو</a>
+					</li>
+					
+					<li>
+						<a href="/tag/dns/" title="1 مطلب" style="font-size: 1.0133333333333334em;">dns</a>
+					</li>
+					
+					<li>
+						<a href="/tag/شخصی‌سازی/" title="6 مطلب" style="font-size: 1.0933333333333333em;">شخصی‌سازی</a>
+					</li>
+					
+					<li>
+						<a href="/tag/سرور/" title="9 مطلب" style="font-size: 1.14em;">سرور</a>
+					</li>
+					
+					<li>
+						<a href="/tag/دبیان/" title="10 مطلب" style="font-size: 1.1533333333333333em;">دبیان</a>
+					</li>
+					
+					<li>
+						<a href="/tag/اوبونتو استدیو/" title="1 مطلب" style="font-size: 1.0133333333333334em;">اوبونتو استدیو</a>
+					</li>
+					
+					<li>
+						<a href="/tag/کوبونتو/" title="1 مطلب" style="font-size: 1.0133333333333334em;">کوبونتو</a>
+					</li>
+					
+					<li>
+						<a href="/tag/زوبونتو/" title="1 مطلب" style="font-size: 1.0133333333333334em;">زوبونتو</a>
+					</li>
+					
+					<li>
+						<a href="/tag/اوبونتو کایلین/" title="1 مطلب" style="font-size: 1.0133333333333334em;">اوبونتو کایلین</a>
+					</li>
+					
+					<li>
+						<a href="/tag/لوبونتو/" title="2 مطلب" style="font-size: 1.0266666666666666em;">لوبونتو</a>
+					</li>
+					
+					<li>
+						<a href="/tag/اوبونتو گنوم/" title="1 مطلب" style="font-size: 1.0133333333333334em;">اوبونتو گنوم</a>
+					</li>
+					
+					<li>
+						<a href="/tag/فدورا/" title="10 مطلب" style="font-size: 1.1533333333333333em;">فدورا</a>
+					</li>
+					
+					<li>
+						<a href="/tag/ترمینال/" title="5 مطلب" style="font-size: 1.0733333333333333em;">ترمینال</a>
+					</li>
+					
+					<li>
+						<a href="/tag/میزکار/" title="6 مطلب" style="font-size: 1.0933333333333333em;">میزکار</a>
+					</li>
+					
+					<li>
+						<a href="/tag/گنوم/" title="3 مطلب" style="font-size: 1.0466666666666666em;">گنوم</a>
+					</li>
+					
+					<li>
+						<a href="/tag/یونیتی/" title="2 مطلب" style="font-size: 1.0266666666666666em;">یونیتی</a>
+					</li>
+					
+					<li>
+						<a href="/tag/سینامون/" title="2 مطلب" style="font-size: 1.0266666666666666em;">سینامون</a>
+					</li>
+					
+					<li>
+						<a href="/tag/kde/" title="2 مطلب" style="font-size: 1.0266666666666666em;">kde</a>
+					</li>
+					
+					<li>
+						<a href="/tag/xfce/" title="1 مطلب" style="font-size: 1.0133333333333334em;">xfce</a>
+					</li>
+					
+					<li>
+						<a href="/tag/lxde/" title="1 مطلب" style="font-size: 1.0133333333333334em;">lxde</a>
+					</li>
+					
+					<li>
+						<a href="/tag/ردهت/" title="7 مطلب" style="font-size: 1.1066666666666667em;">ردهت</a>
+					</li>
+					
+					<li>
+						<a href="/tag/centos/" title="6 مطلب" style="font-size: 1.0933333333333333em;">centos</a>
+					</li>
+					
+					<li>
+						<a href="/tag/نرم‌افزار/" title="21 مطلب" style="font-size: 1.3333333333333333em;">نرم‌افزار</a>
+					</li>
+					
+					<li>
+						<a href="/tag/آرچ‌لینوکس/" title="3 مطلب" style="font-size: 1.0466666666666666em;">آرچ‌لینوکس</a>
+					</li>
+					
+					<li>
+						<a href="/tag/اوپن‌سوزه/" title="9 مطلب" style="font-size: 1.14em;">اوپن‌سوزه</a>
+					</li>
+					
+					<li>
+						<a href="/tag/پیکربندی/" title="16 مطلب" style="font-size: 1.2533333333333334em;">پیکربندی</a>
+					</li>
+					
+					<li>
+						<a href="/tag/مرورگر/" title="2 مطلب" style="font-size: 1.0266666666666666em;">مرورگر</a>
+					</li>
+					
+					<li>
+						<a href="/tag/لینوکس مینت/" title="7 مطلب" style="font-size: 1.1066666666666667em;">لینوکس مینت</a>
+					</li>
+					
+					<li>
+						<a href="/tag/توسعه/" title="3 مطلب" style="font-size: 1.0466666666666666em;">توسعه</a>
+					</li>
+					
+					<li>
+						<a href="/tag/شبکه/" title="5 مطلب" style="font-size: 1.0733333333333333em;">شبکه</a>
+					</li>
+					
+					<li>
+						<a href="/tag/مگیا/" title="1 مطلب" style="font-size: 1.0133333333333334em;">مگیا</a>
+					</li>
+					
+					<li>
+						<a href="/tag/حریم‌شخصی/" title="5 مطلب" style="font-size: 1.0733333333333333em;">حریم‌شخصی</a>
+					</li>
+					
+					<li>
+						<a href="/tag/کتاب/" title="1 مطلب" style="font-size: 1.0133333333333334em;">کتاب</a>
+					</li>
+					
+					<li>
+						<a href="/tag/بوت‌لودر/" title="1 مطلب" style="font-size: 1.0133333333333334em;">بوت‌لودر</a>
+					</li>
+					
+					<li>
+						<a href="/tag/توزیع/" title="1 مطلب" style="font-size: 1.0133333333333334em;">توزیع</a>
+					</li>
+					
+					<li>
+						<a href="/tag/sudo/" title="2 مطلب" style="font-size: 1.0266666666666666em;">sudo</a>
+					</li>
+					
+					<li>
+						<a href="/tag/کالی لینوکس/" title="1 مطلب" style="font-size: 1.0133333333333334em;">کالی لینوکس</a>
+					</li>
+					
+					<li>
+						<a href="/tag/nixos/" title="1 مطلب" style="font-size: 1.0133333333333334em;">nixos</a>
+					</li>
+					
+					<li>
+						<a href="/tag/مدیربسته/" title="1 مطلب" style="font-size: 1.0133333333333334em;">مدیربسته</a>
+					</li>
+					
+					<li>
+						<a href="/tag/رسپبری‌پای/" title="1 مطلب" style="font-size: 1.0133333333333334em;">رسپبری‌پای</a>
+					</li>
+					
+					<li>
+						<a href="/tag/اندروید/" title="1 مطلب" style="font-size: 1.0133333333333334em;">اندروید</a>
+					</li>
+					
+				</ul>
+				<ul class="icons">
+					<li><a href="http://facebook.com/linuxihaa" class="icon genericon genericon-facebook" target="_blank">Facebook</a></li>
+					<li><a href="https://twitter.com/linuxihaa" class="icon genericon genericon-twitter" target="_blank">Twitter</a></li>
+					<li><a href="https://telegram.me/linuxiha" class="icon genericon genericon-telegram" target="_blank">Telegram</a></li>
+					<li><a href="https://www.instagram.com/linuxiha" class="icon genericon genericon-instagram" target="_blank">Instagram</a></li>
+					<li><a href="https://plus.google.com/109502803142394425024/posts" class="icon genericon genericon-googleplus" target="_blank">Google+</a></li>
+					<li><a href="http://www.youtube.com/channel/UCM8_p07cthYziOA96HDdzOg" class="icon genericon genericon-youtube" target="_blank">YouTube</a></li>
+					<li><a href="https://github.com/linuxihaa" class="icon genericon genericon-github" target="_blank">Github</a></li>
+					<li><a href="/feed.xml" class="icon genericon genericon-feed" target="_blank">RSS Feed</a></li>
+				</ul>
+				<ul class="copyright">
+					<li>&copy; حق نشر ۱۳۹۵-۱۳۹۲ <a href="">لینوکسی‌ها</a>، <a href="/version-history/">نسخه‌ی ۲.۰</a>، تحت مجوز <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/">کرتیو کامنز ۳.۰</a></li>
+					<li> پوسته برگرفته از <a href="https://github.com/CloudCannon/Alpha-Jekyll-Theme">Alpha Jekyll Theme</a></li>
+				</ul>
+			</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-44951909-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	</body>
+</html>
+

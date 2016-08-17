@@ -1,0 +1,443 @@
+<!DOCTYPE HTML>
+<html lang="fa">
+	<head>
+		<title>لینوکسی‌ها - نصب Kloxo در CentOS و ردهت</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<link rel="alternate" href="http://linuxihaa.ir" hreflang="fa-IR" />
+		<link type="application/atom+xml" rel="alternate" href="http://linuxihaa.ir/feed.xml" title="لینوکسی‌ها">
+		<link type="application/xml" rel="sitemap" title="لینوکسی‌ها" href="http://linuxihaa.ir/sitemap.xml" />
+		<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+			<!--[if lte IE 8]><script src="/assets/css/ie/html5shiv.js"></script><![endif]-->
+		<script src="/assets/js/jquery.min.js"></script>
+		<script src="/assets/js/jquery.dropotron.min.js"></script>
+		<script src="/assets/js/skel.min.js"></script>
+		<script src="/assets/js/skel-layers.min.js"></script>
+		<script src="/assets/js/jquery.scrollgress.min.js"></script>
+		<script src="/assets/js/init.js?v=2016-07-09:3"></script>
+		<noscript>
+			<link rel="stylesheet" href="/assets/css/skel.css" />
+			<link rel="stylesheet" href="/assets/css/style.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie/v8.css" /><![endif]-->
+		<meta name="robots" content="noodp"/>
+		<meta name="description" content="آموزش نصب Kloxo در CentOS و ردهت"/>
+		<meta property="og:site_name" content="لینوکسی‌ها" />
+		<link rel="canonical" href="http://linuxihaa.ir/%D9%86%D8%B5%D8%A8-%DA%A9%D9%84%DA%A9%D8%B3%D9%88-%D8%AF%D8%B1-%D8%B3%D9%86%D8%AA-%D8%A7%D9%88-%D8%A7%D8%B3-%D9%88-%D8%B1%D8%AF%D9%87%D8%AA/" />
+		<meta property="og:locale" content="fa_IR" />
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content="لینوکسی‌ها - نصب Kloxo در CentOS و ردهت" />
+		<meta property="og:description" content="آموزش نصب Kloxo در CentOS و ردهت" />
+		<meta property="og:url" content="http://linuxihaa.ir/%D9%86%D8%B5%D8%A8-%DA%A9%D9%84%DA%A9%D8%B3%D9%88-%D8%AF%D8%B1-%D8%B3%D9%86%D8%AA-%D8%A7%D9%88-%D8%A7%D8%B3-%D9%88-%D8%B1%D8%AF%D9%87%D8%AA/" />
+		<meta property="article:tag" content="kloxo" />
+		<meta property="article:section" content="آموزشی" />
+		<meta property="article:published_time" content="2013-11-29 00:00:00 +0000" />
+		
+		
+		<meta property="og:image" content="http://linuxihaa.ir/assets/images/kloxo-logo.png" />
+		<meta property="og:image:width" content="600" />
+		<meta property="og:image:height" content="300" />
+	</head>
+	
+		<body>
+			<section id="banner"></section>
+	
+	<!-- Header -->
+	<header id="header" class="alt">
+		<div id="logo" ><a href="/"><span>لینوکسی‌ها</span><img src="/logo.png" /></a></div>
+		<nav id="nav">
+			<ul>
+				<li><a href="/">خانه</a></li>
+				<li>
+					<a href="" class="icon fa-angle-down">دسته‌بندی</a>
+					<ul>
+						
+						<li><a href="/category/خبری/">خبری</a></li>
+						
+						<li><a href="/category/آموزشی/">آموزشی</a></li>
+						
+					</ul>
+				</li>
+				<li><a href="/about/">درباره</a></li>
+				<li><a href="/cooperation/">همکاری</a></li>
+				<li><a href="/contact/">تماس</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<!-- Main -->
+	<section id="main" class="container">
+
+	<article class="box special">
+		<header>
+			<h1>نصب Kloxo در CentOS و ردهت</h1>
+		</header>
+		<div class="content"><p>مدیران سرورهای لینوکس غیر از انتخاب یک توزیع مناسب برای راه‌اندازی سرور خود، باید از یک کنترل پنل مناسب برای مدیریت بهتر سرور استفاده کنند. مخصوصا کسانی که نیاز به مدیریت دامنه‌های زیادی دارند، از راه دور سرور خود را مدیریت می‌کنند و اصلی‌ترین استفاده آن که برای مدیریت سرورهای مخصوص میزبانی وب است.</p>
+
+<p>و اما کدام کنترل پنل؟!</p>
+
+<p>شاید بتوان گفت که در حال حاضر بهترین کنترل پنل سرورهای لینوکس سی پنل (cpanel) است که امکانات لازم را با رابط کاربری مناسب و در محیطی امن در اختیار ما می‌گذارد و بعد از آن می‌توان از کنترل پنل DirectAdmin نام برد.</p>
+
+<p>اما کنترل‌پنل‌هایی که در بالا ذکر شد نیاز به پرداخت هزینه ماهانه تقریبا زیادی دارند که شاید برای افرادی به صرفه نباشد. مانند کسانی که نیاز به مدیریت گسترده ندارند و چند سایت یا چند سرویس مشخص را روی سرور خود دارند و یا امکان پرداخت هزینه را ندارند.</p>
+
+<p><img src="/assets/images/Kloxo6.1.0-high.png" alt="" /></p>
+
+<p>در این پست قصد دارم کنترل پنل رایگان کلکسو (Kloxo) را به شما معرفی کنم که برای مدیریت سرور و مخصوصا میزبان‌های وب مناسب است. این کنترل پنل محصول LxCenter است که از دیگر محصولات آن HyperVM است که برای مدیریت سرورهای مجازی شده استفاده می‌شود.</p>
+
+<p>شاید بتوان گفت که کلکسو یکی از بهترین کنترل پنل‌های رایگان است که بسیار به کاربران پیشنهاد می‌شود و امکانات، رابط کاربری و امنیت نسبتا خوبی را دارد. کلکسو آمده است که یک کنترل پنل رایگان و مناسب را برای مدیریت میزبان وب شما در اختیارتان قرار دهد که این مساله در بیشتر کنترل پنل‌های رایگان وجود ندارد و امکانات کمی برای مدیریت میزبانی وب دارند و بیشتر می‌توانید چند سایت (مخصوص سرورهای شخصی) را مدیریت کنید.</p>
+
+<p>برای آشنایی با امکانات کلکسو می‌توانید دمو آن را از این آدرس مشاهده کنید. demo.kloxo.com:7778</p>
+
+<p>اکنون برویم سراغ آموزش نصب کلکسو. (منبع wiki.lxcenter.org/Kloxo+Installation+Guide)</p>
+
+<p><strong>پیش‌نیازها</strong></p>
+
+<ol>
+  <li>سرور خصوصی یا مجازی با سیستم‌عامل CentOS حداکثر نسخه 5 و یا &gt;Red Hat EL. هنوز سنت-او-اس ۶ پشتیبانی نمی‌شود.</li>
+  <li>حداقل ۲۵۶ مگابایت رم (برای اجرای Yum کافی باشد). [البته تجربه شخصی من نشان می‌دهد حداقل باید ۵۱۲ مگابایت رم داشته باشید و برای استفاده مناسب ۱ گیگ رم پیشنهاد می‌شود.]</li>
+  <li>مقدار ۲ گیگ فضا دیسک برای نصب کلکسو و سرویس‌ها.</li>
+  <li>اگر به صورت دستی دیسک خود را پارتیشن‌بندی کرده‌اید مطمئن شوید شاخه /tmp بزرگی دارید. کلکسو از این شاخه برای ذخیره بک‌آپ استفاده می‌کند و اگر فضا آن کافی نباشد این عمل درست انجام نمی‌شود.</li>
+</ol>
+
+<p><strong>قبل از شروع</strong></p>
+
+<p>شما باید SELinux را غیرفعال کنید. برای این کار باید فایل <code class="highlighter-rouge">/etc/sysconfig/selinux</code> را باز کرده و خط مشخص را به این صورت تغییر دهید selinux=disabled. این تغییر SELinux را از شروع بعدی سیستم بعد از ریبوت فعال نگه می‌دارد و فقط برای این است که در سیشن فعلی که ما قصد داریم کلکسو را نصب کنیم بتوانیم آن را غیرفعال کنیم.</p>
+
+<p>برای غیر فعال کردن SELinux در نشست جاری از دستورات زیر در خط فرمان استفاده کنید.</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code>su - rootsetenforce 0
+</code></pre>
+</div>
+
+<p>اگر مطمئن نیستید که این عمل درست انجام شده برای چک کردن وضعیت از دستور <em>/usr/sbin/sestatus</em> استفاده کنید.<strong> عدم غیرفعال کردن صحیح SELinux باعث می‌شود نصب کلکسو بی‌فایده شود و راه‌اندازی مجدد سیستم‌عامل ممکن است نیاز به نصب درست دوباره آن داشته باشد.</strong></p>
+
+<p>همچنین مطمئن شوید که پورت‌های 7777/tcp و 7778/tcp در فایروال سرور شما باز هستند. اگر این پورت‌ها بسته باشند شما نمی‌توانید به صفحه وب کنترل پنل کلکسو بعد از نصب آن دسترسی داشته باشید.</p>
+
+<p><strong>نصب کلکسو</strong></p>
+
+<p>نصب کلکسو نیاز به دریافت فایل kloxo-installer.sh از download.lxcenter.org و اجرای آن توسط کاربر روت دارد. این اسکریپ در طول اجرا برای نصب کلکسو از شما چند سوال می‌پرسد و گذرواژه‌ای درخواست می‌کند (رمز روت را وارد کنید).</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code>su - rootyum install -y wgetwget http://download.lxcenter.org/download/kloxo/production/kloxo-installer.sh
+</code></pre>
+</div>
+
+<p>بعد از آن دستور زیر برای نصب به صورت مستر (تک سروری) وارد کنید.</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code>sh ./kloxo-installer.sh --type<span class="o">=</span>master
+</code></pre>
+</div>
+
+<p>و اگر مستر نیستید از دستور زیر استفاده کنید.</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code>sh ./kloxo-installer.sh --type<span class="o">=</span>slave
+</code></pre>
+</div>
+
+<p>اگر قبلا MySQL را روی سرور خود نصب کرده‌اید از دستورات زیر استفاده کنید.</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code>su - root
+yum install -y wget
+wget http://download.lxcenter.org/download/kloxo/production/kloxo-installer.sh
+sh ./kloxo-installer.sh --type<span class="o">=</span>&lt;master/slave&gt; --db-rootpassword<span class="o">=</span>PASSWORD
+</code></pre>
+</div>
+
+<p>بعد از نصب کلکسو به آدرس http://YOUR_SERVER_IP:7778 متصل شوید (در مرورگر وارد کنید) و در صفحه ورود نام کاربری admin و پسورد پیش‌فرض که admin است را واد کنید. بعد از ورود کلکسو از شما می‌خواهد که برای امنیت بیشتر رمز پیش‌فرض را تغییر دهید.</p>
+
+<p><strong>بسته‌های نصب شده اولیه</strong></p>
+
+<ul>
+  <li>سرویس‌های وب Web Services
+    <ul>
+      <li>آپاچی apache 2.x</li>
+      <li>پی‌اچ‌پی php 5.2.x</li>
+      <li>سرویس pure-ftpd برای مدیریت کاربران اف تی پی (ftp)</li>
+      <li>سرویس awstats برای تحلیل آمار وب (بازیدها، ترافیک و …)</li>
+    </ul>
+  </li>
+  <li>سرویس‌های پست الکترونیک Mail Services
+    <ul>
+      <li>سرویس qmail-toaster</li>
+      <li>سرویس courier-imap-toaster</li>
+      <li>سرویس vpopmail</li>
+      <li>برنامه‌های وب میل Roundcube (به صورت اجکس) و Horde برای مدیریت پست‌های الکترونیک</li>
+    </ul>
+  </li>
+  <li>سرویس‌های نام‌دامنه DNS Services
+    <ul>
+      <li>سرویس bind برای پیاده سازی پروتکل DNS</li>
+      <li>سرویس bind-chroot برای BIND امن</li>
+    </ul>
+  </li>
+  <li>سرویس دیتابیس Database Service
+    <ul>
+      <li>برنامه mysql-server برای ساخت و مدیریت دیتابیس‌ها</li>
+    </ul>
+  </li>
+  <li>شما می‌توانید بعد از نصب بین سرویس‌ها سوییچ کنید و یکی را انتخاب کنید. مانند؛  Apache/Lighttpd، BIND/djbdns، spamassassin/bogofilter و … .</li>
+</ul>
+
+<p><strong>عیب‌یابی</strong></p>
+
+<p>اگر بعد از نصب نتوانستید به کنترل پنل کلکسو متصل شوید، مطمئن شوید که فایروال سرور پورت‌های ذکر شده را نبسته باشد. اگر این پورت‌ها بسته بود می‌توانید فایروال را با دستور /etc/init.d/iptables stop غیرفعال کنید و با انجام آن شاید بخواهید اسکریپ فایروالی برای کاربران خود بسازید تا امنیت خود را حفظ کنید. برای این کار می‌توانید از آموزش آخر مطلب استفاده کنید.</p>
+
+<p>با همه این موارد اگر نتوانستید به پنل دسترسی داشته باشید و یا هر مشکل دیگری داشتید می‌توانید در انجمن کلکسو با آدرس forum.lxcenter.org مطرح کنید تا پاسخ بگیرید (محتوای فایل /root/kloxo-install/kloxo-linux/kloxo_install.log را برای راهنمایی بهتر به سوال خود پیوست کنید).</p>
+
+<p><strong>ملاحظات نهایی</strong></p>
+
+<p>ط</p>
+
+<p><strong>ساخت اسکریپ فایروال برای کاربران خود - چگونه کلکسو را با جدول آی‌پی ایمن کنیم</strong></p>
+
+<p>ط</p>
+</div>
+		<footer class="meta">
+<!-- AddToAny BEGIN -->
+<div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+<a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+<a class="a2a_button_facebook"></a>
+<a class="a2a_button_twitter"></a>
+<a class="a2a_button_google_plus"></a>
+</div>
+<script async src="https://static.addtoany.com/menu/page.js"></script>
+<!-- AddToAny END -->
+			
+			
+			
+			<time class="date" pubdate datetime="2013-11-29T00:00:00+00:00">جمعه 8 آذر 1392</time>
+			</span>
+			<ul class="tags">
+				<span>دسته </span><a href="/category/آموزشی" class="category">آموزشی</a><span>، </span>
+				<span>برچسب</span>
+				
+				<li><a href="/tag/ردهت" class="tag">ردهت</a><span>،</span></li>
+				
+				<li><a href="/tag/centos" class="tag">centos</a><span>،</span></li>
+				
+				<li><a href="/tag/سرور" class="tag">سرور</a><span>،</span></li>
+				
+			</ul>
+			<div class="adv">
+				
+					
+					
+					
+				
+			</div>
+		</footer>
+	</article>
+	<div id="disqus_thread"></div>
+<script>
+    (function() {
+        var d = document, s = d.createElement('script');
+        
+        s.src = 'https://linuxihaa.disqus.com/embed.js';
+        
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>لطفاً برای مشاهده نظرات جاوااسکریپت را روشن کنید <a href="https://disqus.com/?ref_noscript" rel="nofollow">Powered by Disqus.</a></noscript>
+		</section>
+		<!-- Footer -->
+			<footer id="footer">
+				<span>برچسب‌ها</span>
+				<ul class="tags container">
+					
+					<li>
+						<a href="/tag/پراکسی/" title="1 مطلب" style="font-size: 1.0133333333333334em;">پراکسی</a>
+					</li>
+					
+					<li>
+						<a href="/tag/اوبونتو/" title="30 مطلب" style="font-size: 1.4733333333333334em;">اوبونتو</a>
+					</li>
+					
+					<li>
+						<a href="/tag/dns/" title="1 مطلب" style="font-size: 1.0133333333333334em;">dns</a>
+					</li>
+					
+					<li>
+						<a href="/tag/شخصی‌سازی/" title="6 مطلب" style="font-size: 1.0933333333333333em;">شخصی‌سازی</a>
+					</li>
+					
+					<li>
+						<a href="/tag/سرور/" title="9 مطلب" style="font-size: 1.14em;">سرور</a>
+					</li>
+					
+					<li>
+						<a href="/tag/دبیان/" title="10 مطلب" style="font-size: 1.1533333333333333em;">دبیان</a>
+					</li>
+					
+					<li>
+						<a href="/tag/اوبونتو استدیو/" title="1 مطلب" style="font-size: 1.0133333333333334em;">اوبونتو استدیو</a>
+					</li>
+					
+					<li>
+						<a href="/tag/کوبونتو/" title="1 مطلب" style="font-size: 1.0133333333333334em;">کوبونتو</a>
+					</li>
+					
+					<li>
+						<a href="/tag/زوبونتو/" title="1 مطلب" style="font-size: 1.0133333333333334em;">زوبونتو</a>
+					</li>
+					
+					<li>
+						<a href="/tag/اوبونتو کایلین/" title="1 مطلب" style="font-size: 1.0133333333333334em;">اوبونتو کایلین</a>
+					</li>
+					
+					<li>
+						<a href="/tag/لوبونتو/" title="2 مطلب" style="font-size: 1.0266666666666666em;">لوبونتو</a>
+					</li>
+					
+					<li>
+						<a href="/tag/اوبونتو گنوم/" title="1 مطلب" style="font-size: 1.0133333333333334em;">اوبونتو گنوم</a>
+					</li>
+					
+					<li>
+						<a href="/tag/فدورا/" title="10 مطلب" style="font-size: 1.1533333333333333em;">فدورا</a>
+					</li>
+					
+					<li>
+						<a href="/tag/ترمینال/" title="5 مطلب" style="font-size: 1.0733333333333333em;">ترمینال</a>
+					</li>
+					
+					<li>
+						<a href="/tag/میزکار/" title="6 مطلب" style="font-size: 1.0933333333333333em;">میزکار</a>
+					</li>
+					
+					<li>
+						<a href="/tag/گنوم/" title="3 مطلب" style="font-size: 1.0466666666666666em;">گنوم</a>
+					</li>
+					
+					<li>
+						<a href="/tag/یونیتی/" title="2 مطلب" style="font-size: 1.0266666666666666em;">یونیتی</a>
+					</li>
+					
+					<li>
+						<a href="/tag/سینامون/" title="2 مطلب" style="font-size: 1.0266666666666666em;">سینامون</a>
+					</li>
+					
+					<li>
+						<a href="/tag/kde/" title="2 مطلب" style="font-size: 1.0266666666666666em;">kde</a>
+					</li>
+					
+					<li>
+						<a href="/tag/xfce/" title="1 مطلب" style="font-size: 1.0133333333333334em;">xfce</a>
+					</li>
+					
+					<li>
+						<a href="/tag/lxde/" title="1 مطلب" style="font-size: 1.0133333333333334em;">lxde</a>
+					</li>
+					
+					<li>
+						<a href="/tag/ردهت/" title="7 مطلب" style="font-size: 1.1066666666666667em;">ردهت</a>
+					</li>
+					
+					<li>
+						<a href="/tag/centos/" title="6 مطلب" style="font-size: 1.0933333333333333em;">centos</a>
+					</li>
+					
+					<li>
+						<a href="/tag/نرم‌افزار/" title="21 مطلب" style="font-size: 1.3333333333333333em;">نرم‌افزار</a>
+					</li>
+					
+					<li>
+						<a href="/tag/آرچ‌لینوکس/" title="3 مطلب" style="font-size: 1.0466666666666666em;">آرچ‌لینوکس</a>
+					</li>
+					
+					<li>
+						<a href="/tag/اوپن‌سوزه/" title="9 مطلب" style="font-size: 1.14em;">اوپن‌سوزه</a>
+					</li>
+					
+					<li>
+						<a href="/tag/پیکربندی/" title="16 مطلب" style="font-size: 1.2533333333333334em;">پیکربندی</a>
+					</li>
+					
+					<li>
+						<a href="/tag/مرورگر/" title="2 مطلب" style="font-size: 1.0266666666666666em;">مرورگر</a>
+					</li>
+					
+					<li>
+						<a href="/tag/لینوکس مینت/" title="7 مطلب" style="font-size: 1.1066666666666667em;">لینوکس مینت</a>
+					</li>
+					
+					<li>
+						<a href="/tag/توسعه/" title="3 مطلب" style="font-size: 1.0466666666666666em;">توسعه</a>
+					</li>
+					
+					<li>
+						<a href="/tag/شبکه/" title="5 مطلب" style="font-size: 1.0733333333333333em;">شبکه</a>
+					</li>
+					
+					<li>
+						<a href="/tag/مگیا/" title="1 مطلب" style="font-size: 1.0133333333333334em;">مگیا</a>
+					</li>
+					
+					<li>
+						<a href="/tag/حریم‌شخصی/" title="5 مطلب" style="font-size: 1.0733333333333333em;">حریم‌شخصی</a>
+					</li>
+					
+					<li>
+						<a href="/tag/کتاب/" title="1 مطلب" style="font-size: 1.0133333333333334em;">کتاب</a>
+					</li>
+					
+					<li>
+						<a href="/tag/بوت‌لودر/" title="1 مطلب" style="font-size: 1.0133333333333334em;">بوت‌لودر</a>
+					</li>
+					
+					<li>
+						<a href="/tag/توزیع/" title="1 مطلب" style="font-size: 1.0133333333333334em;">توزیع</a>
+					</li>
+					
+					<li>
+						<a href="/tag/sudo/" title="2 مطلب" style="font-size: 1.0266666666666666em;">sudo</a>
+					</li>
+					
+					<li>
+						<a href="/tag/کالی لینوکس/" title="1 مطلب" style="font-size: 1.0133333333333334em;">کالی لینوکس</a>
+					</li>
+					
+					<li>
+						<a href="/tag/nixos/" title="1 مطلب" style="font-size: 1.0133333333333334em;">nixos</a>
+					</li>
+					
+					<li>
+						<a href="/tag/مدیربسته/" title="1 مطلب" style="font-size: 1.0133333333333334em;">مدیربسته</a>
+					</li>
+					
+					<li>
+						<a href="/tag/رسپبری‌پای/" title="1 مطلب" style="font-size: 1.0133333333333334em;">رسپبری‌پای</a>
+					</li>
+					
+					<li>
+						<a href="/tag/اندروید/" title="1 مطلب" style="font-size: 1.0133333333333334em;">اندروید</a>
+					</li>
+					
+				</ul>
+				<ul class="icons">
+					<li><a href="http://facebook.com/linuxihaa" class="icon genericon genericon-facebook" target="_blank">Facebook</a></li>
+					<li><a href="https://twitter.com/linuxihaa" class="icon genericon genericon-twitter" target="_blank">Twitter</a></li>
+					<li><a href="https://telegram.me/linuxiha" class="icon genericon genericon-telegram" target="_blank">Telegram</a></li>
+					<li><a href="https://www.instagram.com/linuxiha" class="icon genericon genericon-instagram" target="_blank">Instagram</a></li>
+					<li><a href="https://plus.google.com/109502803142394425024/posts" class="icon genericon genericon-googleplus" target="_blank">Google+</a></li>
+					<li><a href="http://www.youtube.com/channel/UCM8_p07cthYziOA96HDdzOg" class="icon genericon genericon-youtube" target="_blank">YouTube</a></li>
+					<li><a href="https://github.com/linuxihaa" class="icon genericon genericon-github" target="_blank">Github</a></li>
+					<li><a href="/feed.xml" class="icon genericon genericon-feed" target="_blank">RSS Feed</a></li>
+				</ul>
+				<ul class="copyright">
+					<li>&copy; حق نشر ۱۳۹۵-۱۳۹۲ <a href="">لینوکسی‌ها</a>، <a href="/version-history/">نسخه‌ی ۲.۰</a>، تحت مجوز <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/">کرتیو کامنز ۳.۰</a></li>
+					<li> پوسته برگرفته از <a href="https://github.com/CloudCannon/Alpha-Jekyll-Theme">Alpha Jekyll Theme</a></li>
+				</ul>
+			</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-44951909-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	</body>
+</html>
+

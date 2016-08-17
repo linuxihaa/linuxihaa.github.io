@@ -1,0 +1,430 @@
+<!DOCTYPE HTML>
+<html lang="fa">
+	<head>
+		<title>لینوکسی‌ها - راه اندازی سرویس Samba در لینوکس</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<link rel="alternate" href="http://linuxihaa.ir" hreflang="fa-IR" />
+		<link type="application/atom+xml" rel="alternate" href="http://linuxihaa.ir/feed.xml" title="لینوکسی‌ها">
+		<link type="application/xml" rel="sitemap" title="لینوکسی‌ها" href="http://linuxihaa.ir/sitemap.xml" />
+		<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+			<!--[if lte IE 8]><script src="/assets/css/ie/html5shiv.js"></script><![endif]-->
+		<script src="/assets/js/jquery.min.js"></script>
+		<script src="/assets/js/jquery.dropotron.min.js"></script>
+		<script src="/assets/js/skel.min.js"></script>
+		<script src="/assets/js/skel-layers.min.js"></script>
+		<script src="/assets/js/jquery.scrollgress.min.js"></script>
+		<script src="/assets/js/init.js?v=2016-07-09:3"></script>
+		<noscript>
+			<link rel="stylesheet" href="/assets/css/skel.css" />
+			<link rel="stylesheet" href="/assets/css/style.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie/v8.css" /><![endif]-->
+		<meta name="robots" content="noodp"/>
+		<meta name="description" content="آموزش راه اندازی سرویس Samba در لینوکس"/>
+		<meta property="og:site_name" content="لینوکسی‌ها" />
+		<link rel="canonical" href="http://linuxihaa.ir/samba/" />
+		<meta property="og:locale" content="fa_IR" />
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content="لینوکسی‌ها - راه اندازی سرویس Samba در لینوکس" />
+		<meta property="og:description" content="آموزش راه اندازی سرویس Samba در لینوکس" />
+		<meta property="og:url" content="http://linuxihaa.ir/samba/" />
+		<meta property="article:tag" content="samba" />
+		<meta property="article:section" content="آموزشی" />
+		<meta property="article:published_time" content="2016-07-28 00:00:00 +0000" />
+		
+		
+		<meta property="og:image" content="http://linuxihaa.ir/assets/images/samba-server-linux.jpg" />
+		<meta property="og:image:width" content="600" />
+		<meta property="og:image:height" content="300" />
+	</head>
+	
+		<body>
+			<section id="banner"></section>
+	
+	<!-- Header -->
+	<header id="header" class="alt">
+		<div id="logo" ><a href="/"><span>لینوکسی‌ها</span><img src="/logo.png" /></a></div>
+		<nav id="nav">
+			<ul>
+				<li><a href="/">خانه</a></li>
+				<li>
+					<a href="" class="icon fa-angle-down">دسته‌بندی</a>
+					<ul>
+						
+						<li><a href="/category/خبری/">خبری</a></li>
+						
+						<li><a href="/category/آموزشی/">آموزشی</a></li>
+						
+					</ul>
+				</li>
+				<li><a href="/about/">درباره</a></li>
+				<li><a href="/cooperation/">همکاری</a></li>
+				<li><a href="/contact/">تماس</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<!-- Main -->
+	<section id="main" class="container">
+
+	<article class="box special">
+		<header>
+			<h1>راه اندازی سرویس Samba در لینوکس</h1>
+		</header>
+		<div class="content"><p>Samba یک ابزار بسیار قدرتمند است که به وسیله آن می‌توان سرویس‌های اشتراک فایل و پرینتر را برای کلاینت‌های مایکروسافتی ارائه نمود. علاوه بر این می‌توان از آن به عنوان یک دامین کنترلر در شبکه‌های مبتنی بر Windows Server Domain استفاده نمود. همچنین از نسخه چهارم این نرم‌افزار به بعد امکان پشتیبانی از Active Directory و دامین‌های Windows NT فراهم شده است.</p>
+
+<p>در این آموزش به نحوه نصب و راه اندازی این سرویس و همچنین اشتراک گذاری منابع توسط سرویس Samba برای کلاینت‌های مایکروسافتی و لینوکسی خواهیم پرداخت.</p>
+
+<p>برای نصب سرویس دهنده Samba دستور زیر را وارد می‌کنیم.</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code>sudo apt install samba  
+</code></pre>
+</div>
+
+<p>سپس برای اعمال تنظیمات می‌بایست فایل <code class="highlighter-rouge">etc/samba/smb.conf/</code> را با یک ویرایش‌گر متنی ویرایش کنیم.</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code>sudo gedit /etc/samba/smb.conf  
+</code></pre>
+</div>
+
+<p>فایل smb.conf دارای بخش‌های مختلفی است که در ادامه به توضییح آن‌ها می‌پردازیم.</p>
+
+<ul>
+  <li><code class="highlighter-rouge">[global]</code>: در این بخش پیکربندی کلی و مورد استفاده در تمامی بخش‌ها تعریف می گردد.</li>
+  <li><code class="highlighter-rouge">[share]</code>: یک اشتراک را تعریف می‌کند.</li>
+  <li><code class="highlighter-rouge">[printers]</code>: در این بخش پرینترهای اشتراک گذاشته تعریف می‌شوند.</li>
+  <li><code class="highlighter-rouge">[homes]</code>: دایرکتوری home کاربران اشتراک گذاشته تعریف می‌شوند.</li>
+</ul>
+
+<p>در داخل هرکدام از این بخش‌ها پارامترهایی وجود دارد که هر پارامتر می‌تواند مقداری مانند true, false, yes, no و یا یک رشته یا مسیر داشته باشد.</p>
+
+<p>در ادامه به توضیح برخی از این پارامتر ها می پردازیم.</p>
+
+<ul>
+  <li>browseable: تعیین می‌کند که اشتراک مورد نظرمان می‌تواند Browse شود و یا خیر.</li>
+  <li>comment: متن توضیح که در کنار اشتراک یا سرویس نمایش داده می‌شود.</li>
+  <li>create mask: برای تبدیل مجوزهای ویندوز به یونیکس/لینوکس در هنگام ایجاد فایل به‌کار می‌رود. مقدار پیشفرض برابر 0744 است.</li>
+  <li>directory mask: برای تبدیل مجوزهای ویندوز به یونیکس/لینوکس در هنگام ایجاد دایرکتوری به‌کار می‌رود. مقدار پیش‌فرض برابر 755 است.</li>
+  <li>encrypt passwords: تعیین می‌کند که در هنگام Authentication بین سرویس دهنده و سرویس گیرنده کلمات عبور رمزنگاری شوند یا خیر.</li>
+  <li>security: این گزینه مشخص می‌کند که کاربران چگونه به سرویس دهنده متصل شده و احراز هویت شوند. مقدار پیش‌فرض برابر user است.</li>
+  <li>read only: امکان ویرایش فایل‌ها توسط کاربران را مشخص می‌کند.</li>
+  <li>invalid users: این کاربران تعریف شده قادر نخواهند بود به سیستم وارد شوند.</li>
+  <li>workgroup: تعیین کننده نام شبکه Workgroup است.</li>
+  <li>server string: نام سرویس دهنده را در سیستم‌های سرویس گیرنده مشخص می‌کند.</li>
+  <li>interfaces: آدرس‌هایی را که مجاز به برقراری ارتباط با سرویس دهنده هستند را مشخص می‌کند.</li>
+  <li>printable: امکان ارسال چاپ توسط کاربر به سرویس دهنده را مشخص می‌کند.</li>
+  <li>و …</li>
+</ul>
+
+<p>قبل از اشتراک گذاری می‌بایست کاربرانمان را در سرویس دهنده تعریف نماییم. که به‌صورت زیر عمل می‌کنیم.</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code>sudo smbpasswd -L -a USER NAME  
+</code></pre>
+</div>
+
+<p>که در اینجا <code class="highlighter-rouge">USER NAME</code> نام کاربر مورد نظر شماست.</p>
+
+<p>برای اشتراک‌گذاری یک دایرکتوری به‌صورت زیر عمل می کنیم.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>[My Share]  
+ path = /home/reza/my_share  
+ browseable = yes  
+ read only = yes  
+</code></pre>
+</div>
+
+<p>در مثال فوق یک دایرکتوری با نام My Share و در مسیر <code class="highlighter-rouge">home/reza/my_share/</code> و با دسترسی فقط خواندنی تعریف نمودیم.</p>
+
+<p>سپس سرویس دهنده را با دستور زیر مجدداً راه اندازی می‌کنیم.</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code>systemctl restart samba-ad-dc.service  
+</code></pre>
+</div>
+
+<p>جهت بررسی وضعیت سرویس دهنده و منابع اشتراک گذاشته شده می‌توانیم از دستور زیر استفاده کنیم.</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code>smbclient -L SERVER  
+</code></pre>
+</div>
+
+<p>که در اینجا <code class="highlighter-rouge">SERVER</code> می‌تواند نام و یا آدرس آی‌پی سرویس دهنده باشد.</p>
+
+<ul>
+  <li>نکته)‌ جهت استفاده از ابزار smbclient می‌بایست ابتدا آن را توسط دستور زیر روی سرویس‌گیرندهای لینوکسی نصب نمود.</li>
+</ul>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code>sudo apt install smbclient  
+</code></pre>
+</div>
+
+<p>جهت ماونت نمودن یک اشتراک می‌توانیم بصورت زیر عمل کنیم.</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code>mount –t cifs //SERVER IP/SHARE /mnt –o <span class="nv">username</span><span class="o">=</span>USER NAME,workgroup<span class="o">=</span>WORKGROUP NAME  
+</code></pre>
+</div>
+
+<p>که در اینجا <code class="highlighter-rouge">SERVER IP/SHARE//</code> آدرس اشتراک ما و <code class="highlighter-rouge">mnt/</code> آدرس مسیری است که می‌بایست در آنجا ماونت شود و <code class="highlighter-rouge">USER NAME</code> نام کاربری و <code class="highlighter-rouge">WORKGROUP NAME</code> هم نام گروه کاری شما را مشخص می‌کند.</p>
+
+<p>*‌نکته)‌ جهت ماونت کردن فایل‌سیستم‌های Samba نیاز به ابزار <code class="highlighter-rouge">cifs-utils</code> داریم که می‌بایست روی سرویس‌گیرنده‌های لینوکسی نصب کنیم که برای برای نصب <code class="highlighter-rouge">cifs-utils</code> دستور زیر را وارد می‌کنیم.</p>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code>sudo apt install cifs-utils  
+</code></pre>
+</div>
+</div>
+		<footer class="meta">
+<!-- AddToAny BEGIN -->
+<div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+<a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+<a class="a2a_button_facebook"></a>
+<a class="a2a_button_twitter"></a>
+<a class="a2a_button_google_plus"></a>
+</div>
+<script async src="https://static.addtoany.com/menu/page.js"></script>
+<!-- AddToAny END -->
+			
+			
+			
+			<span>نوشته شده توسط </span><address class="author"><a href="mailto:r.masoumvand@yahoo.com" class="author" rel="author" target="_blank" title="Linux Ninja">رضا معصوم‌وند</a></address><span>، </span>
+			
+			
+			
+			<time class="date" pubdate datetime="2016-07-28T00:00:00+00:00">پنج‌شنبه 7 مرداد 1395</time>
+			</span>
+			<ul class="tags">
+				<span>دسته </span><a href="/category/آموزشی" class="category">آموزشی</a><span>، </span>
+				<span>برچسب</span>
+				
+				<li><a href="/tag/شبکه" class="tag">شبکه</a><span>،</span></li>
+				
+				<li><a href="/tag/پیکربندی" class="tag">پیکربندی</a><span>،</span></li>
+				
+			</ul>
+			<div class="adv">
+				
+					
+					
+						
+						<a href="mailto:r.masoumvand@yahoo.com" target="_blank"><img src="/adv.png" alt="advertise" /></a>
+						
+					
+					
+				
+			</div>
+		</footer>
+	</article>
+	<div id="disqus_thread"></div>
+<script>
+    (function() {
+        var d = document, s = d.createElement('script');
+        
+        s.src = 'https://linuxihaa.disqus.com/embed.js';
+        
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>لطفاً برای مشاهده نظرات جاوااسکریپت را روشن کنید <a href="https://disqus.com/?ref_noscript" rel="nofollow">Powered by Disqus.</a></noscript>
+		</section>
+		<!-- Footer -->
+			<footer id="footer">
+				<span>برچسب‌ها</span>
+				<ul class="tags container">
+					
+					<li>
+						<a href="/tag/پراکسی/" title="1 مطلب" style="font-size: 1.0133333333333334em;">پراکسی</a>
+					</li>
+					
+					<li>
+						<a href="/tag/اوبونتو/" title="30 مطلب" style="font-size: 1.4733333333333334em;">اوبونتو</a>
+					</li>
+					
+					<li>
+						<a href="/tag/dns/" title="1 مطلب" style="font-size: 1.0133333333333334em;">dns</a>
+					</li>
+					
+					<li>
+						<a href="/tag/شخصی‌سازی/" title="6 مطلب" style="font-size: 1.0933333333333333em;">شخصی‌سازی</a>
+					</li>
+					
+					<li>
+						<a href="/tag/سرور/" title="9 مطلب" style="font-size: 1.14em;">سرور</a>
+					</li>
+					
+					<li>
+						<a href="/tag/دبیان/" title="10 مطلب" style="font-size: 1.1533333333333333em;">دبیان</a>
+					</li>
+					
+					<li>
+						<a href="/tag/اوبونتو استدیو/" title="1 مطلب" style="font-size: 1.0133333333333334em;">اوبونتو استدیو</a>
+					</li>
+					
+					<li>
+						<a href="/tag/کوبونتو/" title="1 مطلب" style="font-size: 1.0133333333333334em;">کوبونتو</a>
+					</li>
+					
+					<li>
+						<a href="/tag/زوبونتو/" title="1 مطلب" style="font-size: 1.0133333333333334em;">زوبونتو</a>
+					</li>
+					
+					<li>
+						<a href="/tag/اوبونتو کایلین/" title="1 مطلب" style="font-size: 1.0133333333333334em;">اوبونتو کایلین</a>
+					</li>
+					
+					<li>
+						<a href="/tag/لوبونتو/" title="2 مطلب" style="font-size: 1.0266666666666666em;">لوبونتو</a>
+					</li>
+					
+					<li>
+						<a href="/tag/اوبونتو گنوم/" title="1 مطلب" style="font-size: 1.0133333333333334em;">اوبونتو گنوم</a>
+					</li>
+					
+					<li>
+						<a href="/tag/فدورا/" title="10 مطلب" style="font-size: 1.1533333333333333em;">فدورا</a>
+					</li>
+					
+					<li>
+						<a href="/tag/ترمینال/" title="5 مطلب" style="font-size: 1.0733333333333333em;">ترمینال</a>
+					</li>
+					
+					<li>
+						<a href="/tag/میزکار/" title="6 مطلب" style="font-size: 1.0933333333333333em;">میزکار</a>
+					</li>
+					
+					<li>
+						<a href="/tag/گنوم/" title="3 مطلب" style="font-size: 1.0466666666666666em;">گنوم</a>
+					</li>
+					
+					<li>
+						<a href="/tag/یونیتی/" title="2 مطلب" style="font-size: 1.0266666666666666em;">یونیتی</a>
+					</li>
+					
+					<li>
+						<a href="/tag/سینامون/" title="2 مطلب" style="font-size: 1.0266666666666666em;">سینامون</a>
+					</li>
+					
+					<li>
+						<a href="/tag/kde/" title="2 مطلب" style="font-size: 1.0266666666666666em;">kde</a>
+					</li>
+					
+					<li>
+						<a href="/tag/xfce/" title="1 مطلب" style="font-size: 1.0133333333333334em;">xfce</a>
+					</li>
+					
+					<li>
+						<a href="/tag/lxde/" title="1 مطلب" style="font-size: 1.0133333333333334em;">lxde</a>
+					</li>
+					
+					<li>
+						<a href="/tag/ردهت/" title="7 مطلب" style="font-size: 1.1066666666666667em;">ردهت</a>
+					</li>
+					
+					<li>
+						<a href="/tag/centos/" title="6 مطلب" style="font-size: 1.0933333333333333em;">centos</a>
+					</li>
+					
+					<li>
+						<a href="/tag/نرم‌افزار/" title="21 مطلب" style="font-size: 1.3333333333333333em;">نرم‌افزار</a>
+					</li>
+					
+					<li>
+						<a href="/tag/آرچ‌لینوکس/" title="3 مطلب" style="font-size: 1.0466666666666666em;">آرچ‌لینوکس</a>
+					</li>
+					
+					<li>
+						<a href="/tag/اوپن‌سوزه/" title="9 مطلب" style="font-size: 1.14em;">اوپن‌سوزه</a>
+					</li>
+					
+					<li>
+						<a href="/tag/پیکربندی/" title="16 مطلب" style="font-size: 1.2533333333333334em;">پیکربندی</a>
+					</li>
+					
+					<li>
+						<a href="/tag/مرورگر/" title="2 مطلب" style="font-size: 1.0266666666666666em;">مرورگر</a>
+					</li>
+					
+					<li>
+						<a href="/tag/لینوکس مینت/" title="7 مطلب" style="font-size: 1.1066666666666667em;">لینوکس مینت</a>
+					</li>
+					
+					<li>
+						<a href="/tag/توسعه/" title="3 مطلب" style="font-size: 1.0466666666666666em;">توسعه</a>
+					</li>
+					
+					<li>
+						<a href="/tag/شبکه/" title="5 مطلب" style="font-size: 1.0733333333333333em;">شبکه</a>
+					</li>
+					
+					<li>
+						<a href="/tag/مگیا/" title="1 مطلب" style="font-size: 1.0133333333333334em;">مگیا</a>
+					</li>
+					
+					<li>
+						<a href="/tag/حریم‌شخصی/" title="5 مطلب" style="font-size: 1.0733333333333333em;">حریم‌شخصی</a>
+					</li>
+					
+					<li>
+						<a href="/tag/کتاب/" title="1 مطلب" style="font-size: 1.0133333333333334em;">کتاب</a>
+					</li>
+					
+					<li>
+						<a href="/tag/بوت‌لودر/" title="1 مطلب" style="font-size: 1.0133333333333334em;">بوت‌لودر</a>
+					</li>
+					
+					<li>
+						<a href="/tag/توزیع/" title="1 مطلب" style="font-size: 1.0133333333333334em;">توزیع</a>
+					</li>
+					
+					<li>
+						<a href="/tag/sudo/" title="2 مطلب" style="font-size: 1.0266666666666666em;">sudo</a>
+					</li>
+					
+					<li>
+						<a href="/tag/کالی لینوکس/" title="1 مطلب" style="font-size: 1.0133333333333334em;">کالی لینوکس</a>
+					</li>
+					
+					<li>
+						<a href="/tag/nixos/" title="1 مطلب" style="font-size: 1.0133333333333334em;">nixos</a>
+					</li>
+					
+					<li>
+						<a href="/tag/مدیربسته/" title="1 مطلب" style="font-size: 1.0133333333333334em;">مدیربسته</a>
+					</li>
+					
+					<li>
+						<a href="/tag/رسپبری‌پای/" title="1 مطلب" style="font-size: 1.0133333333333334em;">رسپبری‌پای</a>
+					</li>
+					
+					<li>
+						<a href="/tag/اندروید/" title="1 مطلب" style="font-size: 1.0133333333333334em;">اندروید</a>
+					</li>
+					
+				</ul>
+				<ul class="icons">
+					<li><a href="http://facebook.com/linuxihaa" class="icon genericon genericon-facebook" target="_blank">Facebook</a></li>
+					<li><a href="https://twitter.com/linuxihaa" class="icon genericon genericon-twitter" target="_blank">Twitter</a></li>
+					<li><a href="https://telegram.me/linuxiha" class="icon genericon genericon-telegram" target="_blank">Telegram</a></li>
+					<li><a href="https://www.instagram.com/linuxiha" class="icon genericon genericon-instagram" target="_blank">Instagram</a></li>
+					<li><a href="https://plus.google.com/109502803142394425024/posts" class="icon genericon genericon-googleplus" target="_blank">Google+</a></li>
+					<li><a href="http://www.youtube.com/channel/UCM8_p07cthYziOA96HDdzOg" class="icon genericon genericon-youtube" target="_blank">YouTube</a></li>
+					<li><a href="https://github.com/linuxihaa" class="icon genericon genericon-github" target="_blank">Github</a></li>
+					<li><a href="/feed.xml" class="icon genericon genericon-feed" target="_blank">RSS Feed</a></li>
+				</ul>
+				<ul class="copyright">
+					<li>&copy; حق نشر ۱۳۹۵-۱۳۹۲ <a href="">لینوکسی‌ها</a>، <a href="/version-history/">نسخه‌ی ۲.۰</a>، تحت مجوز <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/">کرتیو کامنز ۳.۰</a></li>
+					<li> پوسته برگرفته از <a href="https://github.com/CloudCannon/Alpha-Jekyll-Theme">Alpha Jekyll Theme</a></li>
+				</ul>
+			</footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-44951909-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	</body>
+</html>
+
