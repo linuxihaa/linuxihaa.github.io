@@ -1,6 +1,6 @@
 ---    
 layout: post
-jdate: 1395-05-28
+jdate: 1395-05-29
 user: MrNull
 title: شخصی سازی دسکتاپ گنوم      
 categories:
