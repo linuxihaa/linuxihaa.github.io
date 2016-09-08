@@ -1,5 +1,5 @@
 ---
-layout: mpage
+layout: page
 title: همکاری
 ---
 
