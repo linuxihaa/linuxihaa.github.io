@@ -1,6 +1,6 @@
 ---    
 layout: post
-jdate: 1395-06-30
+jdate: 1395-07-30
 user: MrNull
 title: معرفی پروژه بانک vimrc
 categories:
