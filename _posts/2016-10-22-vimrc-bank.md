@@ -1,16 +1,12 @@
 ---    
 layout: post
-jdate: 1395-07-30
+jdate: 1395-08-01
 user: MrNull
 title: معرفی پروژه بانک vimrc
 categories:
 - آموزشی
 tags:
 - ترمینال
-- terminal
-- vim
-- vimrc
-- vimrc bank
 featured: vimrc-bank.png          
 keywords:
 - ترمینال
