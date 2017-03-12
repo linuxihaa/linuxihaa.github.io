@@ -36,18 +36,18 @@ sudo gedit /usr/share/gnome-shell/theme/gnome-shell.css
 در فایل فوق به دنبال عبارت lockDialogGrop# می‌گردیم که بخشی مانند زیر خواهد بود.
 
 ```css
-	#lockDialogGroup {
-		background: #2e3436 url(noise-texture.png);
-		background-repeat: repeat;
+#lockDialogGroup {
+	background: #2e3436 url(noise-texture.png);
+	background-repeat: repeat;
 }
 ```
 
 در قسمت url نام فایل مورد نظرمان را وارد می‌کنیم و همچنین مقدار عبارت background-repeat را به no-repeat تغییر می‌دهیم.
 
 ```css
-	#lockDialogGroup {
-		background: #2e3436 url(sun.jpg);
-		background-repeat: no-repeat;
+#lockDialogGroup {
+	background: #2e3436 url(sun.jpg);
+	background-repeat: no-repeat;
 }
 ```
 
