@@ -9,7 +9,7 @@ tags:
 - پیکربندی
 - میزکار
 - شخصی‌سازی
-featured: ZorinOS.png
+featured: ZorinOS.jpg
 keywords:
 - Zorin
 - زورین در اویونتو
