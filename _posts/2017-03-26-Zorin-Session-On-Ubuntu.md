@@ -62,7 +62,7 @@ gnome-tweak-tool
 > Zorin overview,
 > Zorin panel,
 > Zorin taskbar,
-> Zorin tray,
+> Zorin tray
 
 حالا به قسمت Desktop بروید و Icons on Desktop را فعال کنید.
 بعد به قسمت Windows بروید و maximize و minimize را نیز فعال کنید.
