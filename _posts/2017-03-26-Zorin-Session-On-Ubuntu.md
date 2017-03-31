@@ -21,7 +21,7 @@ description: نصب میزکار زورین در اوبونتو
 
 سلام سال نو مبارک.
 
- یکی از توضیع های اوبونتو zorinos است. زورین بیش‌تر برای افراد ویندوزی طراحی شده و کاربران ویندوزی به راحتی می‌توانند به دنیای گنو/لینوکس مهاجرت کنند. ما امروز قصد داریم که دسکتاپ زورین را در اوبونتو اجرا کنیم.
+ یکی از توزیع‌های اوبونتو zorinos است. زورین بیش‌تر برای افراد ویندوزی طراحی شده و کاربران ویندوزی به راحتی می‌توانند به دنیای گنو/لینوکس مهاجرت کنند. ما امروز قصد داریم که دسکتاپ زورین را در اوبونتو اجرا کنیم.
 ابتدا باید بگم که زورین فقط یک تم GTK+ به همراه چند پلاگین برای دسکتاپ گنوم است. ما می‌توانیم با نصب کردن پلاگین‌های زورین در گنوم، دسکتاپ زورین را شبیه‌سازی کنیم البته ما اینجا تم GTK زورین را نصب نمی‌کنیم و فقط پلاگین‌های آن را نصب می‌کنیم.
 اگر گنوم نصب نکرده‌اید ابتدا آن را با استفاده از ترمینال نصب کنید.
 
@@ -31,6 +31,7 @@ sudo apt-get update
 sudo apt-get -y dist-upgrade
 sudo apt-get install -y ubuntu-gnome-desktop
 ```
+
 بعد از اینکه دانلود به اتمام رسید او شما پیام می‌دهد که شما می‌خواهید صفحه‌ی بالا آمدن سیستم‌تان چه شکلی باشد.
 ![LightdmVSGdm3]({{ site.imgurl }}/LightdmVSGdm3.jpg)
 
@@ -53,6 +54,7 @@ sudo apt-key - < Release.key
 sudo apt-get install -y arc-theme zorin-icon-themes gnome-tweak-tool gnome-shell-extension-zorin-dash gnome-shell-extension-zorin-media-controls gnome-shell-extension-zorin-menu gnome-shell-extension-zorin-overview gnome-shell-extension-zorin-panel gnome-shell-extension-zorin-taskbar gnome-shell-extension-zorin-tray gnome-shell-extension-zorin-window-list-bottom-panel gnome-shell-extension-zorin-window-list-main-panel gnome-shell-extensions-zorin-desktop 
 gnome-tweak-tool
 ```
+
 البته اگر از ورژن اوبونتوی ۱۶.۰۴ استفاده نمی‌کنید جای xUbuntu_xx.xx ورژن اوبونتوی خود را قرار دهید.
 حال با چنین پنجره‌ای مواجع می‌شوید.
 ![Gnome-Tweark-Tool]({{ site.imgurl }}/Gnome-Tweark-Tool.jpg)
