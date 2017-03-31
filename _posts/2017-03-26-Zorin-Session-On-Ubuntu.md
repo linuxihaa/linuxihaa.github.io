@@ -34,7 +34,7 @@ sudo apt-get install -y ubuntu-gnome-desktop
 ![LightdmVSGdm3]({{ site.imgurl }}/LightdmVSGdm3.jpg)
 
 اگر گزینه‌ی lightdm را انتخاب کنید مثل قبل باقی می‌ماند ولی اگر gdm را انتخاب کنید. بعد از بوت سیستم با این صفحه مواجع می‌شوید.
-![GDM-LoginForm]({{ site.imgurl }}/GDM-LoginForm.jpg)
+![GDM-LoginForm]({{ site.imgurl }}/GDM-LoginFrom.jpg)
 این دیگر به شما بستگی دارد. ولی من gdm رو بیش‌تر می‌پسندم. حالا دیگر گزینه‌ی مورد نظر را انتخاب کنید و بعد از نصب کامل سیستم خود را ریبوت کنید. 
 اگر در هنگام نصب gdm را انتخاب کرده‌اید ابتدا روی یوزر خود کلیک کنید و بعد آیکن تنظیمات را فشار دهید و بعد Gnome را انتخاب کنید.
 
