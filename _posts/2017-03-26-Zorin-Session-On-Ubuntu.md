@@ -49,6 +49,7 @@ sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/Horst3180/
 cd
 wget -nv http://download.opensuse.org/repositories/home:Horst3180/xUbuntu_16.04/Release.key -O Release.key
 sudo apt-key - < Release.key
+sudo apt-get update
 sudo apt-get install -y arc-theme zorin-icon-themes gnome-tweak-tool gnome-shell-extension-zorin-dash gnome-shell-extension-zorin-media-controls gnome-shell-extension-zorin-menu gnome-shell-extension-zorin-overview gnome-shell-extension-zorin-panel gnome-shell-extension-zorin-taskbar gnome-shell-extension-zorin-tray gnome-shell-extension-zorin-window-list-bottom-panel gnome-shell-extension-zorin-window-list-main-panel gnome-shell-extensions-zorin-desktop 
 gnome-tweak-tool
 ```
