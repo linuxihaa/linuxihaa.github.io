@@ -1,6 +1,6 @@
 ---    
 layout: post
-jdate: 1396-01-20
+jdate: 1396-02-02
 user: amirhne
 title: ساخت هات‌اسپات در اوبونتو ۱۶.۰۴
 categories:
@@ -8,11 +8,9 @@ categories:
 tags:
 - اوبونتو
 - شبکه
-- اینترنت
 featured: kde-nm-connection-editor.png         
 keywords:
 - هات اسپات اوبونتو
-- اینترنت
 description: آموزش ساخت هات اسپات و به اشتراک گذاری اینترنت در اوبونتو ۱۶.۰۴
 ---
 
