@@ -4,7 +4,7 @@ jdate: 1394-12-13
 user: amirhossein
 title: Raspberry Pi 3 همراه با Wifi و بلوتوث
 categories:
-- آموزشی
+- خبری
 tags:
 - رسپبری‌پای
 featured: raspberry-pi-logo.jpg
