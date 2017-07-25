@@ -4,7 +4,7 @@ description: >
  سایت فارسی آموزش گنو/لینوکس و نرم‌افزارها و توزیع‌های لینوکس و اخبار مرتبط با آن‌ها
  هدف ما استفاده‌ی بهتر کاربران از توزیع‌های گنو/لینوکس است
 short_description: وبسایت فارسی آموزش و اخبار گنو/لینوکس
-baseurl: './amir'
+baseurl: '.'
 url: https://amir28.github.io/linuxihaa.github.io/
 twitter_username: linuxihaa
 github_username:  linuxihaa
