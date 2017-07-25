@@ -5,7 +5,7 @@ description: >
  هدف ما استفاده‌ی بهتر کاربران از توزیع‌های گنو/لینوکس است
 short_description: وبسایت فارسی آموزش و اخبار گنو/لینوکس
 baseurl: ""
-url: http://linuxihaa.ir
+url: https://amir28.github.io/linuxihaa.github.io/
 twitter_username: linuxihaa
 github_username:  linuxihaa
 locale: fa_IR
