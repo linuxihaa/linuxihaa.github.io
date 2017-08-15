@@ -29,30 +29,30 @@ description: آموزش ساخت دستگاه فرستنده رادیویی FM  
 ۴- با این دستور سیستم را ارتقا دهید.
 
 ```sh
-	sudo apt-get update
-	sudo apt-get upgrade
+sudo apt-get update
+sudo apt-get upgrade
 ```
 
 ۵- هسته‌ی سیستم را ارتقا دهید. (اگر از هسته‌ی تقریباً جدید استفاده می‌کنید، اجباری نیست)
 
 ```sh
-	sudo apt-get install -y rpi-update
-	sudo rpi-update
+sudo apt-get install -y rpi-update
+sudo rpi-update
 ```
 
 ۶- نرم‌افزار‌های مورد نیاز را با این دستور نصب کنید.
 
 ```sh
-	sudo apt-get install -y libsndfile1-dev git make gcc c++ sox libsox-fmt-mp3
+sudo apt-get install -y libsndfile1-dev git make gcc c++ sox libsox-fmt-mp3
 ```
 
 ۷- نرم‌افزار فرستنده‌ی FM را نصب کنید.
 
 ```sh
-	git clone https://github.com/ChristopheJacquet/PiFmRds.git
-	cd PiFmRds/src
-	make clean
-	make
+git clone https://github.com/ChristopheJacquet/PiFmRds.git
+cd PiFmRds/src
+make clean
+make
 ```
 
 ۸- یک آنتن کوچک درست کنید. (هر چه کیفیت آنتن بهتر باشد محدوده‌ی بیش‌تری را به خود اختصاص می‌دهد و اگر درست نکنید شاید تا ۲متر برود.)  
@@ -68,13 +68,13 @@ description: آموزش ساخت دستگاه فرستنده رادیویی FM  
 ۱۱- برای اجرا موسیقی با فرمت WAV در ترمینال چنین تایپ کنید. (به جای x نام فایل مورد نظر و به جای y فرکانس مورد نظر را قرار دهید.)
 
 ```sh
-	sudo ./pi_fm_rds -audio xxx.wav -freq yyy.y
+sudo ./pi_fm_rds -audio xxx.wav -freq yyy.y
 ```
 
 ۱۲- اما برای اجرا موسیقی با فرمت MP3 چنین تایپ کنید. (مانند قبل)
 
 ```sh
-	sox xxx.wav -r 22050 -c 1 -b 16 -t wav - | sudo ./fm_transmitter -f yyy.y -
+sox xxx.wav -r 22050 -c 1 -b 16 -t wav - | sudo ./fm_transmitter -f yyy.y -
 ```
 
 و تمام.
