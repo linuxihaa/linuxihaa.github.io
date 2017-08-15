@@ -2,7 +2,7 @@
 layout: post  
 jdate: 1396-05-24
 user: amirmahdi
-title: ساخت دستگاه فرستنده‌ی رادیویی FM با رسپبری‌پای
+title: ساخت فرستنده‌ی رادیویی FM با رسپبری‌پای
 categories:
 - آموزشی
 tags:
