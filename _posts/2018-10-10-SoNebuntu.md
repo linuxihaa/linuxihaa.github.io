@@ -64,6 +64,7 @@ Download and more information available at: [SoNebuntu](https://sonebuntu.com)
 - Vote in [DistroWatch](https://distrowatch.com/dwres.php?resource=faq) for SoNebuntu
 - نشر خبر مربوط به این توزیع به علاقه‌مندان این حوزه
 - حمایت مالی از پروژه که در سایت رسمی توزیع موجود می‌باشد. https://sonebuntu.com
+
 ![SoNebuntu]({{ site.imgurl }}/DistroWatch.jpg)
 # Developer
 <div dir="rtl">
@@ -71,4 +72,5 @@ Download and more information available at: [SoNebuntu](https://sonebuntu.com)
 </div>
 
 [Mir Saman Tajbakhsh](https://mstajbakhsh.ir)
+
 [Contact Sonebuntu](mailto:sonebuntu@mstajbakhsh.ir)
