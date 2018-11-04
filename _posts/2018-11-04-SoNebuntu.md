@@ -1,8 +1,8 @@
 ---
 layout: post  
 jdate: 1397-08-13
-user: mir_saman_tajbakhsh 
-title: SoNebuntu - اوبونتو برای تحلیلگران شبکه‌های اجتماعی
+user: mirsamantajbakhsh
+title: اوبونتو برای تحلیلگران شبکه‌های اجتماعی
 categories:
 - خبری
 tags:
