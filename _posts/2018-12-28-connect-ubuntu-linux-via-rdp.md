@@ -1,0 +1,121 @@
+---
+layout: post  
+jdate: 1397-10-07  
+user: rmasoumvand  
+title: ریموت دسکتاپ در لینوکس  
+categories:
+- آموزشی
+tags:
+- شبکه
+- سرور
+featured: xrdp-linux-desktop-remote-rdp.png  
+keywords:
+- ریموت دسکتاپ در لینوکس
+- rdp
+- remote desktop
+
+description: آموزش ریموت دسکتاپ به لینوکس
+---
+
+
+اگر با سیستم های ویندوز کار کرده باشید حتما می دانید که تمامی نسخه های ویندوز قابلیتی اختصاصی به نام Remote Desktop یاRDP دارند که بوسیله این قابلیت می توانید به صورت ریموت به صفحه دسکتاپ خود دسترسی داشته باشید.
+اما در سیستم های شبهه یونیکس بدلیل اینکه اغلب تنظیمات بصورت متنی انجام می پذیرد معمولا کاربران توسظ SSH می توانند به سیستم راه دور خود متصل شوند و کار خود را انجام دهند. 
+حتما تا به حال برای شما پیش امده است که بخواهید در محیط شبکه از سیستم ویندوزی خود به صفحه دسکتاپ لینوکس خود بصورت ریموت دسترسی داشته باشید. اما همانطور که می دانید برخلاف ویندوز در سیستم عامل لینوکس بصورت پیش فرض ار RDP پشتیبانی نمی شود ولی خوشبختانه توسط ابزاری به نام Xrdp این امکان در لینوکس نیز میسر می شود که در این مقاله به نصب و پیکربندی ان خواهیم پرداخت
+
+پروژه Xrdp یک ابزار متن باز است که این امکان را به کاربران می دهد که بتوانند به دسکتاپ لینوکس خود از داخل سیستم عامل ویندوز دسترسی داشته باشند. این ابزار علاوه بر پشتیبانی از RDP Client های ویندوزی از سایرکلاینت های مشابه همچون FreeRDP, rdesktop, NeutrinoRDP نیز پشتیبانی می کند. همچنین در نسخه جدید این برنامه برای امنیت بیشتر از TLS نیز پشتیبانی می گردد.
+
+- برای نصب در سیستم های مبتنی بر Debian دستور زیر را وارد می کنیم:
+
+```
+apt install xrdp
+```
+
+- برای نصب در سیستم های مبتنی بر Redhat دستورات زیر را وارد می کنیم:
+
+```
+rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+yum update && yum -y install xrdp tigervnc-server
+```
+سپس فایل زیر را ویرایش می کنیم
+
+```
+/etc/polkit-1/localauthority.conf.d/02-allow-colord.conf 
+```
+
+و همانند زیر انرا تغییر می دهیم
+
+```
+polkit.addRule(function(action, subject) {
+if ((action.id == “org.freedesktop.color-manager.create-device” || action.id == “org.freedesktop.color-manager.create-profile” || action.id == “org.freedesktop.color-manager.delete-device” || action.id == “org.freedesktop.color-manager.delete-profile” || action.id == “org.freedesktop.color-manager.modify-device” || action.id == “org.freedesktop.color-manager.modify-profile”) && subject.isInGroup(“{group}”))
+{
+return polkit.Result.YES;
+}
+});
+```
+
+و سپس سرویس xrdp را توسط دستور زیر restart می کنیم
+
+```
+systemctl restart xrdp
+```
+برای بررسی وضعیت xrdp می توانیم دستور زیر را بزنیم
+
+‍‍‍‍‍```
+systemctl status xrdp
+```
+که در صورتی که سرویس xrdp بدون مشکل و در حال اجرا باشد خروجی زیر را خواهیم دید
+
+```
+● xrdp.service - xrdp daemon
+   Loaded: loaded (/lib/systemd/system/xrdp.service; enabled; vendor preset: en
+   Active: active (running) since Tue 2018-10-16 02:05:21 WAT; 11min ago
+     Docs: man:xrdp(8)
+           man:xrdp.ini(5)
+ Main PID: 2654 (xrdp)
+    Tasks: 1 (limit: 2290)
+   CGroup: /system.slice/xrdp.service
+           └─2654 /usr/sbin/xrdp
+```
+
+اگر بخواهیم با هر باز راه اندازی سیستم سرویس xrdp هم بصورت خودکار اجرا شود دستور زیر را وارد می کنیم
+
+```
+systemctl enable xrdp
+```
+
+سرویس xrdp بر روی پورت 3389 کار می کند. پس برای اینکه بتوانیم بصورت ریموت به سیستم دسترسی داشته باشیم لازم است در فایروال سیستمی که xrdp بر روی ان نصب است پورت tcp/3389 را ازاد کنیم
+
+در صورتی که از ufw برای مدیریت فایروال استفاده می کنید می توانید دستور زیر را جهت ازاد شدن پورت tcp/3389 وارد کنید
+
+```
+ufw allow 3389/tcp
+```
+
+در صورتی که از firewalld برای مدیریت فایروال استفاده می کنید دستور زیر را جهت ازاد شدن پورت tcp/3389 وارد کنید
+
+```
+firewall-cmd --permanent --zone=public --add-port=3389/tcp
+firewall-cmd --reload
+```
+
+حال می توانید از سیستم ویندوز به دسکتاپ لینوکس خود دسترسی داشته باشید.
+برای این منظور در سیستم عامل ویندوز ابزار Remote Desktop Connection را اجرا می کنیم
+‍‍‍
+![IMAGE_TITLE]({{ site.imgurl }}/xrdp/01-rdp-win-tools.png)
+
+ادرس IP سیستم مقابل و Username را همانند شکل زیر وارد می کنیم
+
+![IMAGE_TITLE]({{ site.imgurl }}/xrdp/02-rdp-win-connection.png)
+
+و سپس بر روی connect کلیک می نماییم
+
+![IMAGE_TITLE]({{ site.imgurl }}/xrdp/03-rdp-win-confirm.png)
+
+پس از برقراری اتصال کادر زیر نمایش داده خواهد شد که از شما نام کاربری و کلمه عبور را درخواست می کند که انرا وارد نموده و بر روی OK کلیک می کنیم
+
+
+![IMAGE_TITLE]({{ site.imgurl }}/xrdp/04-rdp-win-credential-login.png)
+
+در صورتی که نام کاربری و رمز عبورتان صحیح باشد با صفحه لاگین مواجه خواهید شد که می توانید رمز عبورتان را وارد کنید و وارد دسکتاپ لینوکستان شوید.
+
+![IMAGE_TITLE]({{ site.imgurl }}/xrdp/05-rdp-win-ubuntu-connection-ok.jpg)
