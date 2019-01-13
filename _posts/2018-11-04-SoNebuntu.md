@@ -4,7 +4,7 @@ jdate: 1397-08-13
 user: mirsamantajbakhsh
 title: اوبونتو برای تحلیلگران شبکه‌های اجتماعی
 categories:
-- خبری
+- آموزش
 tags:
 - اوبونتو
 featured: SoNebuntu.jpg  
