@@ -1,0 +1,130 @@
+<!DOCTYPE html><html lang="fa"><head><link rel="manifest" href="/manifest.json"/><link rel="apple-touch-icon" href="/icon-512x512.png"/><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/><link href="//db.onlinewebfonts.com/c/14b4bf4df4455e6a1277f2b2584dadd6?family=BBCNassim" rel="stylesheet" type="text/css"/><meta name="msapplication-TileColor" content="#ce1919"/><meta name="theme-color" content="#ce1919"/><meta charSet="utf-8"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:site" content="@site"/><meta name="twitter:creator" content="@handle"/><meta property="og:type" content="website"/><meta property="og:locale" content="fa_IR"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>نصب Kloxo در CentOS و ردهت</title><meta name="robots" content="index,follow"/><meta name="googlebot" content="index,follow"/><meta name="description" content="آموزش نصب Kloxo در CentOS و ردهت"/><meta property="og:url" content="/articles/[slug]"/><meta property="og:title" content="نصب Kloxo در CentOS و ردهت"/><meta property="og:description" content="آموزش نصب Kloxo در CentOS و ردهت"/><meta property="og:image" content="https://linuxiha.com/images/kloxo-logo.png"/><meta property="og:image:alt" content="نصب Kloxo در CentOS و ردهت"/><meta property="og:image:width" content="800"/><meta property="og:image:height" content="600"/><meta property="og:site_name" content="Linuxiha"/><script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://linuxiha.com/articles/2013-11-29_kloxo-redhat-centos"
+    },
+    "headline": "نصب Kloxo در CentOS و ردهت",
+    "image": [
+      "https://linuxiha.com/images/kloxo-logo.png"
+     ],
+    "datePublished": "Fri Nov 29 2013 00:00:00 GMT+0000",
+    "dateModified": "Fri Nov 29 2013 00:00:00 GMT+0000",
+    "author": {"@type": "Person","name": "undefined"},
+    "publisher": {
+      "@type": "Organization",
+      "name": "Linuxiha",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://linuxiha.com/images/logo.png"
+      }
+    },
+    "description": "آموزش نصب Kloxo در CentOS و ردهت"
+  }</script><script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https://linuxiha.com",
+          "name": "لینوکسی ها"
+        }
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@id": "/learning",
+          "name": "آموزشی"
+        }
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https://linuxiha.com/articles/2013-11-29_kloxo-redhat-centos",
+          "name": "نصب Kloxo در CentOS و ردهت"
+        }
+      }
+     ]
+  }</script><meta name="next-head-count" content="21"/><link rel="preload" href="/_next/static/css/be235685d546691402be.css" as="style"/><link rel="stylesheet" href="/_next/static/css/be235685d546691402be.css" data-n-g=""/><link rel="preload" href="/_next/static/css/d4b1ad855d90d489a111.css" as="style"/><link rel="stylesheet" href="/_next/static/css/d4b1ad855d90d489a111.css" data-n-p=""/><noscript data-n-css=""></noscript><link rel="preload" href="/_next/static/chunks/webpack-50bee04d1dc61f8adf5b.js" as="script"/><link rel="preload" href="/_next/static/chunks/framework.f8bd46fc02868c500bda.js" as="script"/><link rel="preload" href="/_next/static/chunks/dccdaae97238514e0e59f68ff40a3150f2d60869.fd7c33e9ae3c66b740c3.js" as="script"/><link rel="preload" href="/_next/static/chunks/main-3c19994afb449613f52a.js" as="script"/><link rel="preload" href="/_next/static/chunks/c18007ee4e366b206423f37b43f40d4861448257.6ad75590f65d0a64ea61.js" as="script"/><link rel="preload" href="/_next/static/chunks/9f32a1895f4aacf1ea63ff9f71a540b7eb71f721.c3d97f18e04e41235ad9.js" as="script"/><link rel="preload" href="/_next/static/chunks/pages/_app-5e768503c47f0f474cf1.js" as="script"/><link rel="preload" href="/_next/static/chunks/884c0b09aaba7d8da8976f96bae68463b81d3e33.69e17f26dc467dcd1735.js" as="script"/><link rel="preload" href="/_next/static/chunks/755b54d753eea6c310ec0b9a05508d467366a08f.dd8ff6ba50741b700375.js" as="script"/><link rel="preload" href="/_next/static/chunks/6b20a07b2d70cfcb2a9bc7e0210d4109f26bcd0c.6ef66b02a65441044c74.js" as="script"/><link rel="preload" href="/_next/static/chunks/pages/articles/%5Bslug%5D-8dd97a7322e8b3511971.js" as="script"/></head><body dir="rtl" lang="fa"><div id="__next"><header class="header_container__2boq4"><h2></h2><nav class="header_navbar__3Tbm7"><a href="/">خانه</a><a href="/news">خبری</a><a href="/learning">آموزشی</a><a href="/about">درباره ما</a></nav><figure class="header_logo__ZHkcG"><img src="/images/logo.png" alt="linuxiha-logo"/></figure></header><div class="MuiPaper-root article_article__15ETi MuiPaper-elevation1 MuiPaper-rounded"><img src="/images/kloxo-logo.png" alt="نصب Kloxo در CentOS و ردهت"/><h1>نصب Kloxo در CentOS و ردهت</h1><div class="MuiCardHeader-root"><div class="MuiCardHeader-avatar"><div class="MuiAvatar-root MuiAvatar-circle article_avatar__2QXuX MuiAvatar-colorDefault" aria-label="article"><svg class="MuiSvgIcon-root MuiAvatar-fallback" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path></svg></div></div><div class="MuiCardHeader-content"><span class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock">۷ سال قبل - زمان خواندن ۵ دقیقه</span></div></div><section class="article_content__1mHP3"><p>مدیران سرورهای لینوکس غیر از انتخاب یک توزیع مناسب برای راه‌اندازی سرور خود، باید از یک کنترل پنل مناسب برای مدیریت بهتر سرور استفاده کنند. مخصوصا کسانی که نیاز به مدیریت دامنه‌های زیادی دارند، از راه دور سرور خود را مدیریت می‌کنند و اصلی‌ترین استفاده آن که برای مدیریت سرورهای مخصوص میزبانی وب است.</p>
+<p>و اما کدام کنترل پنل؟!</p>
+<p>شاید بتوان گفت که در حال حاضر بهترین کنترل پنل سرورهای لینوکس سی پنل (cpanel) است که امکانات لازم را با رابط کاربری مناسب و در محیطی امن در اختیار ما می‌گذارد و بعد از آن می‌توان از کنترل پنل DirectAdmin نام برد.</p>
+<p>اما کنترل‌پنل‌هایی که در بالا ذکر شد نیاز به پرداخت هزینه ماهانه تقریبا زیادی دارند که شاید برای افرادی به صرفه نباشد. مانند کسانی که نیاز به مدیریت گسترده ندارند و چند سایت یا چند سرویس مشخص را روی سرور خود دارند و یا امکان پرداخت هزینه را ندارند.</p>
+<p><img src="/images/Kloxo6.1.0-high.png" alt=""/></p>
+<p>در این پست قصد دارم کنترل پنل رایگان کلکسو (Kloxo) را به شما معرفی کنم که برای مدیریت سرور و مخصوصا میزبان‌های وب مناسب است. این کنترل پنل محصول LxCenter است که از دیگر محصولات آن HyperVM است که برای مدیریت سرورهای مجازی شده استفاده می‌شود.</p>
+<p>شاید بتوان گفت که کلکسو یکی از بهترین کنترل پنل‌های رایگان است که بسیار به کاربران پیشنهاد می‌شود و امکانات، رابط کاربری و امنیت نسبتا خوبی را دارد. کلکسو آمده است که یک کنترل پنل رایگان و مناسب را برای مدیریت میزبان وب شما در اختیارتان قرار دهد که این مساله در بیشتر کنترل پنل‌های رایگان وجود ندارد و امکانات کمی برای مدیریت میزبانی وب دارند و بیشتر می‌توانید چند سایت (مخصوص سرورهای شخصی) را مدیریت کنید.</p>
+<p>برای آشنایی با امکانات کلکسو می‌توانید دمو آن را از این آدرس مشاهده کنید. demo.kloxo.com:7778</p>
+<p>اکنون برویم سراغ آموزش نصب کلکسو. (منبع wiki.lxcenter.org/Kloxo+Installation+Guide)</p>
+<p><strong>پیش‌نیازها</strong></p>
+<ol>
+<li>سرور خصوصی یا مجازی با سیستم‌عامل CentOS حداکثر نسخه 5 و یا &gt;Red Hat EL. هنوز سنت-او-اس ۶ پشتیبانی نمی‌شود.</li>
+<li>حداقل ۲۵۶ مگابایت رم (برای اجرای Yum کافی باشد). [البته تجربه شخصی من نشان می‌دهد حداقل باید ۵۱۲ مگابایت رم داشته باشید و برای استفاده مناسب ۱ گیگ رم پیشنهاد می‌شود.]</li>
+<li>مقدار ۲ گیگ فضا دیسک برای نصب کلکسو و سرویس‌ها.</li>
+<li>اگر به صورت دستی دیسک خود را پارتیشن‌بندی کرده‌اید مطمئن شوید شاخه /tmp بزرگی دارید. کلکسو از این شاخه برای ذخیره بک‌آپ استفاده می‌کند و اگر فضا آن کافی نباشد این عمل درست انجام نمی‌شود.</li>
+</ol>
+<p><strong>قبل از شروع</strong></p>
+<p>شما باید SELinux را غیرفعال کنید. برای این کار باید فایل <code></code> را باز کرده و خط مشخص را به این صورت تغییر دهید selinux=disabled. این تغییر SELinux را از شروع بعدی سیستم بعد از ریبوت فعال نگه می‌دارد و فقط برای این است که در سیشن فعلی که ما قصد داریم کلکسو را نصب کنیم بتوانیم آن را غیرفعال کنیم.</p>
+<p>برای غیر فعال کردن SELinux در نشست جاری از دستورات زیر در خط فرمان استفاده کنید.</p>
+<pre><pre style="color:#f8f8f2;background:#282a36;text-shadow:0 1px rgba(0, 0, 0, 0.3);font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, &#x27;Ubuntu Mono&#x27;, monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:.5em 0;overflow:auto;border-radius:0.3em"><code class="language-sh" style="color:#f8f8f2;background:none;text-shadow:0 1px rgba(0, 0, 0, 0.3);font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, &#x27;Ubuntu Mono&#x27;, monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none"><span>su - rootsetenforce 0</span></code></pre></pre>
+<p>اگر مطمئن نیستید که این عمل درست انجام شده برای چک کردن وضعیت از دستور <em>/usr/sbin/sestatus</em> استفاده کنید.** عدم غیرفعال کردن صحیح SELinux باعث می‌شود نصب کلکسو بی‌فایده شود و راه‌اندازی مجدد سیستم‌عامل ممکن است نیاز به نصب درست دوباره آن داشته باشد.**</p>
+<p>همچنین مطمئن شوید که پورت‌های 7777/tcp و 7778/tcp در فایروال سرور شما باز هستند. اگر این پورت‌ها بسته باشند شما نمی‌توانید به صفحه وب کنترل پنل کلکسو بعد از نصب آن دسترسی داشته باشید.</p>
+<p><strong>نصب کلکسو</strong></p>
+<p>نصب کلکسو نیاز به دریافت فایل kloxo-installer.sh از download.lxcenter.org و اجرای آن توسط کاربر روت دارد. این اسکریپ در طول اجرا برای نصب کلکسو از شما چند سوال می‌پرسد و گذرواژه‌ای درخواست می‌کند (رمز روت را وارد کنید).</p>
+<pre><pre style="color:#f8f8f2;background:#282a36;text-shadow:0 1px rgba(0, 0, 0, 0.3);font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, &#x27;Ubuntu Mono&#x27;, monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:.5em 0;overflow:auto;border-radius:0.3em"><code class="language-sh" style="color:#f8f8f2;background:none;text-shadow:0 1px rgba(0, 0, 0, 0.3);font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, &#x27;Ubuntu Mono&#x27;, monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none"><span>su - rootyum install -y wgetwget http://download.lxcenter.org/download/kloxo/production/kloxo-installer.sh</span></code></pre></pre>
+<p>بعد از آن دستور زیر برای نصب به صورت مستر (تک سروری) وارد کنید.</p>
+<pre><pre style="color:#f8f8f2;background:#282a36;text-shadow:0 1px rgba(0, 0, 0, 0.3);font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, &#x27;Ubuntu Mono&#x27;, monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:.5em 0;overflow:auto;border-radius:0.3em"><code class="language-sh" style="color:#f8f8f2;background:none;text-shadow:0 1px rgba(0, 0, 0, 0.3);font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, &#x27;Ubuntu Mono&#x27;, monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none"><span>sh ./kloxo-installer.sh --type=master</span></code></pre></pre>
+<p>و اگر مستر نیستید از دستور زیر استفاده کنید.</p>
+<pre><pre style="color:#f8f8f2;background:#282a36;text-shadow:0 1px rgba(0, 0, 0, 0.3);font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, &#x27;Ubuntu Mono&#x27;, monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:.5em 0;overflow:auto;border-radius:0.3em"><code class="language-sh" style="color:#f8f8f2;background:none;text-shadow:0 1px rgba(0, 0, 0, 0.3);font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, &#x27;Ubuntu Mono&#x27;, monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none"><span>sh ./kloxo-installer.sh --type=slave</span></code></pre></pre>
+<p>اگر قبلا MySQL را روی سرور خود نصب کرده‌اید از دستورات زیر استفاده کنید.</p>
+<pre><pre style="color:#f8f8f2;background:#282a36;text-shadow:0 1px rgba(0, 0, 0, 0.3);font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, &#x27;Ubuntu Mono&#x27;, monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:.5em 0;overflow:auto;border-radius:0.3em"><code class="language-sh" style="color:#f8f8f2;background:none;text-shadow:0 1px rgba(0, 0, 0, 0.3);font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, &#x27;Ubuntu Mono&#x27;, monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none"><span>su - root
+</span>yum install -y wget
+<!-- -->wget http://download.lxcenter.org/download/kloxo/production/kloxo-installer.sh
+<!-- -->sh ./kloxo-installer.sh --type=&lt;master/slave&gt; --db-rootpassword=PASSWORD
+</code></pre></pre>
+<p>بعد از نصب کلکسو به آدرس http://YOUR_SERVER_IP:7778 متصل شوید (در مرورگر وارد کنید) و در صفحه ورود نام کاربری admin و پسورد پیش‌فرض که admin است را واد کنید. بعد از ورود کلکسو از شما می‌خواهد که برای امنیت بیشتر رمز پیش‌فرض را تغییر دهید.</p>
+<p><strong>بسته‌های نصب شده اولیه</strong></p>
+<ul>
+<li>
+<p>سرویس‌های وب Web Services</p>
+<ul>
+<li>آپاچی apache 2.x</li>
+<li>پی‌اچ‌پی php 5.2.x</li>
+<li>سرویس pure-ftpd برای مدیریت کاربران اف تی پی (ftp)</li>
+<li>سرویس awstats برای تحلیل آمار وب (بازیدها، ترافیک و ...)</li>
+</ul>
+</li>
+<li>
+<p>سرویس‌های پست الکترونیک Mail Services</p>
+<ul>
+<li>سرویس qmail-toaster</li>
+<li>سرویس courier-imap-toaster</li>
+<li>سرویس vpopmail</li>
+<li>برنامه‌های وب میل Roundcube (به صورت اجکس) و Horde برای مدیریت پست‌های الکترونیک</li>
+</ul>
+</li>
+<li>
+<p>سرویس‌های نام‌دامنه DNS Services</p>
+<ul>
+<li>سرویس bind برای پیاده سازی پروتکل DNS</li>
+<li>سرویس bind-chroot برای BIND امن</li>
+</ul>
+</li>
+<li>
+<p>سرویس دیتابیس Database Service</p>
+<ul>
+<li>برنامه mysql-server برای ساخت و مدیریت دیتابیس‌ها</li>
+</ul>
+</li>
+<li>
+<p>شما می‌توانید بعد از نصب بین سرویس‌ها سوییچ کنید و یکی را انتخاب کنید. مانند؛  Apache/Lighttpd، BIND/djbdns، spamassassin/bogofilter و ... .</p>
+</li>
+</ul>
+<p><strong>عیب‌یابی</strong></p>
+<p>اگر بعد از نصب نتوانستید به کنترل پنل کلکسو متصل شوید، مطمئن شوید که فایروال سرور پورت‌های ذکر شده را نبسته باشد. اگر این پورت‌ها بسته بود می‌توانید فایروال را با دستور /etc/init.d/iptables stop غیرفعال کنید و با انجام آن شاید بخواهید اسکریپ فایروالی برای کاربران خود بسازید تا امنیت خود را حفظ کنید. برای این کار می‌توانید از آموزش آخر مطلب استفاده کنید.</p>
+<p>با همه این موارد اگر نتوانستید به پنل دسترسی داشته باشید و یا هر مشکل دیگری داشتید می‌توانید در انجمن کلکسو با آدرس forum.lxcenter.org مطرح کنید تا پاسخ بگیرید (محتوای فایل /root/kloxo-install/kloxo-linux/kloxo_install.log را برای راهنمایی بهتر به سوال خود پیوست کنید).</p>
+<p><strong>ملاحظات نهایی</strong></p>
+<p>ط</p>
+<p><strong>ساخت اسکریپ فایروال برای کاربران خود - چگونه کلکسو را با جدول آی‌پی ایمن کنیم</strong></p>
+<p>ط</p></section><div class="progress_root__2VpcX"><div class="MuiLinearProgress-root MuiLinearProgress-colorPrimary MuiLinearProgress-determinate" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"><div class="MuiLinearProgress-bar MuiLinearProgress-barColorPrimary MuiLinearProgress-bar1Determinate" style="transform:translateX(100%)"></div></div></div></div><nav id="navbar" class="menu_menu-container__3W1os"><a class="menu_menu-item__2FGZV" href="/"><img src="/icons/home.png" alt="home"/> <span>خانه</span> <aside></aside></a><a class="menu_menu-item__2FGZV" href="/news"><img src="/icons/news.png" alt="news"/> <span>خبری</span> <aside></aside></a><a class="menu_menu-item__2FGZV" href="/learning"><img src="/icons/article.png" alt="article"/> <span>آموزشی</span> <aside></aside></a><a class="menu_menu-item__2FGZV" href="/about"><img src="/icons/info.png" alt="info"/> <span>درباره ما</span> <aside></aside></a></nav></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"page":{"slug":"2013-11-29_kloxo-redhat-centos","layout":"post","jdate":"Fri Nov 29 2013 00:00:00 GMT+0000","title":"نصب Kloxo در CentOS و ردهت","categories":["آموزشی"],"tags":["ردهت","centos","سرور"],"featured":"kloxo-logo.png","keywords":["kloxo","کنترل پنل کلکسو"],"description":"آموزش نصب Kloxo در CentOS و ردهت","timeToRead":5,"content":"\nمدیران سرورهای لینوکس غیر از انتخاب یک توزیع مناسب برای راه‌اندازی سرور خود، باید از یک کنترل پنل مناسب برای مدیریت بهتر سرور استفاده کنند. مخصوصا کسانی که نیاز به مدیریت دامنه‌های زیادی دارند، از راه دور سرور خود را مدیریت می‌کنند و اصلی‌ترین استفاده آن که برای مدیریت سرورهای مخصوص میزبانی وب است.\n\nو اما کدام کنترل پنل؟!\n\nشاید بتوان گفت که در حال حاضر بهترین کنترل پنل سرورهای لینوکس سی پنل (cpanel) است که امکانات لازم را با رابط کاربری مناسب و در محیطی امن در اختیار ما می‌گذارد و بعد از آن می‌توان از کنترل پنل DirectAdmin نام برد.\n\nاما کنترل‌پنل‌هایی که در بالا ذکر شد نیاز به پرداخت هزینه ماهانه تقریبا زیادی دارند که شاید برای افرادی به صرفه نباشد. مانند کسانی که نیاز به مدیریت گسترده ندارند و چند سایت یا چند سرویس مشخص را روی سرور خود دارند و یا امکان پرداخت هزینه را ندارند.\n\n![](/images/Kloxo6.1.0-high.png)\n\nدر این پست قصد دارم کنترل پنل رایگان کلکسو (Kloxo) را به شما معرفی کنم که برای مدیریت سرور و مخصوصا میزبان‌های وب مناسب است. این کنترل پنل محصول LxCenter است که از دیگر محصولات آن HyperVM است که برای مدیریت سرورهای مجازی شده استفاده می‌شود.\n\nشاید بتوان گفت که کلکسو یکی از بهترین کنترل پنل‌های رایگان است که بسیار به کاربران پیشنهاد می‌شود و امکانات، رابط کاربری و امنیت نسبتا خوبی را دارد. کلکسو آمده است که یک کنترل پنل رایگان و مناسب را برای مدیریت میزبان وب شما در اختیارتان قرار دهد که این مساله در بیشتر کنترل پنل‌های رایگان وجود ندارد و امکانات کمی برای مدیریت میزبانی وب دارند و بیشتر می‌توانید چند سایت (مخصوص سرورهای شخصی) را مدیریت کنید.\n\nبرای آشنایی با امکانات کلکسو می‌توانید دمو آن را از این آدرس مشاهده کنید. demo.kloxo.com:7778\n\nاکنون برویم سراغ آموزش نصب کلکسو. (منبع wiki.lxcenter.org/Kloxo+Installation+Guide)\n\n**پیش‌نیازها**\n\n1.  سرور خصوصی یا مجازی با سیستم‌عامل CentOS حداکثر نسخه 5 و یا \u003eRed Hat EL. هنوز سنت-او-اس ۶ پشتیبانی نمی‌شود.\n2.  حداقل ۲۵۶ مگابایت رم (برای اجرای Yum کافی باشد). [البته تجربه شخصی من نشان می‌دهد حداقل باید ۵۱۲ مگابایت رم داشته باشید و برای استفاده مناسب ۱ گیگ رم پیشنهاد می‌شود.]\n3.  مقدار ۲ گیگ فضا دیسک برای نصب کلکسو و سرویس‌ها.\n4.  اگر به صورت دستی دیسک خود را پارتیشن‌بندی کرده‌اید مطمئن شوید شاخه /tmp بزرگی دارید. کلکسو از این شاخه برای ذخیره بک‌آپ استفاده می‌کند و اگر فضا آن کافی نباشد این عمل درست انجام نمی‌شود.\n\n**قبل از شروع**\n\nشما باید SELinux را غیرفعال کنید. برای این کار باید فایل `/etc/sysconfig/selinux` را باز کرده و خط مشخص را به این صورت تغییر دهید selinux=disabled. این تغییر SELinux را از شروع بعدی سیستم بعد از ریبوت فعال نگه می‌دارد و فقط برای این است که در سیشن فعلی که ما قصد داریم کلکسو را نصب کنیم بتوانیم آن را غیرفعال کنیم.\n\nبرای غیر فعال کردن SELinux در نشست جاری از دستورات زیر در خط فرمان استفاده کنید.\n\n```sh\nsu - rootsetenforce 0\n```\n\nاگر مطمئن نیستید که این عمل درست انجام شده برای چک کردن وضعیت از دستور _/usr/sbin/sestatus_ استفاده کنید.** عدم غیرفعال کردن صحیح SELinux باعث می‌شود نصب کلکسو بی‌فایده شود و راه‌اندازی مجدد سیستم‌عامل ممکن است نیاز به نصب درست دوباره آن داشته باشد.**\n\nهمچنین مطمئن شوید که پورت‌های 7777/tcp و 7778/tcp در فایروال سرور شما باز هستند. اگر این پورت‌ها بسته باشند شما نمی‌توانید به صفحه وب کنترل پنل کلکسو بعد از نصب آن دسترسی داشته باشید.\n\n**نصب کلکسو**\n\nنصب کلکسو نیاز به دریافت فایل kloxo-installer.sh از download.lxcenter.org و اجرای آن توسط کاربر روت دارد. این اسکریپ در طول اجرا برای نصب کلکسو از شما چند سوال می‌پرسد و گذرواژه‌ای درخواست می‌کند (رمز روت را وارد کنید).\n\n```sh\nsu - rootyum install -y wgetwget http://download.lxcenter.org/download/kloxo/production/kloxo-installer.sh\n```\n\nبعد از آن دستور زیر برای نصب به صورت مستر (تک سروری) وارد کنید.\n\n```sh\nsh ./kloxo-installer.sh --type=master\n```\n\nو اگر مستر نیستید از دستور زیر استفاده کنید.\n\n```sh\nsh ./kloxo-installer.sh --type=slave\n```\n\nاگر قبلا MySQL را روی سرور خود نصب کرده‌اید از دستورات زیر استفاده کنید.\n\n```sh\nsu - root\nyum install -y wget\nwget http://download.lxcenter.org/download/kloxo/production/kloxo-installer.sh\nsh ./kloxo-installer.sh --type=\u003cmaster/slave\u003e --db-rootpassword=PASSWORD\n```\n\nبعد از نصب کلکسو به آدرس http://YOUR_SERVER_IP:7778 متصل شوید (در مرورگر وارد کنید) و در صفحه ورود نام کاربری admin و پسورد پیش‌فرض که admin است را واد کنید. بعد از ورود کلکسو از شما می‌خواهد که برای امنیت بیشتر رمز پیش‌فرض را تغییر دهید.\n\n**بسته‌های نصب شده اولیه**\n\n*   سرویس‌های وب Web Services\n    *   آپاچی apache 2.x\n    *   پی‌اچ‌پی php 5.2.x\n    *   سرویس pure-ftpd برای مدیریت کاربران اف تی پی (ftp)\n    *   سرویس awstats برای تحلیل آمار وب (بازیدها، ترافیک و ...)\n\n*   سرویس‌های پست الکترونیک Mail Services\n    *   سرویس qmail-toaster\n    *   سرویس courier-imap-toaster\n    *   سرویس vpopmail\n    *   برنامه‌های وب میل Roundcube (به صورت اجکس) و Horde برای مدیریت پست‌های الکترونیک\n\n*   سرویس‌های نام‌دامنه DNS Services\n    *   سرویس bind برای پیاده سازی پروتکل DNS\n    *   سرویس bind-chroot برای BIND امن\n*   سرویس دیتابیس Database Service\n    *   برنامه mysql-server برای ساخت و مدیریت دیتابیس‌ها\n\n* شما می‌توانید بعد از نصب بین سرویس‌ها سوییچ کنید و یکی را انتخاب کنید. مانند؛  Apache/Lighttpd، BIND/djbdns، spamassassin/bogofilter و ... .\n\n**عیب‌یابی**\n\nاگر بعد از نصب نتوانستید به کنترل پنل کلکسو متصل شوید، مطمئن شوید که فایروال سرور پورت‌های ذکر شده را نبسته باشد. اگر این پورت‌ها بسته بود می‌توانید فایروال را با دستور /etc/init.d/iptables stop غیرفعال کنید و با انجام آن شاید بخواهید اسکریپ فایروالی برای کاربران خود بسازید تا امنیت خود را حفظ کنید. برای این کار می‌توانید از آموزش آخر مطلب استفاده کنید.\n\nبا همه این موارد اگر نتوانستید به پنل دسترسی داشته باشید و یا هر مشکل دیگری داشتید می‌توانید در انجمن کلکسو با آدرس forum.lxcenter.org مطرح کنید تا پاسخ بگیرید (محتوای فایل /root/kloxo-install/kloxo-linux/kloxo_install.log را برای راهنمایی بهتر به سوال خود پیوست کنید).\n\n**ملاحظات نهایی**\n\nط\n\n**ساخت اسکریپ فایروال برای کاربران خود - چگونه کلکسو را با جدول آی‌پی ایمن کنیم**\n\nط"}},"__N_SSG":true},"page":"/articles/[slug]","query":{"slug":"2013-11-29_kloxo-redhat-centos"},"buildId":"igqXl2OPJ05s2tPs4MQMK","isFallback":false,"gsp":true}</script><script nomodule="" src="/_next/static/chunks/polyfills-e893e522365b6e0e5fa4.js"></script><script src="/_next/static/chunks/webpack-50bee04d1dc61f8adf5b.js" async=""></script><script src="/_next/static/chunks/framework.f8bd46fc02868c500bda.js" async=""></script><script src="/_next/static/chunks/dccdaae97238514e0e59f68ff40a3150f2d60869.fd7c33e9ae3c66b740c3.js" async=""></script><script src="/_next/static/chunks/main-3c19994afb449613f52a.js" async=""></script><script src="/_next/static/chunks/c18007ee4e366b206423f37b43f40d4861448257.6ad75590f65d0a64ea61.js" async=""></script><script src="/_next/static/chunks/9f32a1895f4aacf1ea63ff9f71a540b7eb71f721.c3d97f18e04e41235ad9.js" async=""></script><script src="/_next/static/chunks/pages/_app-5e768503c47f0f474cf1.js" async=""></script><script src="/_next/static/chunks/884c0b09aaba7d8da8976f96bae68463b81d3e33.69e17f26dc467dcd1735.js" async=""></script><script src="/_next/static/chunks/755b54d753eea6c310ec0b9a05508d467366a08f.dd8ff6ba50741b700375.js" async=""></script><script src="/_next/static/chunks/6b20a07b2d70cfcb2a9bc7e0210d4109f26bcd0c.6ef66b02a65441044c74.js" async=""></script><script src="/_next/static/chunks/pages/articles/%5Bslug%5D-8dd97a7322e8b3511971.js" async=""></script><script src="/_next/static/igqXl2OPJ05s2tPs4MQMK/_buildManifest.js" async=""></script><script src="/_next/static/igqXl2OPJ05s2tPs4MQMK/_ssgManifest.js" async=""></script></body></html>

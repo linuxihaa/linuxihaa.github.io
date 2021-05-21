@@ -1,0 +1,132 @@
+<!DOCTYPE html><html lang="fa"><head><link rel="manifest" href="/manifest.json"/><link rel="apple-touch-icon" href="/icon-512x512.png"/><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/><link href="//db.onlinewebfonts.com/c/14b4bf4df4455e6a1277f2b2584dadd6?family=BBCNassim" rel="stylesheet" type="text/css"/><meta name="msapplication-TileColor" content="#ce1919"/><meta name="theme-color" content="#ce1919"/><meta charSet="utf-8"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:site" content="@site"/><meta name="twitter:creator" content="@handle"/><meta property="og:type" content="website"/><meta property="og:locale" content="fa_IR"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>تبدیل بسته deb به rpm</title><meta name="robots" content="index,follow"/><meta name="googlebot" content="index,follow"/><meta name="description" content="آموزش تبدیل بسته deb به rpm"/><meta property="og:url" content="/articles/[slug]"/><meta property="og:title" content="تبدیل بسته deb به rpm"/><meta property="og:description" content="آموزش تبدیل بسته deb به rpm"/><meta property="og:image" content="https://linuxiha.com/images/packages.png"/><meta property="og:image:alt" content="تبدیل بسته deb به rpm"/><meta property="og:image:width" content="800"/><meta property="og:image:height" content="600"/><meta property="og:site_name" content="Linuxiha"/><script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://linuxiha.com/articles/2013-12-20_rpmtodeb"
+    },
+    "headline": "تبدیل بسته deb به rpm",
+    "image": [
+      "https://linuxiha.com/images/packages.png"
+     ],
+    "datePublished": "Fri Dec 20 2013 00:00:00 GMT+0000",
+    "dateModified": "Fri Dec 20 2013 00:00:00 GMT+0000",
+    "author": {"@type": "Person","name": "میثم ساکی"},
+    "publisher": {
+      "@type": "Organization",
+      "name": "Linuxiha",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://linuxiha.com/images/logo.png"
+      }
+    },
+    "description": "آموزش تبدیل بسته deb به rpm"
+  }</script><script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https://linuxiha.com",
+          "name": "لینوکسی ها"
+        }
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@id": "/learning",
+          "name": "آموزشی"
+        }
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https://linuxiha.com/articles/2013-12-20_rpmtodeb",
+          "name": "تبدیل بسته deb به rpm"
+        }
+      }
+     ]
+  }</script><meta name="next-head-count" content="21"/><link rel="preload" href="/_next/static/css/be235685d546691402be.css" as="style"/><link rel="stylesheet" href="/_next/static/css/be235685d546691402be.css" data-n-g=""/><link rel="preload" href="/_next/static/css/d4b1ad855d90d489a111.css" as="style"/><link rel="stylesheet" href="/_next/static/css/d4b1ad855d90d489a111.css" data-n-p=""/><noscript data-n-css=""></noscript><link rel="preload" href="/_next/static/chunks/webpack-50bee04d1dc61f8adf5b.js" as="script"/><link rel="preload" href="/_next/static/chunks/framework.f8bd46fc02868c500bda.js" as="script"/><link rel="preload" href="/_next/static/chunks/dccdaae97238514e0e59f68ff40a3150f2d60869.fd7c33e9ae3c66b740c3.js" as="script"/><link rel="preload" href="/_next/static/chunks/main-3c19994afb449613f52a.js" as="script"/><link rel="preload" href="/_next/static/chunks/c18007ee4e366b206423f37b43f40d4861448257.6ad75590f65d0a64ea61.js" as="script"/><link rel="preload" href="/_next/static/chunks/9f32a1895f4aacf1ea63ff9f71a540b7eb71f721.c3d97f18e04e41235ad9.js" as="script"/><link rel="preload" href="/_next/static/chunks/pages/_app-5e768503c47f0f474cf1.js" as="script"/><link rel="preload" href="/_next/static/chunks/884c0b09aaba7d8da8976f96bae68463b81d3e33.69e17f26dc467dcd1735.js" as="script"/><link rel="preload" href="/_next/static/chunks/755b54d753eea6c310ec0b9a05508d467366a08f.dd8ff6ba50741b700375.js" as="script"/><link rel="preload" href="/_next/static/chunks/6b20a07b2d70cfcb2a9bc7e0210d4109f26bcd0c.6ef66b02a65441044c74.js" as="script"/><link rel="preload" href="/_next/static/chunks/pages/articles/%5Bslug%5D-8dd97a7322e8b3511971.js" as="script"/></head><body dir="rtl" lang="fa"><div id="__next"><header class="header_container__2boq4"><h2></h2><nav class="header_navbar__3Tbm7"><a href="/">خانه</a><a href="/news">خبری</a><a href="/learning">آموزشی</a><a href="/about">درباره ما</a></nav><figure class="header_logo__ZHkcG"><img src="/images/logo.png" alt="linuxiha-logo"/></figure></header><div class="MuiPaper-root article_article__15ETi MuiPaper-elevation1 MuiPaper-rounded"><img src="/images/packages.png" alt="تبدیل بسته deb به rpm"/><h1>تبدیل بسته deb به rpm</h1><div class="MuiCardHeader-root"><div class="MuiCardHeader-avatar"><div class="MuiAvatar-root MuiAvatar-circle article_avatar__2QXuX" aria-label="article"><img alt="میثم ساکی" src="authors/user.png" class="MuiAvatar-img"/></div></div><div class="MuiCardHeader-content"><span class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock">میثم ساکی</span><span class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock">۷ سال قبل - زمان خواندن ۵ دقیقه</span></div></div><section class="article_content__1mHP3"><p>بسیار پیش آمده است که بخواهید بسته‌های مختلف لینوکس را به هم تبدیل کنید. بسته دبیانی با پسوند deb داشته‌اید و اکنون می‌خواهید در توزیعی که از بسته‌های ردهت با پسوند rmp پشتیبانی می‌کند استفاده کنید و یا بالعکس.</p>
+<p>امروز قصد دارم برنامه‌ای معرفی کنم که این تبدیلات را به راحتی برای شما ممکن می‌سازد با پشتبانی از تبدیل بسته‌های deb، rpm، lsb، tgz و دیگر بسته‌های توزیع‌های لینوکس به هم و یک سری امکانات دیگر.</p>
+<p>قبل از هر چیز بهتر است بدانید که برنامه‌های یونیکس همگی از کدهای ماشین یکسانی بهره می‌برند و از این جهت قابل اجرا در هر توزیعی هستند اما هر توزیع از سیستم بسته‌بندی متفاوتی استفاده می‌کند و همچنین منابع متفاوتی دارد؛ از این جهت بسته‌ها در هر توزیعی قابل نصب نیستند و باید آن‌ها را به فرم بسته‌های آن توزیع تبدیل کرد و یا حتی اگر از منابع خاصی استفاده می‌کنند که در یک توزیع وجود ندارد برای اجرای آن با مشکل بر خواهید خورد.</p>
+<h3>برنامه alien برای تبدیل بسته های لینوکس</h3>
+<p>ابتدا توسط دستور زیر در ترمینال این بسته را نصب کنید. این بسته در منابع توزیع شما موجود است.</p>
+<ul>
+<li>نصب برای دبیان، ابونتو، مینت و ...</li>
+</ul>
+<pre><pre style="color:#f8f8f2;background:#282a36;text-shadow:0 1px rgba(0, 0, 0, 0.3);font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, &#x27;Ubuntu Mono&#x27;, monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:.5em 0;overflow:auto;border-radius:0.3em"><code class="language-sh" style="color:#f8f8f2;background:none;text-shadow:0 1px rgba(0, 0, 0, 0.3);font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, &#x27;Ubuntu Mono&#x27;, monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none"><span>sudo apt-get install alien</span></code></pre></pre>
+<ul>
+<li>نصب برای فدورا، سنت-او-اس و ...</li>
+</ul>
+<pre><pre style="color:#f8f8f2;background:#282a36;text-shadow:0 1px rgba(0, 0, 0, 0.3);font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, &#x27;Ubuntu Mono&#x27;, monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:.5em 0;overflow:auto;border-radius:0.3em"><code class="language-sh" style="color:#f8f8f2;background:none;text-shadow:0 1px rgba(0, 0, 0, 0.3);font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, &#x27;Ubuntu Mono&#x27;, monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none"><span>yum install alien</span></code></pre></pre>
+<p>اکنون دستور زیر را وارد کرده تا راهنمای استفاده از این برنامه را مشاهده کنید.</p>
+<pre><pre style="color:#f8f8f2;background:#282a36;text-shadow:0 1px rgba(0, 0, 0, 0.3);font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, &#x27;Ubuntu Mono&#x27;, monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:.5em 0;overflow:auto;border-radius:0.3em"><code class="language-sh" style="color:#f8f8f2;background:none;text-shadow:0 1px rgba(0, 0, 0, 0.3);font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, &#x27;Ubuntu Mono&#x27;, monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none"><span>alien -h
+</span>Usage: alien [options] file [...]
+<!-- -->  file [...]                Package file or files to convert.
+<!-- -->  -d, --to-deb              Generate a Debian deb package (default).
+<!-- -->     Enables these options:
+<!-- -->       --patch=      Specify patch file to use instead of automatically
+<!-- -->                            looking for patch in /var/lib/alien.
+<!-- -->       --nopatch	    Do not use patches.
+<!-- -->       --anypatch           Use even old version os patches.
+<!-- -->       -s, --single         Like --generate, but do not create .orig
+<!-- -->                            directory.
+<!-- -->       --fixperms           Munge/fix permissions and owners.
+<!-- -->       --test               Test generated packages with lintian.
+<!-- -->  -r, --to-rpm              Generate a Red Hat rpm package.
+<!-- -->      --to-slp              Generate a Stampede slp package.
+<!-- -->  -l, --to-lsb              Generate a LSB package.
+<!-- -->  -t, --to-tgz              Generate a Slackware tgz package.
+<!-- -->     Enables these options:
+<!-- -->       --description= Specify package description.
+<!-- -->       --version=  Specify package version.
+<!-- -->  -p, --to-pkg              Generate a Solaris pkg package.
+<!-- -->  -i, --install             Install generated package.
+<!-- -->  -g, --generate            Generate build tree, but do not build package.
+<!-- -->  -c, --scripts             Include scripts in package.
+<!-- -->  -v, --verbose             Display each command alien runs.
+<!-- -->      --veryverbose         Be verbose, and also display output of run commands.
+<!-- -->  -k, --keep-version        Do not change version of generated package.
+<!-- -->      --bump=number         Increment package version by this number.
+<!-- -->  -h, --help                Display this help message.
+<!-- -->  -V, --version		    Display alien&#x27;s version number.
+</code></pre></pre>
+<p>در اینجا من ترجمه‌ای از این راهنما را قرار داده‌ام.</p>
+<blockquote>
+<p>طریقه استفاده: alien [گزینه‌ها] file [...]<br/>
+<!-- -->file [...] توضیح داده که فایل یعنی فایل بسته یا فایل‌های مورد نظر برای تبدیل کردن<br/>
+<!-- -->-d, --to-deb سوییچ‌های مورد نظر برای تبدیل کردن به بسته‌های دبیان (به صورت پیش‌فرض از همین استفاده می‌شود)<br/>
+<!-- -->گزینه‌های قابل استفاده:<br/>
+<!-- -->--patch= فایل پچ مخصوصی که می‌خواهید از آن کنار تبدیل استفاده کنید<br/>
+<!-- -->نگاهی به پچ‌ها در این مسیر بیندازید /var/lib/alien.<br/>
+<!-- -->--nopatch از هیچ پچی استفاده نکردن<br/>
+<!-- -->--anypatch زمانی از این سوییچ استفاده کنید که پچ‌های سیستم‌عامل قدیمی است<br/>
+<!-- -->-s, --single مانند سوییچ جنریت است اما .او-ار-آی-جی نمی‌سازد<br/>
+<!-- -->directory.<br/>
+<!-- -->--fixperms درست کردن اجازه‌ها و مالک<br/>
+<!-- -->--test آزمایش ساخت بسته‌ها<br/>
+<!-- -->-r, --to-rpm تبدیل به آر-پی‌-ام. بسته‌های ردهت<br/>
+<!-- -->--to-slp تبدیل به بسته‌های استمپید به پسوند اس-ال-پی<br/>
+<!-- -->-l, --to-lsb تبدیل به بسته‌های ال-اس-بی<br/>
+<!-- -->-t, --to-tgz تبدیل به بسته‌های اسلک ور به پسوند تی-جی-زد<br/>
+<!-- -->گزینه‌های قابل استفاده:<br/>
+<!-- -->--description= مشخص کردن توضیحات بسته<br/>
+<!-- -->--version= مشخص کردن نسخه بسته<br/>
+<!-- -->-p, --to-pkg تبدیل به بسته‌های سولاریز با پسوند پی-کی-جی<br/>
+<!-- -->-i, --install نصب بسته تولید شده<br/>
+<!-- -->-g, --generate ساخت درخت تولید. اما بسته را تولید نمی‌کند<br/>
+<!-- -->-c, --scripts اسکریپ‌های پکیج را هم برای تبدیل شامل کن<br/>
+<!-- -->-v, --verbose نمایش هر دستوری که برنامه تبدیل‌گر الین انجام می‌دهد<br/>
+<!-- -->--veryverbose طولانی دستور بالا است و خروجی دستورات را نیز نمایش می‌دهد<br/>
+<!-- -->-k, --keep-version نسخه بسته را تغییر نده<br/>
+<!-- -->--bump=number نسخه بسته را به شماره مذکور تغییر بده<br/>
+<!-- -->-h, --help نمایش راهنمای برنامه<br/>
+<!-- -->-V, --version نمایش نسخه برنامه</p>
+</blockquote>
+<p>مثلا می‌خواهید یک بسته آر پی ام را به دبیان تبدیل کنید:</p>
+<pre><pre style="color:#f8f8f2;background:#282a36;text-shadow:0 1px rgba(0, 0, 0, 0.3);font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, &#x27;Ubuntu Mono&#x27;, monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:.5em 0;overflow:auto;border-radius:0.3em"><code class="language-sh" style="color:#f8f8f2;background:none;text-shadow:0 1px rgba(0, 0, 0, 0.3);font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, &#x27;Ubuntu Mono&#x27;, monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none"><span>sudo alien -r debian-package.debredhat_package_manager-package.rpm generated</span></code></pre></pre>
+<p>یا تبدیل یک بسته دبیان به آر-پی-ام</p>
+<pre><pre style="color:#f8f8f2;background:#282a36;text-shadow:0 1px rgba(0, 0, 0, 0.3);font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, &#x27;Ubuntu Mono&#x27;, monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:.5em 0;overflow:auto;border-radius:0.3em"><code class="language-sh" style="color:#f8f8f2;background:none;text-shadow:0 1px rgba(0, 0, 0, 0.3);font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, &#x27;Ubuntu Mono&#x27;, monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none"><span>alien redhat_package_manager-package.rpmdebian-package.deb generated</span></code></pre></pre>
+<p>با توجه به بسته مورد نظر باید از سوییچ‌های مناسب استفاده کنید.</p></section><div class="progress_root__2VpcX"><div class="MuiLinearProgress-root MuiLinearProgress-colorPrimary MuiLinearProgress-determinate" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"><div class="MuiLinearProgress-bar MuiLinearProgress-barColorPrimary MuiLinearProgress-bar1Determinate" style="transform:translateX(100%)"></div></div></div></div><nav id="navbar" class="menu_menu-container__3W1os"><a class="menu_menu-item__2FGZV" href="/"><img src="/icons/home.png" alt="home"/> <span>خانه</span> <aside></aside></a><a class="menu_menu-item__2FGZV" href="/news"><img src="/icons/news.png" alt="news"/> <span>خبری</span> <aside></aside></a><a class="menu_menu-item__2FGZV" href="/learning"><img src="/icons/article.png" alt="article"/> <span>آموزشی</span> <aside></aside></a><a class="menu_menu-item__2FGZV" href="/about"><img src="/icons/info.png" alt="info"/> <span>درباره ما</span> <aside></aside></a></nav></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"page":{"slug":"2013-12-20_rpmtodeb","layout":"post","jdate":"Fri Dec 20 2013 00:00:00 GMT+0000","user":"misam","title":"تبدیل بسته deb به rpm","categories":["آموزشی"],"tags":["اوبونتو","دبیان","ردهت","فدورا"],"featured":"packages.png","keywords":["alien","تبدیل بسته لینوکس"],"description":"آموزش تبدیل بسته deb به rpm","timeToRead":5,"content":"\nبسیار پیش آمده است که بخواهید بسته‌های مختلف لینوکس را به هم تبدیل کنید. بسته دبیانی با پسوند deb داشته‌اید و اکنون می‌خواهید در توزیعی که از بسته‌های ردهت با پسوند rmp پشتیبانی می‌کند استفاده کنید و یا بالعکس.\n\nامروز قصد دارم برنامه‌ای معرفی کنم که این تبدیلات را به راحتی برای شما ممکن می‌سازد با پشتبانی از تبدیل بسته‌های deb، rpm، lsb، tgz و دیگر بسته‌های توزیع‌های لینوکس به هم و یک سری امکانات دیگر.\n\nقبل از هر چیز بهتر است بدانید که برنامه‌های یونیکس همگی از کدهای ماشین یکسانی بهره می‌برند و از این جهت قابل اجرا در هر توزیعی هستند اما هر توزیع از سیستم بسته‌بندی متفاوتی استفاده می‌کند و همچنین منابع متفاوتی دارد؛ از این جهت بسته‌ها در هر توزیعی قابل نصب نیستند و باید آن‌ها را به فرم بسته‌های آن توزیع تبدیل کرد و یا حتی اگر از منابع خاصی استفاده می‌کنند که در یک توزیع وجود ندارد برای اجرای آن با مشکل بر خواهید خورد.\n\n### برنامه alien برای تبدیل بسته های لینوکس\n\nابتدا توسط دستور زیر در ترمینال این بسته را نصب کنید. این بسته در منابع توزیع شما موجود است.\n\n- نصب برای دبیان، ابونتو، مینت و ...\n\n```sh\nsudo apt-get install alien\n```\n\n- نصب برای فدورا، سنت-او-اس و ...\n\n```sh\nyum install alien\n```\n\nاکنون دستور زیر را وارد کرده تا راهنمای استفاده از این برنامه را مشاهده کنید.\n\n```sh\nalien -h\nUsage: alien [options] file [...]\n  file [...]                Package file or files to convert.\n  -d, --to-deb              Generate a Debian deb package (default).\n     Enables these options:\n       --patch=      Specify patch file to use instead of automatically\n                            looking for patch in /var/lib/alien.\n       --nopatch\t    Do not use patches.\n       --anypatch           Use even old version os patches.\n       -s, --single         Like --generate, but do not create .orig\n                            directory.\n       --fixperms           Munge/fix permissions and owners.\n       --test               Test generated packages with lintian.\n  -r, --to-rpm              Generate a Red Hat rpm package.\n      --to-slp              Generate a Stampede slp package.\n  -l, --to-lsb              Generate a LSB package.\n  -t, --to-tgz              Generate a Slackware tgz package.\n     Enables these options:\n       --description= Specify package description.\n       --version=  Specify package version.\n  -p, --to-pkg              Generate a Solaris pkg package.\n  -i, --install             Install generated package.\n  -g, --generate            Generate build tree, but do not build package.\n  -c, --scripts             Include scripts in package.\n  -v, --verbose             Display each command alien runs.\n      --veryverbose         Be verbose, and also display output of run commands.\n  -k, --keep-version        Do not change version of generated package.\n      --bump=number         Increment package version by this number.\n  -h, --help                Display this help message.\n  -V, --version\t\t    Display alien's version number.\n```\n\nدر اینجا من ترجمه‌ای از این راهنما را قرار داده‌ام.\n\n\u003e طریقه استفاده: alien [گزینه‌ها] file [...]  \n\u003e file [...] توضیح داده که فایل یعنی فایل بسته یا فایل‌های مورد نظر برای تبدیل کردن  \n\u003e -d, --to-deb سوییچ‌های مورد نظر برای تبدیل کردن به بسته‌های دبیان (به صورت پیش‌فرض از همین استفاده می‌شود)  \n\u003e گزینه‌های قابل استفاده:  \n\u003e --patch= فایل پچ مخصوصی که می‌خواهید از آن کنار تبدیل استفاده کنید  \n\u003e نگاهی به پچ‌ها در این مسیر بیندازید /var/lib/alien.  \n\u003e --nopatch از هیچ پچی استفاده نکردن  \n\u003e --anypatch زمانی از این سوییچ استفاده کنید که پچ‌های سیستم‌عامل قدیمی است  \n\u003e -s, --single مانند سوییچ جنریت است اما .او-ار-آی-جی نمی‌سازد  \n\u003e directory.  \n\u003e --fixperms درست کردن اجازه‌ها و مالک  \n\u003e --test آزمایش ساخت بسته‌ها  \n\u003e -r, --to-rpm تبدیل به آر-پی‌-ام. بسته‌های ردهت  \n\u003e --to-slp تبدیل به بسته‌های استمپید به پسوند اس-ال-پی  \n\u003e -l, --to-lsb تبدیل به بسته‌های ال-اس-بی  \n\u003e -t, --to-tgz تبدیل به بسته‌های اسلک ور به پسوند تی-جی-زد  \n\u003e گزینه‌های قابل استفاده:  \n\u003e --description= مشخص کردن توضیحات بسته  \n\u003e --version= مشخص کردن نسخه بسته  \n\u003e -p, --to-pkg تبدیل به بسته‌های سولاریز با پسوند پی-کی-جی  \n\u003e -i, --install نصب بسته تولید شده  \n\u003e -g, --generate ساخت درخت تولید. اما بسته را تولید نمی‌کند  \n\u003e -c, --scripts اسکریپ‌های پکیج را هم برای تبدیل شامل کن  \n\u003e -v, --verbose نمایش هر دستوری که برنامه تبدیل‌گر الین انجام می‌دهد  \n\u003e --veryverbose طولانی دستور بالا است و خروجی دستورات را نیز نمایش می‌دهد  \n\u003e -k, --keep-version نسخه بسته را تغییر نده  \n\u003e --bump=number نسخه بسته را به شماره مذکور تغییر بده  \n\u003e -h, --help نمایش راهنمای برنامه  \n\u003e -V, --version نمایش نسخه برنامه\n\nمثلا می‌خواهید یک بسته آر پی ام را به دبیان تبدیل کنید:\n\n```sh\nsudo alien -r debian-package.debredhat_package_manager-package.rpm generated\n```\n\nیا تبدیل یک بسته دبیان به آر-پی-ام\n\n```sh\nalien redhat_package_manager-package.rpmdebian-package.deb generated\n```\n\nبا توجه به بسته مورد نظر باید از سوییچ‌های مناسب استفاده کنید."}},"__N_SSG":true},"page":"/articles/[slug]","query":{"slug":"2013-12-20_rpmtodeb"},"buildId":"igqXl2OPJ05s2tPs4MQMK","isFallback":false,"gsp":true}</script><script nomodule="" src="/_next/static/chunks/polyfills-e893e522365b6e0e5fa4.js"></script><script src="/_next/static/chunks/webpack-50bee04d1dc61f8adf5b.js" async=""></script><script src="/_next/static/chunks/framework.f8bd46fc02868c500bda.js" async=""></script><script src="/_next/static/chunks/dccdaae97238514e0e59f68ff40a3150f2d60869.fd7c33e9ae3c66b740c3.js" async=""></script><script src="/_next/static/chunks/main-3c19994afb449613f52a.js" async=""></script><script src="/_next/static/chunks/c18007ee4e366b206423f37b43f40d4861448257.6ad75590f65d0a64ea61.js" async=""></script><script src="/_next/static/chunks/9f32a1895f4aacf1ea63ff9f71a540b7eb71f721.c3d97f18e04e41235ad9.js" async=""></script><script src="/_next/static/chunks/pages/_app-5e768503c47f0f474cf1.js" async=""></script><script src="/_next/static/chunks/884c0b09aaba7d8da8976f96bae68463b81d3e33.69e17f26dc467dcd1735.js" async=""></script><script src="/_next/static/chunks/755b54d753eea6c310ec0b9a05508d467366a08f.dd8ff6ba50741b700375.js" async=""></script><script src="/_next/static/chunks/6b20a07b2d70cfcb2a9bc7e0210d4109f26bcd0c.6ef66b02a65441044c74.js" async=""></script><script src="/_next/static/chunks/pages/articles/%5Bslug%5D-8dd97a7322e8b3511971.js" async=""></script><script src="/_next/static/igqXl2OPJ05s2tPs4MQMK/_buildManifest.js" async=""></script><script src="/_next/static/igqXl2OPJ05s2tPs4MQMK/_ssgManifest.js" async=""></script></body></html>

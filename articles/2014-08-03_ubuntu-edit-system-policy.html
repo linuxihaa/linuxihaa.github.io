@@ -1,0 +1,75 @@
+<!DOCTYPE html><html lang="fa"><head><link rel="manifest" href="/manifest.json"/><link rel="apple-touch-icon" href="/icon-512x512.png"/><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/><link href="//db.onlinewebfonts.com/c/14b4bf4df4455e6a1277f2b2584dadd6?family=BBCNassim" rel="stylesheet" type="text/css"/><meta name="msapplication-TileColor" content="#ce1919"/><meta name="theme-color" content="#ce1919"/><meta charSet="utf-8"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:site" content="@site"/><meta name="twitter:creator" content="@handle"/><meta property="og:type" content="website"/><meta property="og:locale" content="fa_IR"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>ویرایش system policy در اوبونتو</title><meta name="robots" content="index,follow"/><meta name="googlebot" content="index,follow"/><meta name="description" content="آموزش ویرایش system policy در اوبونتو"/><meta property="og:url" content="/articles/[slug]"/><meta property="og:title" content="ویرایش system policy در اوبونتو"/><meta property="og:description" content="آموزش ویرایش system policy در اوبونتو"/><meta property="og:image" content="https://linuxiha.com/images/system_policy-1.png"/><meta property="og:image:alt" content="ویرایش system policy در اوبونتو"/><meta property="og:image:width" content="800"/><meta property="og:image:height" content="600"/><meta property="og:site_name" content="Linuxiha"/><script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://linuxiha.com/articles/2014-08-03_ubuntu-edit-system-policy"
+    },
+    "headline": "ویرایش system policy در اوبونتو",
+    "image": [
+      "https://linuxiha.com/images/system_policy-1.png"
+     ],
+    "datePublished": "Sun Aug 03 2014 00:00:00 GMT+0000",
+    "dateModified": "Sun Aug 03 2014 00:00:00 GMT+0000",
+    "author": {"@type": "Person","name": "میثم ساکی"},
+    "publisher": {
+      "@type": "Organization",
+      "name": "Linuxiha",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://linuxiha.com/images/logo.png"
+      }
+    },
+    "description": "آموزش ویرایش system policy در اوبونتو"
+  }</script><script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https://linuxiha.com",
+          "name": "لینوکسی ها"
+        }
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@id": "/learning",
+          "name": "آموزشی"
+        }
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https://linuxiha.com/articles/2014-08-03_ubuntu-edit-system-policy",
+          "name": "ویرایش system policy در اوبونتو"
+        }
+      }
+     ]
+  }</script><meta name="next-head-count" content="21"/><link rel="preload" href="/_next/static/css/be235685d546691402be.css" as="style"/><link rel="stylesheet" href="/_next/static/css/be235685d546691402be.css" data-n-g=""/><link rel="preload" href="/_next/static/css/d4b1ad855d90d489a111.css" as="style"/><link rel="stylesheet" href="/_next/static/css/d4b1ad855d90d489a111.css" data-n-p=""/><noscript data-n-css=""></noscript><link rel="preload" href="/_next/static/chunks/webpack-50bee04d1dc61f8adf5b.js" as="script"/><link rel="preload" href="/_next/static/chunks/framework.f8bd46fc02868c500bda.js" as="script"/><link rel="preload" href="/_next/static/chunks/dccdaae97238514e0e59f68ff40a3150f2d60869.fd7c33e9ae3c66b740c3.js" as="script"/><link rel="preload" href="/_next/static/chunks/main-3c19994afb449613f52a.js" as="script"/><link rel="preload" href="/_next/static/chunks/c18007ee4e366b206423f37b43f40d4861448257.6ad75590f65d0a64ea61.js" as="script"/><link rel="preload" href="/_next/static/chunks/9f32a1895f4aacf1ea63ff9f71a540b7eb71f721.c3d97f18e04e41235ad9.js" as="script"/><link rel="preload" href="/_next/static/chunks/pages/_app-5e768503c47f0f474cf1.js" as="script"/><link rel="preload" href="/_next/static/chunks/884c0b09aaba7d8da8976f96bae68463b81d3e33.69e17f26dc467dcd1735.js" as="script"/><link rel="preload" href="/_next/static/chunks/755b54d753eea6c310ec0b9a05508d467366a08f.dd8ff6ba50741b700375.js" as="script"/><link rel="preload" href="/_next/static/chunks/6b20a07b2d70cfcb2a9bc7e0210d4109f26bcd0c.6ef66b02a65441044c74.js" as="script"/><link rel="preload" href="/_next/static/chunks/pages/articles/%5Bslug%5D-8dd97a7322e8b3511971.js" as="script"/></head><body dir="rtl" lang="fa"><div id="__next"><header class="header_container__2boq4"><h2></h2><nav class="header_navbar__3Tbm7"><a href="/">خانه</a><a href="/news">خبری</a><a href="/learning">آموزشی</a><a href="/about">درباره ما</a></nav><figure class="header_logo__ZHkcG"><img src="/images/logo.png" alt="linuxiha-logo"/></figure></header><div class="MuiPaper-root article_article__15ETi MuiPaper-elevation1 MuiPaper-rounded"><img src="/images/system_policy-1.png" alt="ویرایش system policy در اوبونتو"/><h1>ویرایش system policy در اوبونتو</h1><div class="MuiCardHeader-root"><div class="MuiCardHeader-avatar"><div class="MuiAvatar-root MuiAvatar-circle article_avatar__2QXuX" aria-label="article"><img alt="میثم ساکی" src="authors/user.png" class="MuiAvatar-img"/></div></div><div class="MuiCardHeader-content"><span class="MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock">میثم ساکی</span><span class="MuiTypography-root MuiCardHeader-subheader MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock">۶ سال قبل - زمان خواندن ۵ دقیقه</span></div></div><section class="article_content__1mHP3"><p>همان‌طور که می‌دانید در لینوکس تمام کارهایی که امکان دارد به‌گونه‌ای تاثیر روی کل سیستم بگذارد محدود و فقط در دسترس کاربری روت است.</p>
+<p>در مطلب «<a href="http://linuxihaa.ir/sudo">sudo چیست؟</a>» به این مورد اشاره کردیم و گفتیم با دستوری مانند sudo در رابط خط‌فرمان می‌توان با کاربر عادی به این اعمال دسترسی داشت و در رابط گرافیکی نیز برنامه‌هایی در هر میزکار تعبیه شده‌اند که با نشان دادن کادرهای محاوره‌ای و درخواست رمز عبور، دسترسی به امکانات ممتاز سیستم را امکان پذیر می‌کنند.</p>
+<p>به طور مثال هنگامی که قصد داریم پراکسی سیستم را در اوبونتو تغییر دهیم چون این یک عمل ممتاز در سیستم است کادر محاوره‌ای به شکل زیر باز شده و رمز کاربری را درخواست می‌کند.</p>
+<p><img src="/images/system_policy-1.png" alt="system_policy-1"/></p>
+<p>مشاهده می‌کنید که سیاست سیستم (system policy) پیغام داده که مانع انجام این کار می‌شود مگر این‌که رمز عبور را وارد کنید تا هویت شما تایید شود.</p>
+<p>خب اگر بخواهیم این پیغام‌ها نمایش داده نشود و برخی اعمالی که خودمان می‌دانیم زیاد خطرناک نیستند (همه اعمال را نباید باز گذاشت) را بدون تایید هویت انجام دهیم باید چکار کنیم؟!</p>
+<p>اول از همه گزینه Details در کادر را بزنید تا مشخصات این سیاست دیده شود.</p>
+<p><img src="/images/system-policy-2.png" alt="system-policy-2"/></p>
+<p>نام عملی که سیاست سیستم مانع آن می‌شود جلوی Action نوشته شده است. اکنون شما باید دسترسی به این عمل را برای سیستم به‌گونه‌ای تعریف کنید که دیگر نیاز به تایید هویت نباشد.</p>
+<p>در اینجا عمل com.ubuntu.systemservice.setproxy مورد بحث است که از دسته اعمال com.ubuntu.systemservice است (کافیه بخش آخر را حذف کنیم تا بفهمیم دسته اعمال چیه).</p>
+<p>تمام فایل‌های دسته اعمال در/usr/share/polkit-1/actions/ قرار دارند که با نام آن دسته به اضافه .policy همراه شده‌اند.</p>
+<p>حالا فایل این دسته اعمال را باز می‌کنیم.</p>
+<pre><pre style="color:#f8f8f2;background:#282a36;text-shadow:0 1px rgba(0, 0, 0, 0.3);font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, &#x27;Ubuntu Mono&#x27;, monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;padding:1em;margin:.5em 0;overflow:auto;border-radius:0.3em"><code class="language-sh" style="color:#f8f8f2;background:none;text-shadow:0 1px rgba(0, 0, 0, 0.3);font-family:Consolas, Monaco, &#x27;Andale Mono&#x27;, &#x27;Ubuntu Mono&#x27;, monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none"><span>sudo gedit /usr/share/polkit-1/actions/com.ubuntu.systemservice.policy</span></code></pre></pre>
+<p>در فایل باز شده عمل مورد نظر خود را پیدا می‌کنیم (در اینجا setproxy).</p>
+<p><img src="/images/system_policy-3.png" alt="system_policy-3"/></p>
+<p>خب حالا هر تغییری که دوست داریم روی تگ‌های داخل defaults انجام می‌دهیم. مثلا کافیست به‌جای no در تگ allow_inactive و به‌جای auth_admin_keep در تگ allow_active عبارت yes را بنویسیم (مانند تصویر زیر) تا دیگر برای تغییر پراکسی سیستم نیاز به اهراز هویت نداشته باشیم.</p>
+<p><img src="/images/system_policy-4.png" alt="system_policy-4"/></p>
+<ul>
+<li>
+<p>البته این تغییرات همیشه پیشنهاد نمی‌شود اما در برخی موارد که راحتی به امنیت ارجعیت دارد بسیار سودمند است.</p>
+</li>
+<li>
+<p>این مطلب را بعد از خواند مطلبی با عنوان «نصب و حذف برنامه بدون وارد کردن گذرواژه» نوشتم که می‌توانید از آدرس mehdi.wordpress.com/2014/07/18/add-remove-software-without-password مطالعه کنید.</p>
+</li>
+</ul></section><div class="progress_root__2VpcX"><div class="MuiLinearProgress-root MuiLinearProgress-colorPrimary MuiLinearProgress-determinate" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"><div class="MuiLinearProgress-bar MuiLinearProgress-barColorPrimary MuiLinearProgress-bar1Determinate" style="transform:translateX(100%)"></div></div></div></div><nav id="navbar" class="menu_menu-container__3W1os"><a class="menu_menu-item__2FGZV" href="/"><img src="/icons/home.png" alt="home"/> <span>خانه</span> <aside></aside></a><a class="menu_menu-item__2FGZV" href="/news"><img src="/icons/news.png" alt="news"/> <span>خبری</span> <aside></aside></a><a class="menu_menu-item__2FGZV" href="/learning"><img src="/icons/article.png" alt="article"/> <span>آموزشی</span> <aside></aside></a><a class="menu_menu-item__2FGZV" href="/about"><img src="/icons/info.png" alt="info"/> <span>درباره ما</span> <aside></aside></a></nav></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"page":{"slug":"2014-08-03_ubuntu-edit-system-policy","layout":"post","jdate":"Sun Aug 03 2014 00:00:00 GMT+0000","user":"misam","title":"ویرایش system policy در اوبونتو","categories":["آموزشی"],"tags":["اوبونتو","حریم‌شخصی"],"featured":"system_policy-1.png","keywords":["system policy","system policy اوبونتو"],"description":"آموزش ویرایش system policy در اوبونتو","timeToRead":5,"content":"\nهمان‌طور که می‌دانید در لینوکس تمام کارهایی که امکان دارد به‌گونه‌ای تاثیر روی کل سیستم بگذارد محدود و فقط در دسترس کاربری روت است.\n\nدر مطلب «[sudo چیست؟](http://linuxihaa.ir/sudo)» به این مورد اشاره کردیم و گفتیم با دستوری مانند sudo در رابط خط‌فرمان می‌توان با کاربر عادی به این اعمال دسترسی داشت و در رابط گرافیکی نیز برنامه‌هایی در هر میزکار تعبیه شده‌اند که با نشان دادن کادرهای محاوره‌ای و درخواست رمز عبور، دسترسی به امکانات ممتاز سیستم را امکان پذیر می‌کنند.\n\nبه طور مثال هنگامی که قصد داریم پراکسی سیستم را در اوبونتو تغییر دهیم چون این یک عمل ممتاز در سیستم است کادر محاوره‌ای به شکل زیر باز شده و رمز کاربری را درخواست می‌کند.\n\n![system_policy-1](/images/system_policy-1.png)\n\nمشاهده می‌کنید که سیاست سیستم (system policy) پیغام داده که مانع انجام این کار می‌شود مگر این‌که رمز عبور را وارد کنید تا هویت شما تایید شود.\n\nخب اگر بخواهیم این پیغام‌ها نمایش داده نشود و برخی اعمالی که خودمان می‌دانیم زیاد خطرناک نیستند (همه اعمال را نباید باز گذاشت) را بدون تایید هویت انجام دهیم باید چکار کنیم؟!\n\nاول از همه گزینه Details در کادر را بزنید تا مشخصات این سیاست دیده شود.\n\n![system-policy-2](/images/system-policy-2.png)\n\nنام عملی که سیاست سیستم مانع آن می‌شود جلوی Action نوشته شده است. اکنون شما باید دسترسی به این عمل را برای سیستم به‌گونه‌ای تعریف کنید که دیگر نیاز به تایید هویت نباشد.\n\nدر اینجا عمل com.ubuntu.systemservice.setproxy مورد بحث است که از دسته اعمال com.ubuntu.systemservice است (کافیه بخش آخر را حذف کنیم تا بفهمیم دسته اعمال چیه).\n\nتمام فایل‌های دسته اعمال در/usr/share/polkit-1/actions/ قرار دارند که با نام آن دسته به اضافه .policy همراه شده‌اند.\n\nحالا فایل این دسته اعمال را باز می‌کنیم.\n\n```sh\nsudo gedit /usr/share/polkit-1/actions/com.ubuntu.systemservice.policy\n```\n\nدر فایل باز شده عمل مورد نظر خود را پیدا می‌کنیم (در اینجا setproxy).\n\n![system_policy-3](/images/system_policy-3.png)\n\nخب حالا هر تغییری که دوست داریم روی تگ‌های داخل defaults انجام می‌دهیم. مثلا کافیست به‌جای no در تگ allow_inactive و به‌جای auth_admin_keep در تگ allow_active عبارت yes را بنویسیم (مانند تصویر زیر) تا دیگر برای تغییر پراکسی سیستم نیاز به اهراز هویت نداشته باشیم.\n\n![system_policy-4](/images/system_policy-4.png)\n\n* البته این تغییرات همیشه پیشنهاد نمی‌شود اما در برخی موارد که راحتی به امنیت ارجعیت دارد بسیار سودمند است.\n\n* این مطلب را بعد از خواند مطلبی با عنوان «نصب و حذف برنامه بدون وارد کردن گذرواژه» نوشتم که می‌توانید از آدرس mehdi.wordpress.com/2014/07/18/add-remove-software-without-password مطالعه کنید."}},"__N_SSG":true},"page":"/articles/[slug]","query":{"slug":"2014-08-03_ubuntu-edit-system-policy"},"buildId":"igqXl2OPJ05s2tPs4MQMK","isFallback":false,"gsp":true}</script><script nomodule="" src="/_next/static/chunks/polyfills-e893e522365b6e0e5fa4.js"></script><script src="/_next/static/chunks/webpack-50bee04d1dc61f8adf5b.js" async=""></script><script src="/_next/static/chunks/framework.f8bd46fc02868c500bda.js" async=""></script><script src="/_next/static/chunks/dccdaae97238514e0e59f68ff40a3150f2d60869.fd7c33e9ae3c66b740c3.js" async=""></script><script src="/_next/static/chunks/main-3c19994afb449613f52a.js" async=""></script><script src="/_next/static/chunks/c18007ee4e366b206423f37b43f40d4861448257.6ad75590f65d0a64ea61.js" async=""></script><script src="/_next/static/chunks/9f32a1895f4aacf1ea63ff9f71a540b7eb71f721.c3d97f18e04e41235ad9.js" async=""></script><script src="/_next/static/chunks/pages/_app-5e768503c47f0f474cf1.js" async=""></script><script src="/_next/static/chunks/884c0b09aaba7d8da8976f96bae68463b81d3e33.69e17f26dc467dcd1735.js" async=""></script><script src="/_next/static/chunks/755b54d753eea6c310ec0b9a05508d467366a08f.dd8ff6ba50741b700375.js" async=""></script><script src="/_next/static/chunks/6b20a07b2d70cfcb2a9bc7e0210d4109f26bcd0c.6ef66b02a65441044c74.js" async=""></script><script src="/_next/static/chunks/pages/articles/%5Bslug%5D-8dd97a7322e8b3511971.js" async=""></script><script src="/_next/static/igqXl2OPJ05s2tPs4MQMK/_buildManifest.js" async=""></script><script src="/_next/static/igqXl2OPJ05s2tPs4MQMK/_ssgManifest.js" async=""></script></body></html>
