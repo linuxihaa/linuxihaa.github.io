@@ -1,0 +1,95 @@
+@import 'theme.scss';
+@import 'mixins';
+
+.menu-container {
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    transition: bottom 1s ease 0s;
+    background-color: $background-color ;
+    bottom: 0;
+    right: 0;
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    @include large() {
+        padding: 0.5rem;
+        display: none;
+    }
+
+    @include medium() {
+        padding: 0.5rem;
+    }
+
+    a {
+        width: 3rem;
+        height: 3rem;
+        font-size: 1.3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 1.5rem;
+            height: 1.5rem;
+            backface-visibility: hidden;
+            transition: linear transform 0.5s;
+        }
+
+        span {
+            font-size: 1rem;
+            padding-bottom: 0.8rem;
+            position: absolute;
+            transform: rotateX(180deg);
+            backface-visibility: hidden;
+            transition: linear transform 0.5s;
+        }
+    }
+
+    aside {
+        display: block;
+        width: 5px;
+        height: 5px;
+        border-radius: 2.5px;
+        background-color: gray;
+        margin: 5px;
+    }
+
+    .menu-item {
+        color: gray;
+    }
+
+    .selected {
+        color: $primary;
+
+        aside {
+            background-color: $primary;
+            box-shadow: 0px 0px 15px 2px $primary;
+        }
+
+        img {
+            transform: rotateX(180deg);
+        }
+
+        span {
+            transform: rotateX(0deg);
+            margin-bottom: 0.5rem;
+        }
+    }
+}
+
+
+
+.menu-link {
+    display: block;
+    width: 50px;
+    height: 100%;
+    color: $primary;
+    a {
+        width: 50px;
+        height: 100%;
+    }
+}

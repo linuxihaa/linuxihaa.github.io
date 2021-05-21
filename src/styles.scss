@@ -1,0 +1,64 @@
+// @font-face {
+//     font-family: 'Gandom';
+    
+//     src: url("../public/fonts/Gandom.woff2") format("woff2"),
+//     url('../public/fonts/Gandom.ttf') format('truetype'),
+//       url("../public/fonts/Gandom.woff") format("woff");
+//     font-weight: normal;
+//   }
+
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: BBCNassim;
+  }
+
+  :root {
+    font-size: 20px;
+  }
+  
+  html {
+
+    line-height: 1.8rem;
+  }
+
+  body {
+    background-color: #f6f6f6;
+    position: relative;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .link {
+      color: #ce1919;
+      &:hover {
+          text-decoration: underline;
+      }
+  }
+
+  .menu {
+    position: fixed;
+    bottom: 0;
+  }
+
+  ::-webkit-scrollbar {
+    width: 0.5em;
+    height: 0.5em;
+   }
+ 
+  ::-webkit-scrollbar-thumb {
+    background-color: #e95420;
+    border-radius: 3px;
+ 
+    &:hover {
+    background: #e95420;
+    }
+}

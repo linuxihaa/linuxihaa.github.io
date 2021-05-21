@@ -1,2 +1,0 @@
-Sitemap: http://linuxihaa.ir/sitemap.xml
-User-agent: *

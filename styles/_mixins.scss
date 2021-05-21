@@ -1,0 +1,17 @@
+@mixin medium(){
+    @media screen and (min-width: 600px) and (max-width: 740px) {
+        @content;
+    }   
+}
+
+@mixin large(){
+    @media screen and (min-width: 740px) {
+        @content;
+    }    
+}
+
+@mixin thin() {
+    @media screen and (max-height: 500px) {
+        @content;
+    }  
+}

@@ -1,0 +1,19 @@
+@import 'theme.scss';
+@import 'mixins';
+
+.media {
+    width: 100%;
+    height: 200px;
+
+    @include large() {
+        height: 400px;
+    }
+}
+
+.card {
+    margin: 1.5rem;
+}
+
+.avatar {
+    margin-left: 0.5rem;
+}

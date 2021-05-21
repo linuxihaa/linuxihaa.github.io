@@ -1,0 +1,100 @@
+@import "mixins";
+@import "theme";
+
+.article {
+    width: 90%;
+    margin: 3rem auto;
+    font-size: 0.8rem;
+    overflow: hidden;
+    font-family: BBCNassim;
+
+    & > img {
+        width: 100%;
+        height: auto;
+        border-radius: 5px 5px 0 0;
+    }
+
+    code {
+        display: block;
+        width: 100%;
+        margin: 1rem auto;
+        direction: ltr;
+        font-family: "Courier New";
+        padding: 0.2rem 0.5rem;
+        border-radius: 15px;
+        overflow: auto;
+        border-radius: 10px;
+
+        &::-webkit-scrollbar {
+            width: 0.5em;
+            height: 0.5em;
+           }
+         
+        &::-webkit-scrollbar-thumb {
+            background-color: #e95420;
+            border-radius: 3px;
+         
+            &:hover {
+            background: #e95420;
+            }
+        }
+        
+    }
+
+    .text {
+        background-color: $code;
+        li {
+            margin-right: 1rem;
+        }
+    }
+
+    ul {
+        list-style-type: circle;
+        li {
+            margin-right: 0.5rem;
+        }
+    }
+
+    h1 {
+        margin: 0.5rem 0.5rem 0 0;
+        font-size: 1.5rem;
+    }
+
+    .avatar {
+        margin-left: 1rem;
+    }
+
+    @include large() {
+        width: 60%;
+
+        h1 {
+            margin: 2rem 2rem 0 0;
+        }
+    }
+}
+
+.content {
+    margin-top: 1rem;
+    padding: 0.5rem;
+
+    p {
+        img {
+            display: block;
+            margin: 2rem auto;
+            max-width: 100%;
+            border-radius: 5px;
+        }
+    }
+
+    a {
+        color: $primary;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    @include large() {
+        padding: 2rem;
+    }
+}
+
